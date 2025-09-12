@@ -203,13 +203,13 @@ body {
     color: white !important;
     border-radius: 30px;
     padding: 8px 20px !important;
-    box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,180,61,0.3);
     transition: all 0.3s ease;
 }
 
 .nav-link.register:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,107,0,0.4);
+    box-shadow: 0 8px 20px rgba(0,180,61,0.4);
 }
 
 .navbar-toggler {
@@ -910,7 +910,7 @@ body {
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
   }
   .blog-info h5 a:hover {
-    color: #00b894;
+    color: #00B43D;
   }
 
 
@@ -942,7 +942,7 @@ body {
 }
 
 .footerWrap h5 {
-    color: rgb(29, 226, 111);
+    color: #00B43D;
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 15px;
@@ -956,7 +956,7 @@ body {
     left: 0;
     width: 40px;
     height: 3px;
-    background: #00b894;
+    background: #00B43D;
     border-radius: 3px;
 }
 
@@ -981,17 +981,17 @@ body {
     content: '›';
     position: absolute;
     left: 0;
-    color: #00b894;
+    color: #00B43D;
     transition: all 0.3s ease;
 }
 
 .quicklinks a:hover {
-    color: rgb(14, 171, 97);
+    color: #00B43D;
     padding-left: 20px;
 }
 
 .quicklinks a:hover:before {
-    color: white;
+    color: #00B43D;
 }
 
 .address, .email {
@@ -1006,7 +1006,7 @@ body {
 }
 
 .email a:hover {
-    color: white;
+    color: #00B43D;
 }
 
 .social {
@@ -1027,7 +1027,7 @@ body {
 }
 
 .social a:hover {
-    background: #00b894;
+    background: #00B43D;
     transform: translateY(-3px);
 }
 
