@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsOrbit - Find Your Dream Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+   
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="https://portal.workafy.com/sitesetting_images/thumb/workafy-1748826768-353.png" alt="JobsOrbit">
+          </a>
+      
+          <!-- Toggler for mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Companies</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
+              <li class="nav-item"><a class="nav-link register" href="#">Register</a></li>
+      
+              <!-- 🌍 Language Switcher -->
+              <li class="nav-item dropdown ms-3">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="languageDropdown" 
+                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-globe me-1"></i> Language
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">हिन्दी (Hindi)</a></li>
+                  <li><a class="dropdown-item" href="#">Español (Spanish)</a></li>
+                  <li><a class="dropdown-item" href="#">Français (French)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+   
+      
+    <!-- Header end -->
+
+    
+
+    <!-- Search start -->
+    <div class="searchwrap" style="background: linear-gradient(135deg, #7d7979, #fff); color: #fff; padding: 80px 0;">
+        <div id="particles-js"></div>
+        <div class="container">
+          <div class="row align-items-center">
+            
+            <!-- Left Text + Search Section -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+              <div class="srjobseeker">
+                <div class="bxsrctxt mb-4">
+                  <h1 style="color: #00ff99;">Ready to Find Your Dream Job?</h1>
+                  <p style="color: #3f3737;">
+                    Take the next step in your career journey with <span style="color:#00ff99;">JobsOrbit</span>. 
+                    Explore opportunities that match your skills and passions, and land the job you've always wanted!
+                  </p>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="searchbar p-4 rounded shadow-lg mt-4" style="background: #7d7979; border: 1px solid #7d7079;">
+                  <h3 style="color: #00ff99;">Search Jobs</h3>
+                  <form action="#" method="get">
+                    
+                    <!-- Search input -->
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Enter Skills or job title" style="background: #fff; color: #fff; border: 1px solid #00ff99;">
+                      <button class="btn" type="submit" style="background:#00ff99; color:#000; font-weight:600;">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                    
+                    <!-- Dropdown -->
+                    <div class="input-group mb-3">
+                      <select class="form-select" style="background:#fff; color:#716d6d; border: 1px solid #00ff99;">
+                        <option value="" selected>Select Functional Area</option>
+                        <option value="1">Information Technology</option>
+                        <option value="2">Management</option>
+                        <option value="3">Accounting/Finance</option>
+                        <option value="4">Engineering</option>
+                        <option value="5">Healthcare</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Right Image Section -->
+            <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+              <div class="job-image mt-4">
+                <img src="images/image1.png" alt="Job Search Illustration" 
+                     class="img-fluid" 
+                     style="max-height: 420px; width: 100%; object-fit: contain; border: none; box-shadow: none;">
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+    <!-- Search End -->
+
+    <!-- Info boxes start -->
+    <div class="infodatawrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="#" class="userloginbox">
+                        <h3>Search your desired Job</h3>
+                        <p>Discover a career you are passionate about</p>
+                        <img src="https://portal.workafy.com/images/search-job-icon.png" alt="Search Jobs" class="animate-float">
+                    </a>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="#" class="userloginbox">
+                        <h3>Post a Job Today</h3>
+                        <p>Discover the ideal candidate for your team</p>
+                        <img src="https://portal.workafy.com/images/postjob.png" alt="Post Job" class="animate-float">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Info boxes end -->
+
+    <!-- Stats Section -->
+    <div class="stats-section py-5" data-aos="fade-up" data-aos-duration="1000" style="background: #fff; color: #fff;">
+        <div class="container">
+          <div class="row text-center">
+      
+            <!-- Jobs Posted -->
+            <div class="col-md-3 col-6 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-briefcase fa-3x mb-2" style="color:#00ff99;"></i>
+                <div class="counter fw-bold" data-count="12500">0</div>
+                <p class="mb-0" style="color: #7d7979;">Jobs Posted</p>
+              </div>
+            </div>
+      
+            <!-- Jobs Filled -->
+            <div class="col-md-3 col-6 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-user-check fa-3x mb-2" style="color:#00ff99;"></i>
+                <div class="counter fw-bold" data-count="8500">0</div>
+                <p class="mb-0" style="color: #7d7979;">Jobs Filled</p>
+              </div>
+            </div>
+      
+            <!-- Companies -->
+            <div class="col-md-3 col-6 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-building fa-3x mb-2" style="color:#00ff99;"></i>
+                <div class="counter fw-bold" data-count="3500">0</div>
+                <p class="mb-0" style="color: #7d7979;">Companies</p>
+              </div>
+            </div>
+      
+            <!-- Members -->
+            <div class="col-md-3 col-6 mb-4">
+              <div class="stat-item">
+                <i class="fas fa-users fa-3x mb-2" style="color:#00ff99;"></i>
+                <div class="counter fw-bold" data-count="9500">0</div>
+                <p class="mb-0" style="color: #7d7979;">Members</p>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
+    <!-- Top Employers start -->
+    <div class="section topemployers">
+        <div class="container">
+          <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Top Companies are Hiring</h2>
+            <p>Discover opportunities with the most sought-after employers in the industry</p>
+          </div>
+          
+          <div class="owl-carousel owl-theme employerList" data-aos="fade-up" data-aos-duration="4000" data-aos-delay="200">
+            
+            <!-- Apple -->
+            <div class="item">
+              <div class="empint">
+                <a href="#">
+                  <div class="comimg">
+                    <img src="https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png" 
+                         alt="Apple" style="max-width:150px; max-height:80px; object-fit: contain;">
+                  </div>
+                  <h4>Apple Inc.</h4>
+                  <div class="emloc"><i class="fas fa-map-marker-alt"></i> Cupertino, CA</div>
+                  <div class="cm-info-bottom mt-3"><i class="fas fa-briefcase"></i> 25 Open Jobs</div>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Google -->
+            <div class="item">
+              <div class="empint">
+                <a href="#">
+                  <div class="comimg">
+                    <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" 
+                         alt="Google" style="max-width:150px; max-height:80px; object-fit: contain;">
+                  </div>
+                  <h4>Google</h4>
+                  <div class="emloc"><i class="fas fa-map-marker-alt"></i> Mountain View, CA</div>
+                  <div class="cm-info-bottom mt-3"><i class="fas fa-briefcase"></i> 30 Open Jobs</div>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Microsoft -->
+            <div class="item">
+              <div class="empint">
+                <a href="#">
+                  <div class="comimg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" 
+                         alt="Microsoft" style="max-width:150px; max-height:80px; object-fit: contain;">
+                  </div>
+                  <h4>Microsoft</h4>
+                  <div class="emloc"><i class="fas fa-map-marker-alt"></i> Redmond, WA</div>
+                  <div class="cm-info-bottom mt-3"><i class="fas fa-briefcase"></i> 18 Open Jobs</div>
+                </a>
+              </div>
+            </div>
+      
+            <!-- IBM -->
+            <div class="item">
+              <div class="empint">
+                <a href="#">
+                  <div class="comimg">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" 
+                         alt="IBM" style="max-width:150px; max-height:80px; object-fit: contain;">
+                  </div>
+                  <h4>IBM</h4>
+                  <div class="emloc"><i class="fas fa-map-marker-alt"></i> Armonk, NY</div>
+                  <div class="cm-info-bottom mt-3"><i class="fas fa-briefcase"></i> 14 Open Jobs</div>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Netflix -->
+            <div class="item">
+              <div class="empint">
+                <a href="#">
+                  <div class="comimg">
+                    <img src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-symbol.jpg" 
+                         alt="Netflix" style="max-width:150px; max-height:80px; object-fit: contain;">
+                  </div>
+                  <h4>Netflix</h4>
+                  <div class="emloc"><i class="fas fa-map-marker-alt"></i> Los Gatos, CA</div>
+                  <div class="cm-info-bottom mt-3"><i class="fas fa-briefcase"></i> 10 Open Jobs</div>
+                </a>
+              </div>
+            </div>
+      
+          </div>
+          
+          <div class="viewallbtn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <a href="#">View All Featured Companies</a>
+          </div>
+        </div>
+      </div>
+      
+    <!-- Top Employers ends -->
+
+    <!-- Popular Industries start -->
+    <div class="section greybg">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Popular Industries</h3>
+                <p>Explore opportunities across various industry sectors</p>
+            </div>
+            
+            <div class="popularind" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <ul class="hmindlist row">
+                    <li class="col-md-3 col-6"><a href="#">Information Technology (256)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Healthcare (189)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Finance (143)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Education (112)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Manufacturing (98)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Retail (87)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Construction (76)</a></li>
+                    <li class="col-md-3 col-6"><a href="#">Marketing (65)</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Popular Industries ends -->
+
+
+
+    <!-- Featured Jobs start -->
+    <div class="section featuredjobwrap">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Featured Jobs</h3>
+                <p>Handpicked opportunities from top employers</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="jobint">
+                    <div class="d-flex">
+                      <div class="fticon"><i class="fas fa-briefcase"></i> Full Time</div>
+                    </div>
+                    <h4><a href="#">Senior Web Developer</a></h4>
+                    <strong><i class="fas fa-map-marker-alt"></i> San Francisco, CA</strong>
+                    <div class="jobcompany">
+                      <div class="ftjobcomp">
+                        <span>Posted 2 days ago</span>
+                        <a href="#">TechCorp</a>
+                      </div>
+                      <a href="#" class="company-logo" aria-label="TechCorp logo">
+                        <!-- Inline SVG logo (TechCorp / blue) -->
+                        <svg width="80" height="40" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                          <rect width="100%" height="100%" rx="8" ry="8" fill="#1967d2"/>
+                          <text x="50%" y="50%" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#ffffff" dominant-baseline="middle" text-anchor="middle">TechCorp</text>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                  <div class="jobint">
+                    <div class="d-flex">
+                      <div class="fticon"><i class="fas fa-briefcase"></i> Contract</div>
+                    </div>
+                    <h4><a href="#">UI/UX Designer</a></h4>
+                    <strong><i class="fas fa-map-marker-alt"></i> New York, NY</strong>
+                    <div class="jobcompany">
+                      <div class="ftjobcomp">
+                        <span>Posted 5 days ago</span>
+                        <a href="#">DesignHub</a>
+                      </div>
+                      <a href="#" class="company-logo" aria-label="DesignHub logo">
+                        <!-- Inline SVG logo (DesignHub / orange) -->
+                        <svg width="80" height="40" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                          <rect width="100%" height="100%" rx="8" ry="8" fill="#ff6b00"/>
+                          <text x="50%" y="50%" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#ffffff" dominant-baseline="middle" text-anchor="middle">DesignHub</text>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <div class="jobint">
+                    <div class="d-flex">
+                      <div class="fticon"><i class="fas fa-briefcase"></i> Part Time</div>
+                    </div>
+                    <h4><a href="#">Marketing Specialist</a></h4>
+                    <strong><i class="fas fa-map-marker-alt"></i> Remote</strong>
+                    <div class="jobcompany">
+                      <div class="ftjobcomp">
+                        <span>Posted 1 day ago</span>
+                        <a href="#">MarketMind</a>
+                      </div>
+                      <a href="#" class="company-logo" aria-label="MarketMind logo">
+                        <!-- Inline SVG logo (MarketMind / dark) -->
+                        <svg width="80" height="40" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                          <rect width="100%" height="100%" rx="8" ry="8" fill="#343a40"/>
+                          <text x="50%" y="50%" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#ffffff" dominant-baseline="middle" text-anchor="middle">MarketMind</text>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            <div class="viewallbtn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <a href="#">View All Featured Jobs</a>
+            </div>
+        </div>
+    </div>
+    <!-- Featured Jobs ends -->
+
+
+
+    <!-- Job Categories start -->
+    <div class="section greybg">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Browse Jobs By Categories</h3>
+                <p>Find opportunities in your field of expertise</p>
+            </div>
+            
+            <div class="owl-carousel owl-theme categorylisting" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1006/1006555.png" alt="Technology">
+                        </div>
+                        <div class="catedata">
+                            <h3>Technology</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (256) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Healthcare">
+                        </div>
+                        <div class="catedata">
+                            <h3>Healthcare</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (189) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="Finance">
+                        </div>
+                        <div class="catedata">
+                            <h3>Finance</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (143) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2942/2942789.png" alt="Education">
+                        </div>
+                        <div class="catedata">
+                            <h3>Education</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (112) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062630.png" alt="Marketing">
+                        </div>
+                        <div class="catedata">
+                            <h3>Marketing</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (98) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="item">
+                    <a class="catecard" href="#">
+                        <div class="iconcircle">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2616/2616619.png" alt="Engineering">
+                        </div>
+                        <div class="catedata">
+                            <h3>Engineering</h3>
+                            <div class="badge"><i class="fas fa-briefcase"></i> (87) Jobs</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="viewallbtn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <a href="#">View All Categories</a>
+            </div>
+        </div>
+    </div>
+    <!-- Job Categories ends -->
+
+
+    
+    <!-- Latest Jobs start -->
+    <div class="section">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Latest Jobs</h3>
+                <p>Recently posted opportunities</p>
+            </div>
+            <div class="row">
+                <!-- TechCorp -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="jobint">
+                    <div class="row">
+                      <div class="col-3">
+                        <a href="#">
+                          <!-- Inline SVG logo -->
+                          <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" rx="12" ry="12" fill="#1967d2"/>
+                            <text x="50%" y="50%" fill="#ffffff" font-size="32" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">T</text>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="col-9">
+                        <h4><a href="#">Frontend Developer</a></h4>
+                        <div class="company"><a href="#">TechCorp</a> - <span>Remote</span></div>
+                        <div class="jobloc">
+                          <label class="fulltime">Full Time</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- DesignHub -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                  <div class="jobint">
+                    <div class="row">
+                      <div class="col-3">
+                        <a href="#">
+                          <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" rx="12" ry="12" fill="#ff6b00"/>
+                            <text x="50%" y="50%" fill="#ffffff" font-size="32" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">D</text>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="col-9">
+                        <h4><a href="#">Product Designer</a></h4>
+                        <div class="company"><a href="#">DesignHub</a> - <span>New York</span></div>
+                        <div class="jobloc">
+                          <label class="contract">Contract</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- FinancePlus -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <div class="jobint">
+                    <div class="row">
+                      <div class="col-3">
+                        <a href="#">
+                          <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" rx="12" ry="12" fill="#343a40"/>
+                            <text x="50%" y="50%" fill="#ffffff" font-size="32" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">F</text>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="col-9">
+                        <h4><a href="#">Financial Analyst</a></h4>
+                        <div class="company"><a href="#">FinancePlus</a> - <span>Chicago</span></div>
+                        <div class="jobloc">
+                          <label class="fulltime">Full Time</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            
+            <div class="viewallbtn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <a href="#">View All Latest Jobs</a>
+            </div>
+        </div>
+    </div>
+    <!-- Latest Jobs ends -->
+
+<!-- Jobs by Cities Section -->
+<div class="section jobs-by-cities py-5" style="background:#f9f9f9;">
+    <div class="container">
+      <div class="titleTop text-center mb-5">
+        <h2 class="fw-bold">Jobs by Cities</h2>
+        <p class="text-muted">Explore jobs in top cities near you</p>
+      </div>
+  
+      <div class="row g-4">
+        <!-- New York -->
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="city-card d-block position-relative overflow-hidden rounded shadow-sm">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" 
+                 alt="New York" class="img-fluid city-img">
+            <div class="city-overlay d-flex flex-column justify-content-end p-3">
+              <h5 class="text-white mb-1">New York</h5>
+              <span class="job-count">150 Jobs</span>
+            </div>
+          </a>
+        </div>
+  
+        <!-- London -->
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="city-card d-block position-relative overflow-hidden rounded shadow-sm">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" 
+                 alt="London" class="img-fluid city-img">
+            <div class="city-overlay d-flex flex-column justify-content-end p-3">
+              <h5 class="text-white mb-1">London</h5>
+              <span class="job-count">120 Jobs</span>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Berlin -->
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="city-card d-block position-relative overflow-hidden rounded shadow-sm">
+            <img src="https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmVybGlufGVufDB8fDB8fHww" 
+                 alt="Berlin" class="img-fluid city-img">
+            <div class="city-overlay d-flex flex-column justify-content-end p-3">
+              <h5 class="text-white mb-1">Berlin</h5>
+              <span class="job-count">85 Jobs</span>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Mumbai -->
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="city-card d-block position-relative overflow-hidden rounded shadow-sm">
+            <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bXVtYmFpfGVufDB8fDB8fHww" 
+                 alt="Mumbai" class="img-fluid city-img">
+            <div class="city-overlay d-flex flex-column justify-content-end p-3">
+              <h5 class="text-white mb-1">Mumbai</h5>
+              <span class="job-count">200 Jobs</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ 
+  
+
+    
+
+    <!-- How it Works start -->
+    <div class="section greybg">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>How It Works</h3>
+                <p>Simple steps to your next career opportunity</p>
+            </div>
+            
+            <div class="row howlist">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="iconcircle">
+                        <i class="fas fa-user-plus fa-2x"></i>
+                    </div>
+                    <div>
+                        <h4>Create An Account</h4>
+                        <p>It's very easy to open an account and start your journey.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="iconcircle">
+                        <i class="fas fa-file-alt fa-2x"></i>
+                    </div>
+                    <div>
+                        <h4>Complete Your Profile</h4>
+                        <p>Complete your profile with all the info to get attention of clients.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="iconcircle">
+                        <i class="fas fa-briefcase fa-2x"></i>
+                    </div>
+                    <div>
+                        <h4>Apply Job or Hire</h4>
+                        <p>Apply & get your preferable jobs with all the requirements and get it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- How it Works ends -->
+
+
+    <!-- Testimonials start -->
+    <div class="section">
+        <div class="container">
+            <div class="titleTop" data-aos="fade-up" data-aos-duration="1000">
+                <h3>Success Stories</h3>
+                <p>What our users say about us</p>
+            </div>
+            
+            <div class="owl-carousel owl-theme testimonialsList" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="item">
+                    <div class="ratinguser">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"I had been stuck in a dead-end job for years. I decided to explore JobsPortal and discovered a listing for a position that aligned perfectly with my passion for marketing. After applying, I received personalized career advice from the platform. I aced the interview and secured the role, kickstarting my exciting career journey."</p>
+                    <div class="clientname">John Smith</div>
+                    <div class="clientinfo">Marketing Director</div>
+                </div>
+                
+                <div class="item">
+                    <div class="ratinguser">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"I am a working mom and needed flexibility in my job. I turned to JobsPortal and found remote job listings that allowed me to balance work and family life. I'm now working as a content writer for an international company, all thanks to JobsPortal's user-friendly interface and extensive job listings."</p>
+                    <div class="clientname">Maria Johnson</div>
+                    <div class="clientinfo">Content Writer</div>
+                </div>
+                
+                <div class="item">
+                    <div class="ratinguser">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"I am a recent graduate who struggled to find a job in my field. I joined JobsPortal and customized my profile, highlighting my skills and experiences. Within weeks, I received interview invitations from top companies. I landed my dream job at a tech startup, and I credit JobsPortal for connecting me with the right opportunity."</p>
+                    <div class="clientname">David Wilson</div>
+                    <div class="clientinfo">Software Developer</div>
+                </div>
+                
+                <div class="item">
+                    <div class="ratinguser">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"As a hiring manager, I've found JobsPortal to be an invaluable resource for finding qualified candidates. The platform's advanced filtering options saved me countless hours of screening. I've hired three exceptional team members through JobsPortal, and they've all been perfect fits for our company culture."</p>
+                    <div class="clientname">Sarah Thompson</div>
+                    <div class="clientinfo">HR Manager</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials ends -->
+
+
+    <!-- Latest Blog Articles Section -->
+<div class="section latest-blogs py-5" style="background:#f9f9f9;">
+    <div class="container">
+      <div class="titleTop text-center mb-5">
+        <h2 class="fw-bold">Latest Blog Articles</h2>
+        <p class="text-muted">Insights, tips, and stories from industry experts</p>
+      </div>
+  
+      <div class="row g-4">
+        <!-- Blog 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card rounded shadow-sm overflow-hidden">
+            <a href="#">
+              <img src="https://portal.workafy.com/uploads/blogs/balancing-1868051_1280_465.jpg" 
+                   class="img-fluid" alt="Blog 1">
+            </a>
+          </div>
+          <div class="blog-info mt-3 d-flex align-items-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61112.png" alt="Calendar" 
+                 style="width:20px; height:20px; margin-right:8px;">
+            <p class="text-muted small mb-0">Sep 10, 2025</p>
+          </div>
+          <h5 class="fw-bold mt-2"><a href="#" class="text-dark text-decoration-none">How to Ace Your Next Job Interview</a></h5>
+        </div>
+  
+        <!-- Blog 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card rounded shadow-sm overflow-hidden">
+            <a href="#">
+              <img src="https://portal.workafy.com/uploads/blogs/laptop-8499942_1280_661.jpg" 
+                   class="img-fluid" alt="Blog 2">
+            </a>
+          </div>
+          <div class="blog-info mt-3 d-flex align-items-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61112.png" alt="Calendar" 
+                 style="width:20px; height:20px; margin-right:8px;">
+            <p class="text-muted small mb-0">Sep 08, 2025</p>
+          </div>
+          <h5 class="fw-bold mt-2"><a href="#" class="text-dark text-decoration-none">Top 10 Skills in Demand for 2025</a></h5>
+        </div>
+  
+        <!-- Blog 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="blog-card rounded shadow-sm overflow-hidden">
+            <a href="#">
+              <img src="https://portal.workafy.com/uploads/blogs/post-it-notes-3233653_1280_441.jpg" 
+                   class="img-fluid" alt="Blog 3">
+            </a>
+          </div>
+          <div class="blog-info mt-3 d-flex align-items-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61112.png" alt="Calendar" 
+                 style="width:20px; height:20px; margin-right:8px;">
+            <p class="text-muted small mb-0">Sep 05, 2025</p>
+          </div>
+          <h5 class="fw-bold mt-2"><a href="#" class="text-dark text-decoration-none">Remote Work: Best Practices in 2025</a></h5>
+        </div>
+      </div>
+  
+      <!-- View All Button -->
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-dark px-5 py-2 rounded-pill">View All Blog Articles</a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Footer start -->
+  
+    <!-- Footer end -->
+    
+    <!-- Copyright start -->
+   
+
+
+
+    <!-- Copyright end -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Preloader
+            $(window).on('load', function() {
+                $('#preloader').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            });
+            
+            // Back to top button
+            var backToTop = $('.back-to-top');
+            
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    backToTop.addClass('active');
+                } else {
+                    backToTop.removeClass('active');
+                }
+            });
+            
+            backToTop.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop:0}, '300');
+            });
+            
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Employer carousel
+            $(".employerList").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 4 }
+                }
+            });
+            
+            // Categories carousel
+            $(".categorylisting").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 3 },
+                    1000: { items: 5 }
+                }
+            });
+            
+            // Testimonials carousel
+            $(".testimonialsList").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+            
+            // Add animation to search bar on focus
+            $('.form-control, .form-select').focus(function() {
+                $(this).parent().addClass('animate__pulse');
+            }).blur(function() {
+                $(this).parent().removeClass('animate__pulse');
+            });
+            
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffffff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // Counter animation
+            $('.counter').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+            
+            // Add hover effect to cards
+            $('.userloginbox, .catecard, .jobint').hover(function() {
+                $(this).addClass('animate__pulse');
+            }, function() {
+                $(this).removeClass('animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html>
