@@ -308,7 +308,7 @@ body {
     left: 0;
     width: 50px;
     height: 3px;
-    background: var(--gradient-accent);
+    background: #00B43D;
     border-radius: 3px;
 }
 
