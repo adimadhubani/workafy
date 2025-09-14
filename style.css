@@ -190,7 +190,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--gradient);
+    background: #00B43D;
     transition: all 0.3s ease;
 }
 
@@ -222,8 +222,6 @@ body {
 }
 
 /* Hero Section */
-
-
 
 
 .searchwrap {
@@ -310,7 +308,7 @@ body {
     left: 0;
     width: 50px;
     height: 3px;
-    background: #00B43D;
+    background: var(--gradient-accent);
     border-radius: 3px;
 }
 
@@ -368,8 +366,6 @@ body {
 }
 
 /* Info boxes */
-
-
 .infodatawrap {
     padding: 100px 0;
 }
@@ -436,11 +432,6 @@ body {
 }
 
 /* Section Styling */
-
-
-
-
-
 .section {
     padding: 100px 0;
     position: relative;
