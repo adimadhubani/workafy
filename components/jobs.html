@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Dream Job | Professional Job Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/jobs.css">
+</head>
+<body>
+    <!-- Search Section for Jobs Page -->
+    <div class="pageSearch">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <h1>Find Your Dream Job</h1>
+                        <p>
+                            Browse through thousands of job opportunities and find the perfect match for your skills and experience.
+                        </p>
+                    </div>
+                    
+                    <div class="searchform">
+                        <form action="#" method="get">
+                            <div class="input-group">
+                                <input type="text" name="search" id="jbsearch" value="" class="form-control" placeholder="Enter skills or job title" autocomplete="off">
+                                <button type="submit" class="btn"><i class="fas fa-search"></i> Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Jobs Content -->
+    <div class="listpgWraper">
+        <div class="container">
+            <form action="#" method="get">
+                <div class="row">
+                    <!-- Mobile Filter Toggle -->
+                    <div class="d-lg-none mobile-filter-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#ffffff" style="margin-right: 8px;">
+                            <path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"></path>
+                        </svg>
+                        Filter Jobs
+                    </div>
+                    
+                    <!-- Sidebar Filters -->
+                    <div class="col-lg-3">
+                        <div class="jobreqbtn">
+                            <a href="#" class="btn"><i class="fa fa-file-text" aria-hidden="true"></i> Upload Your Resume</a>
+                        </div>
+
+                        <a href="javascript:void();" class="filterjobsnav d-none d-lg-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368">
+                                <path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"></path>
+                            </svg>
+                            Filter Jobs
+                        </a>
+
+                        <!-- Side Bar start -->
+                        <div class="sidebar" id="filterjobs">
+                            <a href="javascript:void();" class="close-filterjobs mb-3 d-lg-none d-flex align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#999" style="margin-right: 8px;">
+                                    <path d="m336-280 144-144 144 144 56-56-144-144 144-144-56-56-144 144-144-144-56 56 144 144-144 144 56 56ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"></path>
+                                </svg>
+                                Close Filters
+                            </a>
+
+                            <!-- Jobs By Title -->
+                            <div class="widget">
+                                <h4 class="widget-title">Jobs By Title</h4>
+                                <ul class="optionlist view_more_ul">
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_0" value="UI/UX Designer">
+                                        <label for="job_title_0">UI/UX Designer <span>1</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_1" value="IOS Developer">
+                                        <label for="job_title_1">IOS Developer <span>1</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_2" value="Electrical Engineer">
+                                        <label for="job_title_2">Electrical Engineer <span>1</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_3" value="PHP Developer Required">
+                                        <label for="job_title_3">PHP Developer Required <span>2</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_4" value="Web Designer">
+                                        <label for="job_title_4">Web Designer <span>1</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_title[]" id="job_title_5" value="Frontend Developer">
+                                        <label for="job_title_5">Frontend Developer <span>1</span></label>
+                                    </li>
+                                </ul>
+                                <span class="text text-primary view_more hide_vm">View More <i class="fas fa-chevron-down"></i></span>
+                            </div>
+
+                            <!-- Jobs By Country -->
+                            <div class="widget">
+                                <h4 class="widget-title">Jobs By Country</h4>
+                                <ul class="optionlist view_more_ul">
+                                    <li>
+                                        <input type="checkbox" name="country_id[]" id="country_166" value="166">
+                                        <label for="country_166">Pakistan <span>2</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="country_id[]" id="country_231" value="231">
+                                        <label for="country_231">United States of America <span>16</span></label>
+                                    </li>
+                                </ul>
+                                <span class="text text-primary view_more hide_vm">View More <i class="fas fa-chevron-down"></i></span>
+                            </div>
+
+                            <!-- Jobs By State -->
+                            <div class="widget">
+                                <h4 class="widget-title">Jobs By State</h4>
+                                <ul class="optionlist view_more_ul hide_vm_ul">
+                                    <li>
+                                        <input type="checkbox" name="state_id[]" id="state_2724" value="2724">
+                                        <label for="state_2724">Islamabad - Federal Capital Area <span>2</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state_id[]" id="state_3931" value="3931">
+                                        <label for="state_3931">Georgia <span>2</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state_id[]" id="state_3930" value="3930">
+                                        <label for="state_3930">Florida <span>1</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state_id[]" id="state_3919" value="3919">
+                                        <label for="state_3919">Alabama <span>3</span></label>
+                                    </li>
+                                </ul>
+                                <span class="text text-primary view_more">View More <i class="fas fa-chevron-down"></i></span>
+                            </div>
+
+                            <!-- Jobs By Experience -->
+                            <div class="widget">
+                                <h4 class="widget-title">Jobs By Experience</h4>
+                                <ul class="optionlist view_more_ul hide_vm_ul">
+                                    <li>
+                                        <input type="checkbox" name="job_experience_id[]" id="job_experience_4" value="4">
+                                        <label for="job_experience_4">3 years <span>5</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_experience_id[]" id="job_experience_5" value="5">
+                                        <label for="job_experience_5">4 years <span>2</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_experience_id[]" id="job_experience_3" value="3">
+                                        <label for="job_experience_3">2 years <span>3</span></label>
+                                    </li>
+                                </ul>
+                                <span class="text text-primary view_more">View More <i class="fas fa-chevron-down"></i></span>
+                            </div>
+
+                            <!-- Jobs By Job Type -->
+                            <div class="widget">
+                                <h4 class="widget-title">Jobs By Job Type</h4>
+                                <ul class="optionlist view_more_ul hide_vm_ul">
+                                    <li>
+                                        <input type="checkbox" name="job_type_id[]" id="job_type_3" value="3">
+                                        <label for="job_type_3">Full Time/Permanent <span>8</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_type_id[]" id="job_type_1" value="1">
+                                        <label for="job_type_1">Contract <span>7</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="job_type_id[]" id="job_type_4" value="4">
+                                        <label for="job_type_4">Internship <span>1</span></label>
+                                    </li>
+                                </ul>
+                                <span class="text text-primary view_more">View More <i class="fas fa-chevron-down"></i></span>
+                            </div>
+
+                            <!-- Salary -->
+                            <div class="widget">
+                                <h4 class="widget-title">Salary Range</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input class="form-control" id="salary_from" placeholder="Salary From" name="salary_from" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input class="form-control" id="salary_to" placeholder="Salary To" name="salary_to" type="number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- button -->
+                                <div class="searchnt mt-3">
+                                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> Search Jobs</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Listings -->
+                    <div class="col-lg-9">
+                        <h3>18 Jobs Found</h3>
+                        <div class="topstatinfo mb-0">
+                            <i class="fas fa-info-circle me-2"></i>Showing Jobs : 1 - 18 Total 18
+                        </div>
+
+                        <ul class="featuredlist row">
+                            <!-- Job 1 -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint">
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Full Time/Permanent</div>
+                                    </div>
+                                    <h4><a href="#" title="UI UX Designer Required">UI UX Designer Required</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>$2500 - $3000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Fairbanks</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Multimedia Design">Multimedia Design</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Multimedia Design">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">MD</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Job 2 -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint">
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Contract</div>
+                                    </div>
+                                    <h4><a href="#" title="Graphic Designer Required">Graphic Designer Required</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>USD100000 - USD200000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Bessemer</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Multimedia Design">Multimedia Design</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Multimedia Design">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">MD</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Job 3 -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint">
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Contract</div>
+                                    </div>
+                                    <h4><a href="#" title="Full Stack Developer Required">Full Stack Developer Required</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>USD100000 - USD200000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Bessemer</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Multimedia Design">Multimedia Design</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Multimedia Design">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">MD</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Job 4 (Featured) -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint featured">
+                                    <span class="promotepof-badge"><i class="fa fa-bolt" title="This Job is Featured"></i></span>
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Full Time/Permanent</div>
+                                    </div>
+                                    <h4><a href="#" title="Full Stack Designer">Full Stack Designer</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>USD6000 - USD8000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Barrington</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Connect People">Connect People</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Connect People">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="20" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">CP</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Job 5 (Featured) -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint featured">
+                                    <span class="promotepof-badge"><i class="fa fa-bolt" title="This Job is Featured"></i></span>
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Contract</div>
+                                    </div>
+                                    <h4><a href="#" title="Dot Developer">Dot Developer</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>USD6000 - USD12000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Durant</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Power Wave">Power Wave</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Power Wave">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="20" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">PW</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Job 6 (Featured) -->
+                            <li class="col-lg-4 col-md-6">
+                                <div class="jobint featured">
+                                    <span class="promotepof-badge"><i class="fa fa-bolt" title="This Job is Featured"></i></span>
+                                    <div class="d-flex">
+                                        <div class="fticon"><i class="fas fa-briefcase"></i> Full Time/Permanent</div>
+                                    </div>
+                                    <h4><a href="#" title="SEO Expert">SEO Expert</a></h4>
+                                    <div class="salary mb-2">Salary: <strong>USD4000 - USD8000/</strong></div>
+                                    <strong><i class="fas fa-map-marker-alt"></i> Blaine</strong>
+                                    <div class="jobcompany">
+                                        <div class="ftjobcomp">
+                                            <span>Mar 07, 2025</span>
+                                            <a href="#" title="Mayan Design Studios">Mayan Design Studios</a>
+                                        </div>
+                                        <a href="#" class="company-logo" title="Mayan Design Studios">
+                                            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;">
+                                                <rect width="100%" height="100%" rx="8" ry="8" fill="#00B43D"/>
+                                                <text x="50%" y="50%" fill="#ffffff" font-size="18" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">MDS</text>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Pagination Start -->
+                        <div class="pagiWrap mt-5">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <div class="showreslt">
+                                        <i class="fas fa-info-circle me-2"></i>Showing Jobs : 1 - 18 Total 18
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 text-right">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                                    <i class="fas fa-chevron-left me-1"></i> Previous
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    Next <i class="fas fa-chevron-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination end -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile filter -->
+    <div class="overlay"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jobs.js"></script>
+</body>
+</html>
