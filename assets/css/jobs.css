@@ -680,3 +680,301 @@ html {
         min-height: 280px;
     }
 }
+/* ===== OPTIMIZED CHECKBOX FILTERS & SINGLE SCROLLBAR ===== */
+.sidebar {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.25rem;
+    position: sticky;
+    top: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* Remove individual scrollbars from optionlists */
+.optionlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: none !important; /* Remove max-height to prevent nested scrolling */
+    overflow-y: visible !important; /* Remove individual scrolling */
+}
+
+/* Ultra-Compact Widget Styling */
+.widget {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--medium-grey);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0;
+}
+
+.widget-title i {
+    color: var(--primary-green);
+    font-size: 0.85rem;
+    width: 14px;
+    text-align: center;
+}
+
+/* Super Compact Option List - No individual scrolling */
+.optionlist li {
+    margin-bottom: 0.3rem;
+    transition: var(--transition);
+    border-radius: 5px;
+}
+
+.optionlist li:hover {
+    transform: translateX(2px);
+    background: var(--primary-green-bg);
+}
+
+/* Minimal Checkbox Labels */
+.optionlist input[type="checkbox"] {
+    display: none;
+}
+
+.optionlist label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.7rem;
+    background: var(--light-grey);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin: 0;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+
+.optionlist label:hover {
+    background: var(--medium-grey);
+    border-color: var(--primary-green-light);
+}
+
+.optionlist input[type="checkbox"]:checked + label {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: scale(1.01);
+    box-shadow: 0 1px 4px rgba(0, 180, 61, 0.2);
+    border-color: var(--primary-green);
+}
+
+.optionlist label span {
+    background: var(--white);
+    color: var(--dark-grey);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 28px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.optionlist input[type="checkbox"]:checked + label span {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* Compact Salary Range */
+.widget .row {
+    margin: 0 -0.2rem;
+}
+
+.widget .col-6 {
+    padding: 0 0.2rem;
+}
+
+.form-group {
+    margin-bottom: 0.6rem;
+}
+
+.form-control {
+    border: 1.5px solid var(--medium-grey);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    font-weight: 500;
+    height: auto;
+}
+
+.form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.1rem rgba(0, 180, 61, 0.2);
+}
+
+/* Compact Filter Button */
+.searchnt {
+    margin-top: 0.8rem;
+}
+
+.searchnt .btn {
+    width: 100%;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.searchnt .btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Upload Resume Button Optimization */
+.jobreqbtn {
+    margin-bottom: 1.25rem;
+}
+
+.jobreqbtn .btn {
+    width: 100%;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    text-decoration: none;
+}
+
+.jobreqbtn .btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Close Filter Button for Mobile */
+.close-filterjobs {
+    color: var(--dark-grey);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--medium-grey);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: var(--transition);
+}
+
+.close-filterjobs:hover {
+    color: var(--primary-green);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        z-index: 1050;
+        transition: var(--transition);
+        border-radius: 0;
+        padding: 1rem;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sidebar {
+        width: 260px;
+        padding: 0.8rem;
+    }
+    
+    .widget {
+        margin-bottom: 1rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    .optionlist label {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .optionlist label span {
+        font-size: 0.65rem;
+        min-width: 24px;
+        padding: 0.1rem 0.3rem;
+    }
+}
+
+/* Remove duplicate sidebar styles from earlier in the file */
+/* Delete the duplicate .sidebar styles that appear earlier */
+
+/* Ensure smooth scrolling for the entire sidebar */
+.sidebar {
+    scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.optionlist label:focus {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 1px;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+/* Add a subtle animation for filter interactions */
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.optionlist input[type="checkbox"]:checked + label::before {
+    content: '✓';
+    margin-right: 0.3rem;
+    font-weight: bold;
+    animation: checkmark 0.3s ease;
+}
