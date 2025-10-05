@@ -11,6 +11,36 @@
     --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
 }
 
+
+/* ===== GREEN SCROLLBAR STYLING ===== */
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0fff4; /* Light greenish background */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00B43D; /* Primary green */
+    border-radius: 10px;
+    border: 2px solid #f0fff4; /* Creates padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #00a037; /* Darker green on hover */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #00B43D #f0fff4; /* thumb track */
+}
+
+
 * {
     margin: 0;
     padding: 0;

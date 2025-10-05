@@ -3,28 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobs - JobsOrbit</title>
+    <title>Jobs | Workafy</title>
+    
+    <!-- External Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Project Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/jobs.css">
 </head>
 <body>
-    <!-- Load Navbar -->
+
+    <!-- Navbar -->
     <div id="navbar-container"></div>
-    
-    <!-- Jobs Content Container -->
-    <div id="jobs-content"></div>
-    
-    <!-- Load Footer -->
+
+    <!-- Jobs Section -->
+    <section class="jobs-section container my-4">
+        <h2 class="text-center mb-4" style="color:#00B43D;">Available Jobs</h2>
+        <div class="row g-4" id="jobs-list">
+            <!-- Jobs from jobs.html will be injected here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
     <div id="footer-container"></div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/loadComponent.js"></script>
     <script>
-        // Load components
-        loadHTML('navbar-container', 'components/navbar.html');
-        loadHTML('jobs-content', 'components/jobs.html');
+        // Load Navbar, Jobs Content, and Footer
+        loadHTML('navbar-container', 'components/navbar.html').then(() => {
+            // If navbar.js exists, initialize it
+            if (typeof initializeNavbar === 'function') initializeNavbar();
+        });
+
+        loadHTML('jobs-list', 'components/jobs.html'); // load jobs into the container
+
         loadHTML('footer-container', 'components/footer.html');
     </script>
+
 </body>
 </html>
