@@ -6,4 +6,3 @@ function loadHTML(containerId, url) {
         })
         .catch(err => console.error("Error loading component:", err));
 }
-

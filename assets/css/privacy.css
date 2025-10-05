@@ -1,0 +1,228 @@
+
+:root {
+    --primary: #00B43D;
+    --primary-dark: #009931;
+    --white: #ffffff;
+    --grey-50: #f9fafb;
+    --grey-100: #f3f4f6;
+    --grey-200: #e5e7eb;
+    --grey-600: #4b5563;
+    --grey-800: #1f2937;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--grey-50);
+    color: var(--grey-800);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation - Assuming this is in your components/navbar.html */
+.navbar-placeholder {
+    background: var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    margin-bottom: 0;
+}
+
+/* Privacy Policy Header */
+.privacy-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.privacy-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.privacy-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.last-updated {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* Main Content Layout */
+.privacy-main {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* Table of Contents */
+.toc-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.toc-sidebar h3 {
+    color: var(--grey-800);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+    font-size: 1.2rem;
+}
+
+.toc-nav {
+    list-style: none;
+}
+
+.toc-nav li {
+    margin-bottom: 0.75rem;
+}
+
+.toc-nav a {
+    color: var(--grey-600);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.toc-nav a:hover {
+    color: var(--primary);
+    background-color: var(--grey-50);
+}
+
+.toc-nav a.active {
+    color: var(--primary);
+    background-color: var(--grey-100);
+    font-weight: 600;
+}
+
+.toc-nav a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+/* Policy Content */
+.policy-content {
+    flex: 1;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.policy-section {
+    margin-bottom: 2.5rem;
+    scroll-margin-top: 2rem;
+}
+
+.policy-section:last-child {
+    margin-bottom: 0;
+}
+
+.policy-section h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--grey-200);
+}
+
+.policy-section h3 {
+    color: var(--grey-800);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.policy-section p {
+    margin-bottom: 1rem;
+    color: var(--grey-600);
+}
+
+.policy-section ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.policy-section li {
+    margin-bottom: 0.5rem;
+    color: var(--grey-600);
+}
+
+.contact-card {
+    background: var(--grey-50);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+}
+
+.contact-card p {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer - Assuming this is in your components/footer.html */
+.footer-placeholder {
+    background: var(--grey-800);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .privacy-main {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .toc-sidebar {
+        position: static;
+        flex: none;
+    }
+
+    .policy-content {
+        padding: 1.5rem;
+    }
+
+    .privacy-header h1 {
+        font-size: 2rem;
+    }
+}
+  
+    
+

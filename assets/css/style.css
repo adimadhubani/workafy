@@ -111,7 +111,7 @@ body {
     right: 30px;
     width: 60px;
     height: 60px;
-    background: var(--gradient);
+    background: #00B43D;
     color: white;
     border-radius: 50%;
     display: flex;
