@@ -11,68 +11,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
-    <!-- <div id="preloader">
-        <div class="loader"></div>
-    </div> -->
 
-   
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- Header start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="#">
-            <img src="https://portal.workafy.com/sitesetting_images/thumb/workafy-1748826768-353.png" alt="JobsOrbit">
-          </a>
-      
-          <!-- Toggler for mobile -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <!-- Navbar links -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Companies</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Sign in</a></li>
-              <li class="nav-item"><a class="nav-link register" href="#">Register</a></li>
-      
-              <!-- 🌍 Language Switcher -->
-              <li class="nav-item dropdown ms-3">
-                <a class=" dropdown-toggle d-flex align-items-center" href="#" id="languageDropdown" style="color: #0d0e0d;"
-                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-globe me-1"></i>
-                   Language
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                  <li><a class="dropdown-item" href="#">English</a></li>
-                  <li><a class="dropdown-item" href="#">हिन्दी (Hindi)</a></li>
-                  <li><a class="dropdown-item" href="#">Español (Spanish)</a></li>
-                  <li><a class="dropdown-item" href="#">Français (French)</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
-   
-      
+    <div id="navbar-container"></div> 
     <!-- Header end -->
-
-    
 
     <!-- Search start -->
     <div class="searchwrap" style="background: #f9f9f9; color: #333; padding: 80px 0;">
@@ -124,7 +73,7 @@
           <!-- Right Image Section -->
           <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <div class="job-image mt-4">
-              <img src="images/image2.jpg" alt="Job Search Illustration" 
+              <img src="assets/images/image2.jpg" alt="Job Search Illustration" 
                    class="img-fluid" 
                    style="max-height: 420px; width: 100%; object-fit: contain; border: none;">
             </div>
@@ -134,10 +83,6 @@
       </div>
     </div>
     
-      
-      
-      
-      
     <!-- Search End -->
 
     <!-- Info boxes start -->
@@ -849,64 +794,7 @@
   </div>
   
     <!-- Footer start -->
-    <div class="footerWrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000">
-                    <h5>Quick Links</h5>
-                    <ul class="quicklinks">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Terms Of Use</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <h5>Jobs By Functional Area</h5>
-                    <ul class="quicklinks">
-                        <li><a href="#">Information Technology</a></li>
-                        <li><a href="#">Banking/Financial Services</a></li>
-                        <li><a href="#">Healthcare</a></li>
-                        <li><a href="#">Sales & Marketing</a></li>
-                        <li><a href="#">Education/Training</a></li>
-                        <li><a href="#">Engineering</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <h5>Jobs By Industry</h5>
-                    <ul class="quicklinks">
-                        <li><a href="#">IT Services</a></li>
-                        <li><a href="#">Banking</a></li>
-                        <li><a href="#">Healthcare</a></li>
-                        <li><a href="#">Education</a></li>
-                        <li><a href="#">Manufacturing</a></li>
-                        <li><a href="#">Real Estate</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    <h5>Contact Us</h5>
-                    <div class="address">
-                        651 N Broad St, Suite 201, Middletown,<br>
-                        Zip Code 19709, New Castle, Delaware, USA
-                    </div>
-                    <div class="email">
-                        <a href="mailto:info@jobportal.com">info@jobportal.com</a>
-                    </div>
-                    <div class="social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="footer-container"></div>
     <!-- Footer end -->
     
     <!-- Copyright start -->
@@ -930,12 +818,24 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- Copyright end -->
 
     <!-- Scripts -->
+    <script src="assets/js/loadComponent.js"></script>
+    <script>
+        // Load navbar
+        loadHTML('navbar-container', 'components/navbar.html');
+
+        // Load footer and then initialize AOS & other dependent scripts
+        loadHTML('footer-container', 'components/footer.html').then(() => {
+            // Initialize AOS after footer is loaded
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
