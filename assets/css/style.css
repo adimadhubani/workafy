@@ -1,3 +1,5 @@
+/* Import Jobs CSS */
+@import url('jobs.css');
 :root {
     --primary: #1967d2;
     --primary-dark: #0d47a1;
