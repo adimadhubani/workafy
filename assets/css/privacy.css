@@ -15,7 +15,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    /* font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; */
 }
 
 body {
@@ -24,11 +24,6 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 /* Header & Navigation - Assuming this is in your components/navbar.html */
 .navbar-placeholder {

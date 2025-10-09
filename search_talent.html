@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs In United States of America</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/search_talent.css">
+    
+</head>
+
+<style>
+    @media (max-width: 768px) {
+      .searchwrap {
+        padding: 60px 0;
+        text-align: center;
+      }
+      .bxsrctxt h1 {
+        font-size: 1.8rem;
+      }
+      .bxsrctxt p {
+        font-size: 1rem;
+      }
+      .searchbar {
+        margin: 0 auto;
+        max-width: 95%;
+      }
+      .text-end {
+        text-align: center !important;
+      }
+    }
+  </style>
+<body>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header start -->
+    <div id="navbar-container"></div> 
+    <!-- Header end -->
+
+     <!-- Mobile Search Bar -->
+     <div class="mobile-search-container mobile-only">
+        <div class="mobile-search-form">
+            <input type="text" class="mobile-search-input" placeholder="Search candidates...">
+            <button class="mobile-search-btn" id="mobileSearchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="mobile-search-btn" id="mobileFilterBtn">
+                <i class="fas fa-filter"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+  <!-- Search Section -->
+<div class="pageSearch desktop-only py-5" style="background-color: #f9f9f9;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Heading -->
+          <div class="text-center mb-4">
+            <h1 style="color: #080805; font-weight: 700;">
+              Find Top <span style="color: #020804;">Talent</span>
+            </h1>
+            <p class="lead text-muted">
+              Discover skilled professionals ready to join your team
+            </p>
+          </div>
+  
+          <!-- Search Form -->
+          <div class="searchform shadow-lg p-4 rounded-4 bg-white animate-fadeInUp">
+            <form id="desktopSearchForm" action="#" method="get">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-8">
+                  <div class="input-group border rounded-3 overflow-hidden">
+                    <span class="input-group-text bg-white border-0">
+                      <i class="fas fa-search text-success"></i>
+                    </span>
+                    <input
+                      type="text"
+                      name="search"
+                      class="form-control border-0"
+                      placeholder="Enter skills (e.g. JavaScript, Python, UX Design)"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+  
+                <div class="col-md-4 position-relative">
+                  <!-- Custom Dropdown -->
+                  <div class="custom-dropdown" id="functionalDropdown">
+                    <button
+                      type="button"
+                      class="dropdown-toggle w-100 text-start"
+                      id="dropdownBtn"
+                    >
+                      <span id="dropdownSelected">Select Functional Area</span>
+                      <i class="fas fa-chevron-down float-end mt-1"></i>
+                    </button>
+                    <ul class="dropdown-menu-list text-dark" id="dropdownList">
+                      <li data-value="software_development">Software Development</li>
+                      <li data-value="data_science">Data Science & Analytics</li>
+                      <li data-value="ux_ui">UX/UI Design</li>
+                      <li data-value="product_management">Product Management</li>
+                      <li data-value="digital_marketing">Digital Marketing</li>
+                      <li data-value="devops">DevOps & Infrastructure</li>
+                      <li data-value="qa">Quality Assurance</li>
+                      <li data-value="it_support">IT Support</li>
+                      <li data-value="sales">Sales & Business Development</li>
+                      <li data-value="project_management">Project Management</li>
+                    </ul>
+                    <input type="hidden" name="functional_area" id="functionalInput" />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="text-center">
+                <button type="submit" class="btn btn-success mt-4 px-5 py-2 rounded-pill shadow-sm">
+                  <i class="fas fa-search me-2"></i> Search Candidates
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Main Content -->
+    <div class="listpgWraper">
+        <div class="container">
+            <form action="#" method="get" id="candidateFilterForm">
+                <div class="row">
+                    <!-- Mobile Filter Toggle -->
+                    <div class="d-lg-none mobile-filter-toggle mobile-only" id="mobileFilterToggle">
+                        <i class="fas fa-filter me-2"></i> Filter Candidates
+                    </div>
+                    
+                    <!-- Sidebar Filters -->
+                    <div class="col-lg-3 desktop-only">
+                        <div class="sidebar" id="filterjobs">
+                            <a href="javascript:void();" class="close-filterjobs mb-3 d-lg-none d-flex align-items-center">
+                                <i class="fas fa-times me-2"></i> Close Filters
+                            </a>
+
+                            <!-- By Country -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-globe me-2"></i> By Country</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="country[]" id="country_us" value="us">
+                                        <label for="country_us">United States <span>342</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="country[]" id="country_ca" value="ca">
+                                        <label for="country_ca">Canada <span>127</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="country[]" id="country_uk" value="uk">
+                                        <label for="country_uk">United Kingdom <span>98</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="country[]" id="country_au" value="au">
+                                        <label for="country_au">Australia <span>76</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="country[]" id="country_de" value="de">
+                                        <label for="country_de">Germany <span>64</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By State -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-map me-2"></i> By State</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="state[]" id="state_ca" value="ca">
+                                        <label for="state_ca">California <span>187</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state[]" id="state_ny" value="ny">
+                                        <label for="state_ny">New York <span>132</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state[]" id="state_tx" value="tx">
+                                        <label for="state_tx">Texas <span>98</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state[]" id="state_wa" value="wa">
+                                        <label for="state_wa">Washington <span>76</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="state[]" id="state_fl" value="fl">
+                                        <label for="state_fl">Florida <span>64</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By City -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-building me-2"></i> By City</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="city[]" id="city_sf" value="sf">
+                                        <label for="city_sf">San Francisco <span>87</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="city[]" id="city_ny" value="ny">
+                                        <label for="city_ny">New York <span>76</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="city[]" id="city_sea" value="sea">
+                                        <label for="city_sea">Seattle <span>65</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="city[]" id="city_la" value="la">
+                                        <label for="city_la">Los Angeles <span>54</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="city[]" id="city_aus" value="aus">
+                                        <label for="city_aus">Austin <span>43</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Career Level -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-chart-line me-2"></i> Career Level</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="career_level[]" id="level_entry" value="entry">
+                                        <label for="level_entry">Entry Level <span>156</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="career_level[]" id="level_mid" value="mid">
+                                        <label for="level_mid">Mid Level <span>243</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="career_level[]" id="level_senior" value="senior">
+                                        <label for="level_senior">Senior Level <span>187</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="career_level[]" id="level_lead" value="lead">
+                                        <label for="level_lead">Lead/Manager <span>98</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="career_level[]" id="level_exec" value="exec">
+                                        <label for="level_exec">Executive <span>42</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Experience -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-briefcase me-2"></i> Experience</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="experience[]" id="exp_0_2" value="0_2">
+                                        <label for="exp_0_2">0-2 years <span>132</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="experience[]" id="exp_2_5" value="2_5">
+                                        <label for="exp_2_5">2-5 years <span>287</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="experience[]" id="exp_5_10" value="5_10">
+                                        <label for="exp_5_10">5-10 years <span>198</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="experience[]" id="exp_10" value="10">
+                                        <label for="exp_10">10+ years <span>87</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Gender -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-user me-2"></i> Gender</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="gender[]" id="gender_male" value="male">
+                                        <label for="gender_male">Male <span>342</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="gender[]" id="gender_female" value="female">
+                                        <label for="gender_female">Female <span>287</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="gender[]" id="gender_other" value="other">
+                                        <label for="gender_other">Other/Prefer not to say <span>54</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Skills -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-code me-2"></i> Skills</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="skills[]" id="skill_js" value="js">
+                                        <label for="skill_js">JavaScript <span>287</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="skills[]" id="skill_python" value="python">
+                                        <label for="skill_python">Python <span>243</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="skills[]" id="skill_react" value="react">
+                                        <label for="skill_react">React <span>198</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="skills[]" id="skill_aws" value="aws">
+                                        <label for="skill_aws">AWS <span>154</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="skills[]" id="skill_ui" value="ui">
+                                        <label for="skill_ui">UI/UX Design <span>132</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Industry -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-industry me-2"></i> Industry</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="industry[]" id="industry_tech" value="tech">
+                                        <label for="industry_tech">Technology <span>432</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="industry[]" id="industry_finance" value="finance">
+                                        <label for="industry_finance">Finance <span>187</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="industry[]" id="industry_health" value="health">
+                                        <label for="industry_health">Healthcare <span>154</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="industry[]" id="industry_retail" value="retail">
+                                        <label for="industry_retail">Retail/E-commerce <span>132</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="industry[]" id="industry_edu" value="edu">
+                                        <label for="industry_edu">Education <span>98</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- By Functional Area -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-sitemap me-2"></i> Functional Area</h4>
+                                <ul class="optionlist">
+                                    <li>
+                                        <input type="checkbox" name="functional_area[]" id="area_dev" value="dev">
+                                        <label for="area_dev">Software Development <span>287</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="functional_area[]" id="area_design" value="design">
+                                        <label for="area_design">Design <span>154</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="functional_area[]" id="area_data" value="data">
+                                        <label for="area_data">Data Science <span>132</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="functional_area[]" id="area_marketing" value="marketing">
+                                        <label for="area_marketing">Marketing <span>98</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="functional_area[]" id="area_sales" value="sales">
+                                        <label for="area_sales">Sales <span>87</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Salary Range -->
+                            <div class="widget">
+                                <h4 class="widget-title"><i class="fas fa-dollar-sign me-2"></i> Expected Salary</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input class="form-control" id="salary_from" placeholder="Min" name="salary_from" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input class="form-control" id="salary_to" placeholder="Max" name="salary_to" type="number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Apply Filters Button -->
+                                <div class="searchnt mt-3">
+                                    <button type="submit" class="btn"><i class="fas fa-filter me-2"></i> Apply Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Listings -->
+                    <div class="col-lg-9">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0"><span class="text-black">342</span> Companies Found</h3>
+                            <div class="sortby">
+                                <select class="form-select form-select-sm">
+                                    <option>Most Relevant</option>
+                                    <option>Newest First</option>
+                                    <option>Highest Rated</option>
+                                    <option>Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="topstatinfo mb-4">
+                            <i class="fas fa-info-circle me-2"></i>Showing <strong>1-12</strong> of <strong>342</strong> companies
+                        </div>
+
+                        <ul class="featuredlist row">
+                            <!-- Company 1 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">TC</div>
+                                    <h5 class="company-name">TechCorp Solutions</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> San Francisco, CA
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 15% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Enterprise software solutions with focus on AI and machine learning applications for business optimization.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">50-200 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Company 2 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">DH</div>
+                                    <h5 class="company-name">DesignHub Studios</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> New York, NY
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 22% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Leading UX/UI design agency specializing in mobile applications and digital product design.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">50-200 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Company 3 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">DW</div>
+                                    <h5 class="company-name">DataWorks Analytics</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> Austin, TX
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 18% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Big data analytics platform helping businesses make data-driven decisions with predictive modeling.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">200-500 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Company 4 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">CT</div>
+                                    <h5 class="company-name">CloudTech Innovations</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> Seattle, WA
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 25% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Cloud infrastructure and DevOps services with focus on scalable solutions for growing businesses.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">100-300 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Company 5 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">AI</div>
+                                    <h5 class="company-name">AI Solutions Inc.</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> Boston, MA
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 30% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Artificial intelligence research and development with applications in healthcare and finance.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">150-400 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Company 6 -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card animate-fadeInUp">
+                                    <div class="company-logo">MF</div>
+                                    <h5 class="company-name">MobileFirst Technologies</h5>
+                                    <div class="company-location">
+                                        <i class="fas fa-map-marker-alt"></i> Los Angeles, CA
+                                    </div>
+                                    <div class="company-growth">
+                                        <i class="fas fa-chart-line me-1"></i> 20% Growth
+                                    </div>
+                                    <div class="company-domain">
+                                        Mobile application development company specializing in iOS and Android solutions for various industries.
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">75-150 employees</div>
+                                        <button class="view-profile-btn">View Profile</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Pagination Start -->
+                        <div class="pagiWrap">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showreslt">
+                                        <i class="fas fa-info-circle me-2"></i>Showing <strong>1-6</strong> of <strong>342</strong> companies
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                                    <i class="fas fa-chevron-left me-1"></i> Previous
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    Next <i class="fas fa-chevron-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination end -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Filter Modal -->
+    <div class="mobile-filter-modal" id="mobileFilterModal">
+        <div class="mobile-filter-content">
+            <div class="mobile-filter-header">
+                <h5 class="mb-0">Filter Candidates</h5>
+                <button type="button" class="btn-close" id="closeMobileFilter"></button>
+            </div>
+            <div class="mobile-filter-body">
+                <!-- Mobile filter content would go here -->
+                <p>Mobile filter content would be implemented here with the same filter options as the desktop sidebar.</p>
+            </div>
+            <div class="mobile-filter-footer">
+                <button type="button" class="btn btn-secondary" id="resetMobileFilters">Reset</button>
+                <button type="button" class="btn btn-primary" id="applyMobileFilters">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright end -->
+     <!-- Footer -->
+   <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/loadComponent.js"></script>
+    <script>
+        // Load navbar
+        loadHTML('navbar-container', 'components/company_nav.html');
+
+        // Load footer and then initialize AOS & other dependent scripts
+        loadHTML('footer-container', 'components/footer.html').then(() => {
+            // Initialize AOS after footer is loaded
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Preloader
+            $(window).on('load', function() {
+                $('#preloader').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            });
+            
+            // Back to top button
+            var backToTop = $('.back-to-top');
+            
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    backToTop.addClass('active');
+                } else {
+                    backToTop.removeClass('active');
+                }
+            });
+            
+            backToTop.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop:0}, '300');
+            });
+            
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Employer carousel
+            $(".employerList").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 4 }
+                }
+            });
+            
+            // Categories carousel
+            $(".categorylisting").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 3 },
+                    1000: { items: 5 }
+                }
+            });
+            
+            // Testimonials carousel
+            $(".testimonialsList").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+            
+            // Add animation to search bar on focus
+            $('.form-control, .form-select').focus(function() {
+                $(this).parent().addClass('animate__pulse');
+            }).blur(function() {
+                $(this).parent().removeClass('animate__pulse');
+            });
+            
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffffff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // Counter animation
+            $('.counter').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+            
+            // Add hover effect to cards
+            $('.userloginbox, .catecard, .jobint').hover(function() {
+                $(this).addClass('animate__pulse');
+            }, function() {
+                $(this).removeClass('animate__pulse');
+            });
+        });
+    </script>
+
+
+<script>
+    document.querySelectorAll('.widget-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const list = title.nextElementSibling;
+        list.classList.toggle('open');
+      });
+    });
+    </script>
+
+
+
+
+<!-- ✅ Script -->
+<script>
+    const dropdownBtn = document.getElementById("dropdownBtn");
+    const dropdownList = document.getElementById("dropdownList");
+    const dropdownSelected = document.getElementById("dropdownSelected");
+    const functionalInput = document.getElementById("functionalInput");
+  
+    dropdownBtn.addEventListener("click", () => {
+      dropdownList.style.display =
+        dropdownList.style.display === "block" ? "none" : "block";
+    });
+  
+    dropdownList.querySelectorAll("li").forEach((item) => {
+      item.addEventListener("click", () => {
+        dropdownSelected.textContent = item.textContent;
+        functionalInput.value = item.getAttribute("data-value");
+        dropdownList.style.display = "none";
+      });
+    });
+  
+    // Close dropdown if clicked outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".custom-dropdown")) {
+        dropdownList.style.display = "none";
+      }
+    });
+  </script>
+    
+</body>
+</html>
