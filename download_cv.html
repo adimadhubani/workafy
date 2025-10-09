@@ -13,7 +13,7 @@
 
   <!-- Project Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/candidate-dashboard.css">
+  <link rel="stylesheet" href="assets/css/download_cv.css">
 </head>
 
 <body>
@@ -97,172 +97,176 @@
 
     </div>
 
-    <div class="col-lg-9">
-      <div class="userprofilealert">
-        <h5><i class="fas fa-exclamation-triangle"></i> Your Resume is incomplete please update.</h5>
-        <div class="editbtbn"><a href="https://portal.workafy.com/build-resume"><i class="fas fa-user-edit"></i> Complete CV </a></div>
-      </div>
-
-      <ul class="row profilestat">
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/resume/344226" class="inbox">
-            <i class="fas fa-eye" aria-hidden="true"></i>
-            <h6>0
-              <strong>Profile Views</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-followings" class="inbox">
-            <i class="fas fa-user" aria-hidden="true"></i>
-            <h6>2
-              <strong>Followings</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-profile#cvs" class="inbox">
-            <i class="fas fa-briefcase" aria-hidden="true"></i>
-            <h6>1
-              <strong>My CV List</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-messages" class="inbox">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <h6>0
-              <strong>Messages</strong>
-            </h6>
-          </a>
-        </li>
-      </ul>
-
-      <div class="usercoverphoto">
-        <img src="https://portal.workafy.com/admin_assets/no-cover.jpg" alt="Ankit garg" title="Ankit garg">
-        <a href="https://portal.workafy.com/my-profile"><i class="fas fa-edit"></i></a>
-      </div>
-
-      <!-- Profile Information -->
-      <div class="profileban">
-        <div class="abtuser">
-          <div class="row">
-            <div class="col-lg-2 col-md-3">
-              <div class="uavatar"><img src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-green-icon-symbol-transparent-png-11639594320ayr6vyoidq.png" alt="Ankit garg" title="Ankit garg"></div>
+   
+   <!-- Main Content - Resume Section -->
+        <div class="col-lg-9">
+          <div class="resume-container" id="printableArea">
+            <div class="row">
+              <!-- Left Column -->
+              <div class="col-md-4 resume-left">
+                <div class="user-image">
+                  <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Ankit garg">
+                </div>
+                
+                <h2 class="section-title">Contact Details</h2>
+                <div class="contact-info">
+                  <div><i class="fas fa-envelope"></i> testuser@gmail.com</div>
+                  <div><i class="fas fa-phone"></i> +1 234 567 8900</div>
+                  <div><i class="fas fa-globe"></i> www.example.com</div>
+                  <div><i class="fas fa-map-marker-alt"></i> New York, USA</div>
+                </div>
+                
+                <div class="years-experience">5+</div>
+                <div class="years-label">Years of experience</div>
+                
+                <h2 class="section-title">Personal Details</h2>
+                <div class="personal-details">
+                  <table>
+                    <tr>
+                      <td>D.O.B</td>
+                      <td>9th Oct 1990</td>
+                    </tr>
+                    <tr>
+                      <td>Age</td>
+                      <td>33 Years</td>
+                    </tr>
+                    <tr>
+                      <td>Gender</td>
+                      <td>Male</td>
+                    </tr>
+                    <tr>
+                      <td>Marital Status</td>
+                      <td>Single</td>
+                    </tr>
+                    <tr>
+                      <td>Functional Area</td>
+                      <td>Software Development</td>
+                    </tr>
+                    <tr>
+                      <td>Industry</td>
+                      <td>Information Technology</td>
+                    </tr>
+                    <tr>
+                      <td>Career Level</td>
+                      <td>Senior</td>
+                    </tr>
+                    <tr>
+                      <td>Current Salary</td>
+                      <td>$75,000</td>
+                    </tr>
+                    <tr>
+                      <td>Expected Salary</td>
+                      <td>$90,000</td>
+                    </tr>
+                    <tr>
+                      <td>Nationality</td>
+                      <td>American</td>
+                    </tr>
+                  </table>
+                </div>
+                
+                <h2 class="section-title">Key Skills</h2>
+                <ul class="skills-list">
+                  <li><i class="fas fa-check"></i> JavaScript</li>
+                  <li><i class="fas fa-check"></i> React.js</li>
+                  <li><i class="fas fa-check"></i> Node.js</li>
+                  <li><i class="fas fa-check"></i> HTML/CSS</li>
+                  <li><i class="fas fa-check"></i> MongoDB</li>
+                  <li><i class="fas fa-check"></i> Git</li>
+                  <li><i class="fas fa-check"></i> Agile Methodologies</li>
+                </ul>
+              </div>
+              
+              <!-- Right Column -->
+              <div class="col-md-8 resume-right">
+                <div class="candidate-name">Ankit Garg</div>
+                
+                <div class="content-section">
+                  <h2 class="content-title">Objective</h2>
+                  <div class="content-body">
+                    <p>Experienced software developer with 5+ years in full-stack web development. Seeking a challenging role where I can leverage my expertise in JavaScript frameworks and backend technologies to build scalable applications and contribute to innovative projects.</p>
+                  </div>
+                </div>
+                
+                <div class="content-section">
+                  <h2 class="content-title">Experience</h2>
+                  <div class="content-body">
+                    <div class="experience-item mb-4">
+                      <h5>Senior Software Developer</h5>
+                      <p><strong>Tech Solutions Inc.</strong> | Jan 2020 - Present</p>
+                      <ul>
+                        <li>Led development of customer-facing web applications using React and Node.js</li>
+                        <li>Improved application performance by 40% through code optimization</li>
+                        <li>Mentored 3 junior developers and conducted code reviews</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                      <h5>Software Developer</h5>
+                      <p><strong>Digital Innovations LLC</strong> | Jun 2017 - Dec 2019</p>
+                      <ul>
+                        <li>Developed and maintained multiple client websites and applications</li>
+                        <li>Implemented responsive designs for mobile compatibility</li>
+                        <li>Collaborated with UX designers to improve user experience</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="content-section">
+                  <h2 class="content-title">Education</h2>
+                  <div class="content-body">
+                    <div class="education-item mb-4">
+                      <h5>Master of Science in Computer Science</h5>
+                      <p><strong>University of Technology</strong> | 2015 - 2017</p>
+                      <p>GPA: 3.8/4.0</p>
+                    </div>
+                    
+                    <div class="education-item">
+                      <h5>Bachelor of Science in Information Technology</h5>
+                      <p><strong>State College</strong> | 2011 - 2015</p>
+                      <p>GPA: 3.6/4.0</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="content-section">
+                  <h2 class="content-title">Languages</h2>
+                  <div class="content-body">
+                    <div class="language-item">
+                      <p><strong>English:</strong> Native</p>
+                      <p><strong>Spanish:</strong> Intermediate</p>
+                      <p><strong>French:</strong> Basic</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-10 col-md-9">
-              <h4>Ankit garg</h4>
-              <ul class="userdata">
-                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> </li>
-                <li><i class="fas fa-phone" aria-hidden="true"></i> </li>
-                <li><i class="fas fa-envelope" aria-hidden="true"></i> testuser@gmail.com</li>
-              </ul>
-            </div>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="action-buttons no-print">
+            <button class="btn btn-workafy" onclick="downloadPDF()">
+              <i class="fas fa-download"></i> Download PDF
+            </button>
+            <button class="btn btn-workafy" onclick="window.print()">
+              <i class="fas fa-print"></i> Print Resume
+            </button>
+          </div>
+          
+          <!-- Profile Alert -->
+          <div class="profile-alert no-print">
+            <h5><i class="fas fa-exclamation-triangle"></i> Your profile is incomplete. Please update to improve your CV.</h5>
+            <a href="profile.html" class="btn btn-workafy">
+              <i class="fas fa-user-edit"></i> Edit Profile
+            </a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Applied jobs -->
-      <div class="appliedjobswrap">
-        <h3>My Applied Jobs</h3>
-        <p>No applied jobs found.</p>
-      </div>
 
-      <div class="paypackages">
-        <!---four-paln-->
-        <div class="four-plan mb-4">
-          <h3>Jobseeker Packages</h3>
-          <div class="row"></div>
-        </div>
-        <!---end four-paln-->
-      </div>
-
-      <div class="profbox">
-        <h3>Recommended Jobs</h3>
-        <ul class="featuredlist">
-          <div class="alert alert-danger">No matching jobs found</div>
-        </ul>
-      </div>
-
-      <!-- My Followings -->
-      <div class="profbox followbox">
-        <h3>My Followings <a href="https://portal.workafy.com/my-followings">View All <i class="fas fa-arrow-right"></i></a></h3>
-        <ul class="row compnaieslist">
-          <li class="col-lg-4 col-md-6">
-            <div class="empint">
-              <a href="https://portal.workafy.com/company/power-color-1" title="Power Color">
-                <div class="emptbox">
-                  <div class="comimg"><img src="https://portal.workafy.com/company_logos/power-color-1536854682-955.jpg" alt="Power Color" title="Power Color"></div>
-                  <div class="text-info-right">
-                    <h4>Power Color</h4>
-                    <div class="indst">Fashion</div>
-                    <div class="emloc"><i class="fas fa-map-marker-alt"></i> Your Location Address USA</div>
-                  </div>
-                  <div class="cm-info-bottom">
-                    <span><i class="fas fa-briefcase"></i> 2 Open Jobs</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-
-          <li class="col-lg-4 col-md-6">
-            <div class="empint">
-              <a href="https://portal.workafy.com/company/surf-wave-4" title="Surf Wave">
-                <div class="emptbox">
-                  <div class="comimg"><img src="https://portal.workafy.com/company_logos/surf-wave-1536855024-252.jpg" alt="Surf Wave" title="Surf Wave"></div>
-                  <div class="text-info-right">
-                    <h4>Surf Wave</h4>
-                    <div class="indst">Courier/Logistics</div>
-                    <div class="emloc"><i class="fas fa-map-marker-alt"></i> Your Location Address USA</div>
-                  </div>
-                  <div class="cm-info-bottom">
-                    <span><i class="fas fa-briefcase"></i> 1 Open Jobs</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-           
-           <li class="col-lg-4 col-md-6">
-            <div class="empint">
-              <a href="https://portal.workafy.com/company/surf-wave-4" title="Surf Wave">
-                <div class="emptbox">
-                  <div class="comimg"><img src="https://portal.workafy.com/company_logos/surf-wave-1536855024-252.jpg" alt="Surf Wave" title="Surf Wave"></div>
-                  <div class="text-info-right">
-                    <h4>Surf Wave</h4>
-                    <div class="indst">Courier/Logistics</div>
-                    <div class="emloc"><i class="fas fa-map-marker-alt"></i> Your Location Address USA</div>
-                  </div>
-                  <div class="cm-info-bottom">
-                    <span><i class="fas fa-briefcase"></i> 1 Open Jobs</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          
-            <li class="col-lg-4 col-md-6">
-            <div class="empint">
-              <a href="https://portal.workafy.com/company/power-color-1" title="Power Color">
-                <div class="emptbox">
-                  <div class="comimg"><img src="https://portal.workafy.com/company_logos/power-color-1536854682-955.jpg" alt="Power Color" title="Power Color"></div>
-                  <div class="text-info-right">
-                    <h4>Power Color</h4>
-                    <div class="indst">Fashion</div>
-                    <div class="emloc"><i class="fas fa-map-marker-alt"></i> Your Location Address USA</div>
-                  </div>
-                  <div class="cm-info-bottom">
-                    <span><i class="fas fa-briefcase"></i> 2 Open Jobs</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div> <!-- end col-lg-9 -->
   </div> <!-- end row -->
 </div> <!-- end container -->
 

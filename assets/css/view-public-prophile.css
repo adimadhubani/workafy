@@ -1,5 +1,547 @@
-/* Basic resets */
-* { box-sizing: border-box; }
+/* ===== Candidate Public Profile Styles ===== */
+
+/* Workafy Theme Colors */
+:root {
+    --primary: #1e5395;
+    --secondary: #0981c5;
+    --accent: #fff000;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --text: #333;
+    --text-light: #6c757d;
+    --border: #dee2e6;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Main Layout */
+.container.py-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+/* Sidebar column */
+.col-lg-3 {
+    padding-right: 15px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+/* Main content column with candidate profile */
+.col-lg-9 {
+    padding-left: 15px;
+}
+
+/* List Page Wrapper */
+.listpgWraper {
+    padding: 20px 0;
+    min-height: calc(100vh - 200px);
+    width: 100%;
+}
+
+/* Cover Image */
+.usercoverimg {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.usercoverimg img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* User Main Info */
+.userMaininfo {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.userPic {
+    flex-shrink: 0;
+}
+
+.userPic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--light);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.title {
+    flex: 1;
+}
+
+.title h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.title h3 span {
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.redyto {
+    margin-bottom: 10px;
+}
+
+.desi {
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.desi i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.membersinc {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.membersinc i {
+    margin-right: 8px;
+    color: var(--secondary);
+}
+
+/* Buttons */
+.userlinkstp {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.userlinkstp .btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.userlinkstp .btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 103, 210, 0.3);
+}
+
+.userlinkstp .btn i {
+    font-size: 16px;
+}
+
+/* User Detail Boxes */
+.userdetailbox {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.userdetailbox h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light);
+    position: relative;
+}
+
+.userdetailbox h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.userdetailbox p {
+    color: var(--text-light);
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Skills */
+.profileskills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profileskills li {
+    background: var(--light);
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.profileskills li:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Languages */
+.profilelang {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* No Records */
+.no-records {
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    background: var(--light);
+    border-radius: 6px;
+    border: 1px dashed var(--border);
+}
+
+/* Job Header (Sidebar Sections) */
+.job-header {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+.jobdetail h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--light);
+    position: relative;
+}
+
+.jobdetail h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--primary);
+}
+
+/* Candidate Info */
+.candidateinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.loctext {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.loctext i {
+    color: var(--primary);
+    width: 20px;
+    text-align: center;
+}
+
+.loctext a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.loctext a:hover {
+    color: var(--primary);
+}
+
+/* Job Detail List */
+.jbdetail {
+    list-style: none;
+    padding: 0;
+    margin: 0 -10px;
+}
+
+.jbdetail li {
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+.jbitlist {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--light);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.jbitlist:hover {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+/* Material Icons Replacement with Font Awesome */
+.material-symbols-outlined {
+    display: none !important;
+}
+
+.jbitlist::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--primary);
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+/* Verified */
+.jbdetail li:nth-child(1) .jbitlist::before {
+    content: "\f058";
+}
+
+/* Handshake */
+.jbdetail li:nth-child(2) .jbitlist::before {
+    content: "\f2b5";
+}
+
+/* Cake */
+.jbdetail li:nth-child(3) .jbitlist::before {
+    content: "\f1fd";
+}
+
+/* Account Circle */
+.jbdetail li:nth-child(4) .jbitlist::before {
+    content: "\f007";
+}
+
+/* Content Paste */
+.jbdetail li:nth-child(5) .jbitlist::before {
+    content: "\f0c5";
+}
+
+/* Business Center */
+.jbdetail li:nth-child(6) .jbitlist::before {
+    content: "\f0b1";
+}
+
+/* Schema */
+.jbdetail li:nth-child(7) .jbitlist::before {
+    content: "\f0e8";
+}
+
+/* Location On */
+.jbdetail li:nth-child(8) .jbitlist::before {
+    content: "\f3c5";
+}
+
+/* Paid */
+.jbdetail li:nth-child(9) .jbitlist::before {
+    content: "\f155";
+}
+
+/* Payments */
+.jbdetail li:nth-child(10) .jbitlist::before {
+    content: "\f53c";
+}
+
+.jbitdata {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.jbitdata strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.jbitdata span {
+    display: block;
+    font-size: 14px;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+/* Portfolio Section */
+.profileproject {
+    border: 2px solid var(--light);
+}
+
+.profileproject h3 {
+    color: var(--primary);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .userMaininfo {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .userPic img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .title h3 {
+        font-size: 24px;
+    }
+    
+    .col-lg-3 {
+        padding-right: 15px;
+        margin-bottom: 20px;
+        position: static;
+    }
+    
+    .col-lg-9 {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .listpgWraper {
+        padding: 15px 0;
+    }
+    
+    .usercoverimg img {
+        height: 150px;
+    }
+    
+    .userMaininfo {
+        padding: 20px;
+    }
+    
+    .userdetailbox,
+    .job-header {
+        padding: 20px;
+    }
+    
+    .jbdetail li {
+        margin-bottom: 10px;
+    }
+    
+    .jbitlist {
+        padding: 10px;
+    }
+    
+    .col-lg-3,
+    .col-lg-9 {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .usercoverimg img {
+        height: 120px;
+    }
+    
+    .userMaininfo {
+        padding: 15px;
+    }
+    
+    .userPic img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .title h3 {
+        font-size: 20px;
+    }
+    
+    .userdetailbox,
+    .job-header {
+        padding: 15px;
+    }
+    
+    .userlinkstp .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .jbdetail li {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .profileskills {
+        justify-content: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .listpgWraper {
+        padding: 0;
+    }
+    
+    .userlinkstp,
+    .job-header:last-child {
+        display: none;
+    }
+    
+    .userdetailbox,
+    .job-header {
+        box-shadow: none;
+        border: 1px solid var(--border);
+    }
+    
+    .col-lg-3 {
+        display: none;
+    }
+    
+    .col-lg-9 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+}
+* 
 body { 
     font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
     background: var(--light-grey); 
@@ -660,165 +1202,3 @@ body {
         transform: translateY(0);
     }
 }
-
-.featuredprofile,
-.switchbox,
-.usernavdash,
-.userprofilealert,
-.profilestat .inbox,
-.usercoverphoto,
-.profileban,
-.profbox,
-.empint .emptbox {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* Responsive tweaks */
-@media (max-width: 767px) {
-    .packginfor { 
-        padding: 16px; 
-    }
-    
-    .order { 
-        padding: 14px 16px 16px; 
-    }
-    
-    .usercoverphoto img { 
-        height: 140px; 
-    }
-    
-    .uavatar img { 
-        width: 70px; 
-        height: 70px; 
-    }
-    
-    .profileban {
-        padding: 16px;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .userdata {
-        justify-content: center;
-    }
-    
-    .empint .emptbox {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-    
-    .cm-info-bottom {
-        margin-left: 0;
-        margin-top: 8px;
-    }
-    
-    .profilestat {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .profilestat {
-        grid-template-columns: 1fr;
-    }
-    
-    .userprofilealert {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-    
-    .switchbox {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-    }
-    
-    .switch {
-        align-self: flex-end;
-    }
-}
-.appliedjobswrap{
-    margin-left:60px;
-    margin-top:50px;
-}
-.profbox{
-    // margin-right:6000px;
-}
-.paypackages ,.h3{
-      margin-left:60px;
-      margin-top:50px;
-}
-.profbox ,.h3{
-      margin-left:60px;
-      margin-top:50px;
-}
-/* Outer card */
-  .profbox.followbox {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: none;
-    margin-bottom: 22px;
-  }
-
-  /* Heading row: left title + right link */
-  .profbox.followbox h3{
-    margin: 0 0 14px;
-    font-size: 20px;
-    font-weight: 700;
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .profbox.followbox h3 a{
-    margin-left:auto;
-    color:#0b65f6;
-    text-decoration:none;
-    font-weight:600;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-  .profbox.followbox h3 a:hover{ text-decoration:underline }
-
-  /* Company list grid */
-  .compnaieslist{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
-  }
-  .compnaieslist li{ margin:0; padding:0; }
-
-  /* Each company card (flex) */
-  .empint a{ text-decoration:none; color:inherit; display:block; }
-  .emptbox{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    padding:14px;
-    border-radius:10px;
-    background:var(--white);
-    border:1px solid var(--border);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    min-height: 100px;
-    width:400px;
-    height:200px;
-    margin-top:30px;
-  }
-  .emptbox:hover{
-    transform: translateY(-6px);
-    box-shadow: var(--card-shadow);
-    border-color: rgba(18,164,84,0.10);
-  }
-.text-info-right , .i {
-    margin-left: 10px;
-    font-weight: 400; 
-    text:black;/* Corrected from 40px → 400 (normal weight) */
-}
-  

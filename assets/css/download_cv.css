@@ -822,3 +822,575 @@ body {
     text:black;/* Corrected from 40px → 400 (normal weight) */
 }
   
+
+
+    :root {
+      --primary: #1e5395;
+      --secondary: #0981c5;
+      --accent: #fff000;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --text: #333;
+      --text-light: #6c757d;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background-color: #f5f5f5;
+    }
+    
+    /* Header Styles */
+    .site-header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .logo img {
+      max-height: 50px;
+    }
+    
+    .navbar-nav .nav-link {
+      color: var(--dark);
+      font-weight: 500;
+      padding: 10px 15px;
+    }
+    
+    .navbar-nav .nav-link:hover {
+      color: var(--secondary);
+    }
+    
+    .userbtn img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    
+    /* Page Title */
+    .pageTitle {
+      background-color: var(--light);
+      padding: 20px 0;
+      margin-bottom: 30px;
+    }
+    
+    .page-heading {
+      color: var(--primary);
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    /* List Page Wrapper */
+    .listpgWraper {
+      padding: 20px 0;
+      min-height: calc(100vh - 200px);
+    }
+    
+    /* Sidebar Styles */
+    .usernavwrap {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .switchbox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: var(--light);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    
+    .usernavdash {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .usernavdash li {
+      margin-bottom: 8px;
+    }
+    
+    .usernavdash li a {
+      display: block;
+      padding: 12px 15px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .usernavdash li a:hover,
+    .usernavdash li.active a {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .usernavdash li a i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    /* Featured Profile */
+    .featuredprofile {
+      background: linear-gradient(135deg, #78dc9a 0%, #5ec57e 100%);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+      text-align: center;
+      color: white;
+    }
+    
+    .featuredprofile h5 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .featprice {
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      margin: 15px 0;
+    }
+    
+    .featprice span {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .pckfeatlist {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 20px 0;
+    }
+    
+    .pckfeatlist li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+    
+    .pckfeatlist li:last-child {
+      border-bottom: none;
+    }
+    
+    .pckfeatlist li i {
+      margin-right: 10px;
+      color: white;
+    }
+    
+    .order a {
+      display: block;
+      background: white;
+      color: var(--primary);
+      padding: 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .order a:hover {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    /* Resume Container */
+    .resume-container {
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    
+    /* Left Column */
+    .resume-left {
+      background-color: var(--primary);
+      color: white;
+      padding: 30px 20px;
+    }
+    
+    .user-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      background-color: white;
+    }
+    
+    .user-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 10px;
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    
+    .contact-info div {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    
+    .contact-info i {
+      margin-right: 10px;
+      width: 20px;
+    }
+    
+    .personal-details table {
+      width: 100%;
+      font-size: 14px;
+    }
+    
+    .personal-details td {
+      padding: 5px 0;
+    }
+    
+    .personal-details td:first-child {
+      font-weight: bold;
+      width: 40%;
+    }
+    
+    .years-experience {
+      font-size: 30px;
+      text-align: center;
+      border: 1px solid white;
+      padding: 10px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+    
+    .years-label {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    .skills-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .skills-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    /* Right Column */
+    .resume-right {
+      padding: 30px;
+    }
+    
+    .candidate-name {
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin: -30px -30px 30px;
+      font-size: 32px;
+    }
+    
+    .content-section {
+      margin-bottom: 30px;
+    }
+    
+    .content-title {
+      font-size: 22px;
+      color: var(--dark);
+      border-bottom: 2px solid var(--dark);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .content-body {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .no-records {
+      font-style: italic;
+      color: var(--text-light);
+    }
+    
+    .experience-item, .education-item {
+      margin-bottom: 25px;
+    }
+    
+    .experience-item h5, .education-item h5 {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .experience-item p, .education-item p {
+      margin-bottom: 8px;
+      color: var(--text-light);
+    }
+    
+    .experience-item ul {
+      padding-left: 20px;
+    }
+    
+    .experience-item li {
+      margin-bottom: 5px;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+      text-align: center;
+      margin: 30px 0;
+    }
+    
+    .btn-workafy {
+      background-color: var(--secondary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-workafy:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Profile Alert */
+    .profile-alert {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    
+    .profile-alert h5 {
+      color: #856404;
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      margin-top: 50px;
+    }
+    
+    .footer h5 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer ul li {
+      margin-bottom: 8px;
+    }
+    
+    .footer ul li a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer ul li a:hover {
+      color: white;
+    }
+    
+    .footer .address, .footer .email {
+      margin-bottom: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+      color: rgba(255,255,255,0.8);
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      color: white;
+    }
+    
+    .copyright {
+      background-color: #222;
+      color: rgba(255,255,255,0.7);
+      padding: 15px 0;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+    
+    /* Mobile Navigation */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    
+    .mobile-nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+    }
+    
+    .mobile-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-nav a.active, .mobile-nav a:hover {
+      color: var(--secondary);
+    }
+    
+    .mobile-nav svg {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+      fill: var(--text-light);
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-nav a.active svg, .mobile-nav a:hover svg {
+      fill: var(--secondary);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+      .resume-left, .resume-right {
+        padding: 20px 15px;
+      }
+      
+      .candidate-name {
+        margin: -20px -15px 20px;
+        padding: 20px 0;
+        font-size: 28px;
+      }
+      
+      .user-image {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      
+      .mobile-nav {
+        display: block;
+      }
+      
+      .resume-container {
+        margin-bottom: 70px;
+      }
+      
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .btn-workafy {
+        margin: 5px 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .resume-left, .resume-right {
+        padding: 15px 10px;
+      }
+      
+      .candidate-name {
+        font-size: 24px;
+        padding: 15px 0;
+      }
+      
+      .content-title {
+        font-size: 20px;
+      }
+      
+      .section-title {
+        font-size: 16px;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      
+      .resume-container {
+        box-shadow: none;
+        margin: 0;
+      }
+      
+      body {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+      
+      .resume-left {
+        background-color: var(--primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .candidate-name {
+        background-color: var(--secondary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
