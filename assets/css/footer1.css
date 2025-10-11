@@ -1,0 +1,345 @@
+
+/* Footer */
+.footerWrap {
+    background: #fff;
+    color: white;
+    padding: 100px 0 40px;
+    position: relative;
+}
+
+.footerWrap:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23000000' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.footerWrap h5 {
+    color: #00B43D;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+.footerWrap h5:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #00B43D;
+    border-radius: 3px;
+}
+
+.quicklinks {
+    list-style: none;
+    padding: 0;
+}
+
+.quicklinks li {
+    margin-bottom: 12px;
+}
+
+.quicklinks a {
+    color: #011111;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+.quicklinks a:before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #00B43D;
+    transition: all 0.3s ease;
+}
+
+.quicklinks a:hover {
+    color: #00B43D;
+    padding-left: 20px;
+}
+
+.quicklinks a:hover:before {
+    color: #00B43D;
+}
+
+.address, .email {
+    margin-bottom: 20px;
+    color: #0e0d1d;
+}
+
+.email a {
+    color: #090202;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.email a:hover {
+    color: #00B43D;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+    color: rgb(12, 10, 10);
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background: #00B43D;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    background: #222;
+    color: #ddd;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Buttons */
+.viewallbtn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.viewallbtn a {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #000000;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(25, 103, 210, 0.3);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.viewallbtn a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00B43D;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.viewallbtn a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(25, 103, 210, 0.4);
+}
+
+.viewallbtn a:hover:before {
+    width: 100%;
+}
+
+/* Animations */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* New Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+}
+
+/* Counter Animation */
+.counter {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Stats Section */
+.stats-section {
+    background: var(--gradient);
+    color: white;
+    padding: 80px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-item .counter {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1200px) {
+    .hmindlist li {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .bxsrctxt h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hmindlist li {
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    .searchwrap {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+    }
+    
+    .searchwrap {
+        padding: 80px 0;
+        background-attachment: scroll;
+    }
+    
+    .bxsrctxt h1 {
+        font-size: 2rem;
+    }
+    
+    .bxsrctxt p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+    
+    .userloginbox {
+        margin-bottom: 30px;
+    }
+    
+    .hmindlist li {
+        flex: 0 0 100%;
+    }
+    
+    .footerWrap {
+        padding: 80px 0 30px;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .bxsrctxt h1 {
+        font-size: 1.8rem;
+    }
+    
+    .searchbar {
+        padding: 20px;
+    }
+    
+    .titleTop h2, .titleTop h3 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-item .counter {
+        font-size: 2.5rem;
+    }
+}
