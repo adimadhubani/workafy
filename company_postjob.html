@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job | Green Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --primary-green: #00b35f;
+            --light-green: #e8f7ef;
+            --dark-green: #008a4a;
+            --accent-green: #00e676;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fdfb;
+            color: #333;
+        }
+        
+        .job-posting-hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .job-posting-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23008a4a' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .job-form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 179, 95, 0.1);
+            padding: 40px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .section-title {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.25rem rgba(0, 179, 95, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-green);
+            border-color: var(--primary-green);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            border-color: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 179, 95, 0.3);
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 179, 95, 0.15);
+            border-color: var(--light-green);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-green);
+            font-size: 28px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary-green);
+        }
+        
+        .preview-title {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+        
+        .preview-item {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        
+        .preview-label {
+            font-weight: 500;
+            min-width: 120px;
+            color: #555;
+        }
+        
+        .preview-value {
+            color: #333;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: var(--light-green);
+            color: var(--primary-green);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .salary-badge {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            display: inline-block;
+        }
+        
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e0e0e0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .step.active .step-number {
+            background-color: var(--primary-green);
+            color: white;
+        }
+        
+        .step-text {
+            font-weight: 500;
+            color: #999;
+        }
+        
+        .step.active .step-text {
+            color: var(--primary-green);
+        }
+        
+        .step-connector {
+            width: 60px;
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 0 10px;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            bottom: 10%;
+            right: 10%;
+        }
+        
+        .form-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .form-tab {
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #777;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .form-tab.active {
+            color: var(--primary-green);
+            border-bottom: 3px solid var(--primary-green);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="job-posting-hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3 animate-fade-in">Find Your Perfect Candidate</h1>
+                    <p class="lead mb-4 animate-fade-in" style="animation-delay: 0.2s;">Post your job opening and connect with top talent in minutes.</p>
+                    <div class="d-flex flex-wrap animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Reach thousands of qualified candidates
+                        </div>
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Easy application management
+                        </div>
+                        <div class="mb-2">
+                            <i class="fas fa-check-circle me-2"></i> 30-day visibility
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="animate-fade-in" style="animation-delay: 0.6s;">
+                        <i class="fas fa-briefcase" style="font-size: 150px; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="steps-indicator">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Job Details</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Company Info</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Review & Post</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="job-form-container">
+                        <div class="form-tabs">
+                            <div class="form-tab active" data-tab="basic">Basic Information</div>
+                            <div class="form-tab" data-tab="details">Job Details</div>
+                            <div class="form-tab" data-tab="requirements">Requirements</div>
+                        </div>
+                        
+                        <form id="jobPostingForm">
+                            <!-- Basic Information Tab -->
+                            <div class="tab-content active" id="basic-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Basic Job Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobTitle" class="form-label">Job Title *</label>
+                                            <input type="text" class="form-control" id="jobTitle" placeholder="e.g. Senior Frontend Developer" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobCategory" class="form-label">Job Category *</label>
+                                            <select class="form-select" id="jobCategory" required>
+                                                <option value="" selected disabled>Select a category</option>
+                                                <option value="technology">Technology</option>
+                                                <option value="marketing">Marketing</option>
+                                                <option value="sales">Sales</option>
+                                                <option value="design">Design</option>
+                                                <option value="finance">Finance</option>
+                                                <option value="hr">Human Resources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobType" class="form-label">Job Type *</label>
+                                            <select class="form-select" id="jobType" required>
+                                                <option value="" selected disabled>Select job type</option>
+                                                <option value="full-time">Full-time</option>
+                                                <option value="part-time">Part-time</option>
+                                                <option value="contract">Contract</option>
+                                                <option value="internship">Internship</option>
+                                                <option value="remote">Remote</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="location" class="form-label">Location *</label>
+                                            <input type="text" class="form-control" id="location" placeholder="e.g. New York, NY or Remote" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div></div>
+                                    <button type="button" class="btn btn-primary next-tab" data-next="details">Next: Job Details <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Details Tab -->
+                            <div class="tab-content" id="details-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Job Details</h3>
+                                    <div class="mb-3">
+                                        <label for="jobDescription" class="form-label">Job Description *</label>
+                                        <textarea class="form-control" id="jobDescription" rows="6" placeholder="Describe the role, responsibilities, and what makes this position exciting..." required></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="salaryMin" class="form-label">Salary Range (Min)</label>
+                                            <input type="number" class="form-control" id="salaryMin" placeholder="e.g. 50000">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="salaryMax" class="form-label">Salary Range (Max)</label>
+                                            <input type="number" class="form-control" id="salaryMax" placeholder="e.g. 80000">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="benefits" class="form-label">Benefits & Perks</label>
+                                        <textarea class="form-control" id="benefits" rows="3" placeholder="Health insurance, flexible hours, remote work options, etc."></textarea>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary prev-tab" data-prev="basic"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                                    <button type="button" class="btn btn-primary next-tab" data-next="requirements">Next: Requirements <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Requirements Tab -->
+                            <div class="tab-content" id="requirements-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Requirements & Skills</h3>
+                                    <div class="mb-3">
+                                        <label for="skills" class="form-label">Required Skills *</label>
+                                        <input type="text" class="form-control" id="skills" placeholder="e.g. JavaScript, React, Node.js (separate with commas)" required>
+                                        <div class="form-text">Separate skills with commas</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="experience" class="form-label">Experience Level *</label>
+                                            <select class="form-select" id="experience" required>
+                                                <option value="" selected disabled>Select experience level</option>
+                                                <option value="intern">Intern</option>
+                                                <option value="entry">Entry Level</option>
+                                                <option value="mid">Mid Level</option>
+                                                <option value="senior">Senior Level</option>
+                                                <option value="lead">Lead / Manager</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="education" class="form-label">Education Level</label>
+                                            <select class="form-select" id="education">
+                                                <option value="" selected>Not specified</option>
+                                                <option value="high-school">High School</option>
+                                                <option value="associate">Associate Degree</option>
+                                                <option value="bachelor">Bachelor's Degree</option>
+                                                <option value="master">Master's Degree</option>
+                                                <option value="phd">PhD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="applicationDeadline" class="form-label">Application Deadline</label>
+                                        <input type="date" class="form-control" id="applicationDeadline">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary prev-tab" data-prev="details"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                                    <button type="submit" class="btn btn-primary">Post Job <i class="fas fa-paper-plane ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mt-5 mt-lg-0">
+                    <div class="sticky-top" style="top: 100px;">
+                        <div class="preview-card mb-4">
+                            <h4 class="preview-title">Job Preview</h4>
+                            <div class="preview-item">
+                                <div class="preview-label">Title:</div>
+                                <div class="preview-value" id="preview-title">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Type:</div>
+                                <div class="preview-value" id="preview-type">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Location:</div>
+                                <div class="preview-value" id="preview-location">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Salary:</div>
+                                <div class="preview-value" id="preview-salary">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Experience:</div>
+                                <div class="preview-value" id="preview-experience">Not specified</div>
+                            </div>
+                            <div class="mt-3" id="preview-skills">
+                                <!-- Skills will be added here dynamically -->
+                            </div>
+                        </div>
+                        
+                        <h4 class="mb-3" style="color: var(--primary-green);">Why Post With Us?</h4>
+                        <div class="feature-card mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="feature-title">Wide Reach</h5>
+                            <p class="feature-description">Your job will be seen by thousands of qualified candidates actively looking for opportunities.</p>
+                        </div>
+                        <div class="feature-card mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h5 class="feature-title">Quick Setup</h5>
+                            <p class="feature-description">Post your job in minutes with our streamlined process and intuitive interface.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5 class="feature-title">Performance Tracking</h5>
+                            <p class="feature-description">Monitor applications, views, and engagement with our detailed analytics dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loadComponent.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    
+    <script>
+        // Load Navbar & Footer
+        loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+        loadHTML('footer-container', 'components/footer.html').then(() => {
+            AOS.init({ duration: 1000, once: true });
+        });
+        
+        // Tab functionality
+        document.querySelectorAll('.form-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Next button functionality
+        document.querySelectorAll('.next-tab').forEach(button => {
+            button.addEventListener('click', function() {
+                const nextTab = this.getAttribute('data-next');
+                
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to next tab and content
+                document.querySelector(`.form-tab[data-tab="${nextTab}"]`).classList.add('active');
+                document.getElementById(`${nextTab}-tab`).classList.add('active');
+                
+                // Update step indicator
+                updateStepIndicator(nextTab);
+            });
+        });
+        
+        // Previous button functionality
+        document.querySelectorAll('.prev-tab').forEach(button => {
+            button.addEventListener('click', function() {
+                const prevTab = this.getAttribute('data-prev');
+                
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to previous tab and content
+                document.querySelector(`.form-tab[data-tab="${prevTab}"]`).classList.add('active');
+                document.getElementById(`${prevTab}-tab`).classList.add('active');
+                
+                // Update step indicator
+                updateStepIndicator(prevTab);
+            });
+        });
+        
+        // Update step indicator based on active tab
+        function updateStepIndicator(activeTab) {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => step.classList.remove('active'));
+            
+            if (activeTab === 'basic') {
+                document.querySelector('.step:nth-child(1)').classList.add('active');
+            } else if (activeTab === 'details') {
+                document.querySelector('.step:nth-child(1)').classList.add('active');
+                document.querySelector('.step:nth-child(2)').classList.add('active');
+            } else if (activeTab === 'requirements') {
+                steps.forEach(step => step.classList.add('active'));
+            }
+        }
+        
+        // Real-time preview update
+        document.getElementById('jobTitle').addEventListener('input', function() {
+            document.getElementById('preview-title').textContent = this.value || 'Not specified';
+        });
+        
+        document.getElementById('jobType').addEventListener('change', function() {
+            document.getElementById('preview-type').textContent = this.options[this.selectedIndex].text || 'Not specified';
+        });
+        
+        document.getElementById('location').addEventListener('input', function() {
+            document.getElementById('preview-location').textContent = this.value || 'Not specified';
+        });
+        
+        document.getElementById('salaryMin').addEventListener('input', updateSalaryPreview);
+        document.getElementById('salaryMax').addEventListener('input', updateSalaryPreview);
+        
+        function updateSalaryPreview() {
+            const min = document.getElementById('salaryMin').value;
+            const max = document.getElementById('salaryMax').value;
+            
+            if (min && max) {
+                document.getElementById('preview-salary').textContent = `$${min} - $${max}`;
+            } else if (min) {
+                document.getElementById('preview-salary').textContent = `From $${min}`;
+            } else if (max) {
+                document.getElementById('preview-salary').textContent = `Up to $${max}`;
+            } else {
+                document.getElementById('preview-salary').textContent = 'Not specified';
+            }
+        }
+        
+        document.getElementById('experience').addEventListener('change', function() {
+            document.getElementById('preview-experience').textContent = this.options[this.selectedIndex].text || 'Not specified';
+        });
+        
+        document.getElementById('skills').addEventListener('input', function() {
+            const skillsContainer = document.getElementById('preview-skills');
+            skillsContainer.innerHTML = '';
+            
+            if (this.value) {
+                const skills = this.value.split(',').map(skill => skill.trim()).filter(skill => skill);
+                
+                skills.forEach(skill => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.textContent = skill;
+                    skillsContainer.appendChild(tag);
+                });
+            }
+        });
+        
+        // Form submission
+        document.getElementById('jobPostingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Job posted successfully! Your listing is now live and visible to candidates.');
+            // In a real application, you would submit the form data to a server here
+        });
+        
+        document.querySelectorAll('.widget-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const list = title.nextElementSibling;
+                list.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

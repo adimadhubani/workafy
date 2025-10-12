@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> company messages  </title>
+
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Layout container for sidebar and main content */
+    #sidebar-container .sidebar {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      height: auto !important;
+      width: 100%;
+      z-index: 1 !important;
+      margin-top: 10px;
+      border: 2px solid #00b35f;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Layout for sidebar + content */
+    .dashboard-layout {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
+      margin: 30px auto;
+      padding: 0 40px;
+      max-width: 1800px;
+    }
+
+    /* Sidebar width */
+    #sidebar-container {
+      flex: 0 0 280px;
+    }
+
+    /* Content box styling */
+    .main-content {
+      flex: 1;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Message card animations */
+    .message-card {
+      transition: all 0.3s ease-in-out;
+      transform: translateY(0);
+    }
+
+    .message-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 179, 95, 0.15) !important;
+      border-left: 4px solid #00b35f !important;
+    }
+
+    /* Smooth entrance animation for messages */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .message-card {
+      animation: slideIn 0.5s ease-out forwards;
+    }
+
+    /* Staggered animation delays */
+    .message-card:nth-child(1) { animation-delay: 0.1s; }
+    .message-card:nth-child(2) { animation-delay: 0.2s; }
+    .message-card:nth-child(3) { animation-delay: 0.3s; }
+    .message-card:nth-child(4) { animation-delay: 0.4s; }
+    .message-card:nth-child(5) { animation-delay: 0.5s; }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="dashboard-layout">
+    <div id="sidebar-container"></div>
+    
+    <!-- Messages Content -->
+    <div class="main-content">
+      <h2 class="mb-4" style="color: #00b35f;"><i class="fas fa-envelope me-2"></i>Company Messages</h2>
+      
+      <!-- Message List -->
+      <div class="message-list">
+        <!-- Message 1 -->
+        <div class="card mb-3 border-0 shadow-sm message-card" style="border-left: 4px solid #00b35f !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title" style="color: #00b35f;">Welcome Message</h5>
+              <small class="text-muted">Today, 09:30 AM</small>
+            </div>
+            <p class="card-text">Welcome to our company portal! We're excited to have you on board.</p>
+          </div>
+        </div>
+
+        <!-- Message 2 -->
+        <div class="card mb-3 border-0 shadow-sm message-card" style="border-left: 4px solid #00b35f !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title" style="color: #00b35f;">System Update</h5>
+              <small class="text-muted">Yesterday, 02:15 PM</small>
+            </div>
+            <p class="card-text">Scheduled maintenance will occur this weekend. The system will be unavailable from 10 PM to 2 AM.</p>
+          </div>
+        </div>
+
+        <!-- Message 3 -->
+        <div class="card mb-3 border-0 shadow-sm message-card" style="border-left: 4px solid #00b35f !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title" style="color: #00b35f;">Meeting Reminder</h5>
+              <small class="text-muted">Dec 12, 2024</small>
+            </div>
+            <p class="card-text">Team meeting scheduled for Friday at 3:00 PM in Conference Room B.</p>
+          </div>
+        </div>
+
+        <!-- Message 4 -->
+        <div class="card mb-3 border-0 shadow-sm message-card" style="border-left: 4px solid #00b35f !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title" style="color: #00b35f;">Holiday Schedule</h5>
+              <small class="text-muted">Dec 10, 2024</small>
+            </div>
+            <p class="card-text">Office will be closed from December 24th to January 1st for the holiday break.</p>
+          </div>
+        </div>
+
+        <!-- Message 5 -->
+        <div class="card mb-3 border-0 shadow-sm message-card" style="border-left: 4px solid #00b35f !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title" style="color: #00b35f;">New Policy Update</h5>
+              <small class="text-muted">Dec 5, 2024</small>
+            </div>
+            <p class="card-text">Please review the updated company policies in the documents section.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    loadHTML('sidebar-container', 'components/company_sidebar.html');
+    loadHTML('footer-container', 'components/footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+
+    // Initialize AOS animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    });
+  </script>
+</body>
+</html>
