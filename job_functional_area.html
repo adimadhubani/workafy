@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Jobs by Functional Area | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/job_functional_area.css">
+ 
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+   
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <h3 class="fw-bold">Filters</h3>
+                            <p class="text-muted mb-0">Refine your job search</p>
+                        </div>
+                        
+                        <div class="sidebar-actions">
+                            <a href="#" class="action-btn save-alert">
+                                <i class="fas fa-bell"></i>
+                                Save Job Alert
+                            </a>
+                            <a href="#" class="action-btn post-job">
+                                <i class="fas fa-plus"></i>
+                                Post a Job
+                            </a>
+                        </div>
+                        
+                        <!-- Job by Title -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Job Title</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="title-software">
+                                        <label for="title-software">
+                                            Software Engineer
+                                            <span class="filter-count">(342)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="title-product">
+                                        <label for="title-product">
+                                            Product Manager
+                                            <span class="filter-count">(127)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="title-data">
+                                        <label for="title-data">
+                                            Data Scientist
+                                            <span class="filter-count">(98)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="title-ui">
+                                        <label for="title-ui">
+                                            UI/UX Designer
+                                            <span class="filter-count">(76)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="title-marketing">
+                                        <label for="title-marketing">
+                                            Marketing Manager
+                                            <span class="filter-count">(64)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Location Filters -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Location</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <select class="location-select">
+                                    <option>Select Country</option>
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>United Kingdom</option>
+                                    <option>Australia</option>
+                                    <option>Germany</option>
+                                </select>
+                                
+                                <select class="location-select">
+                                    <option>Select State</option>
+                                    <option>California</option>
+                                    <option>New York</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                    <option>Florida</option>
+                                </select>
+                                
+                                <select class="location-select">
+                                    <option>Select City</option>
+                                    <option>San Francisco</option>
+                                    <option>New York</option>
+                                    <option>Seattle</option>
+                                    <option>Los Angeles</option>
+                                    <option>Austin</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Experience Level</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="exp-entry">
+                                        <label for="exp-entry">
+                                            Entry Level (0-2 years)
+                                            <span class="filter-count">(342)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="exp-mid">
+                                        <label for="exp-mid">
+                                            Mid Level (2-5 years)
+                                            <span class="filter-count">(287)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="exp-senior">
+                                        <label for="exp-senior">
+                                            Senior Level (5-10 years)
+                                            <span class="filter-count">(198)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="exp-executive">
+                                        <label for="exp-executive">
+                                            Executive (10+ years)
+                                            <span class="filter-count">(87)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Job Type -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Job Type</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="type-fulltime">
+                                        <label for="type-fulltime">
+                                            Full-time
+                                            <span class="filter-count">(542)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="type-parttime">
+                                        <label for="type-parttime">
+                                            Part-time
+                                            <span class="filter-count">(187)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="type-contract">
+                                        <label for="type-contract">
+                                            Contract
+                                            <span class="filter-count">(154)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="type-internship">
+                                        <label for="type-internship">
+                                            Internship
+                                            <span class="filter-count">(98)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="type-remote">
+                                        <label for="type-remote">
+                                            Remote
+                                            <span class="filter-count">(243)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Job Shift -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Job Shift</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="shift-day">
+                                        <label for="shift-day">
+                                            Day Shift
+                                            <span class="filter-count">(432)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="shift-night">
+                                        <label for="shift-night">
+                                            Night Shift
+                                            <span class="filter-count">(87)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="shift-rotating">
+                                        <label for="shift-rotating">
+                                            Rotating Shift
+                                            <span class="filter-count">(54)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="shift-flexible">
+                                        <label for="shift-flexible">
+                                            Flexible
+                                            <span class="filter-count">(132)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Career Level -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Career Level</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-intern">
+                                        <label for="level-intern">
+                                            Intern
+                                            <span class="filter-count">(76)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-junior">
+                                        <label for="level-junior">
+                                            Junior
+                                            <span class="filter-count">(187)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-mid">
+                                        <label for="level-mid">
+                                            Mid-Level
+                                            <span class="filter-count">(342)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-senior">
+                                        <label for="level-senior">
+                                            Senior
+                                            <span class="filter-count">(198)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-lead">
+                                        <label for="level-lead">
+                                            Lead
+                                            <span class="filter-count">(87)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="level-manager">
+                                        <label for="level-manager">
+                                            Manager
+                                            <span class="filter-count">(54)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Degree Level -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Degree Level</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="degree-highschool">
+                                        <label for="degree-highschool">
+                                            High School
+                                            <span class="filter-count">(87)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="degree-associate">
+                                        <label for="degree-associate">
+                                            Associate
+                                            <span class="filter-count">(132)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="degree-bachelor">
+                                        <label for="degree-bachelor">
+                                            Bachelor's
+                                            <span class="filter-count">(432)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="degree-master">
+                                        <label for="degree-master">
+                                            Master's
+                                            <span class="filter-count">(187)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="degree-phd">
+                                        <label for="degree-phd">
+                                            PhD
+                                            <span class="filter-count">(54)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Gender -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Gender</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="gender-male">
+                                        <label for="gender-male">
+                                            Male
+                                            <span class="filter-count">(342)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="gender-female">
+                                        <label for="gender-female">
+                                            Female
+                                            <span class="filter-count">(287)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="gender-other">
+                                        <label for="gender-other">
+                                            Other
+                                            <span class="filter-count">(54)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Industry -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Industry</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="industry-tech">
+                                        <label for="industry-tech">
+                                            Technology
+                                            <span class="filter-count">(432)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="industry-finance">
+                                        <label for="industry-finance">
+                                            Finance
+                                            <span class="filter-count">(187)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="industry-healthcare">
+                                        <label for="industry-healthcare">
+                                            Healthcare
+                                            <span class="filter-count">(154)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="industry-retail">
+                                        <label for="industry-retail">
+                                            Retail
+                                            <span class="filter-count">(132)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="industry-education">
+                                        <label for="industry-education">
+                                            Education
+                                            <span class="filter-count">(98)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Skills -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Skills</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="skill-js">
+                                        <label for="skill-js">
+                                            JavaScript
+                                            <span class="filter-count">(287)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="skill-python">
+                                        <label for="skill-python">
+                                            Python
+                                            <span class="filter-count">(243)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="skill-react">
+                                        <label for="skill-react">
+                                            React
+                                            <span class="filter-count">(198)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="skill-aws">
+                                        <label for="skill-aws">
+                                            AWS
+                                            <span class="filter-count">(154)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="skill-ui">
+                                        <label for="skill-ui">
+                                            UI/UX Design
+                                            <span class="filter-count">(132)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Functional Area -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Functional Area</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="area-dev">
+                                        <label for="area-dev">
+                                            Software Development
+                                            <span class="filter-count">(287)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="area-design">
+                                        <label for="area-design">
+                                            Design
+                                            <span class="filter-count">(154)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="area-data">
+                                        <label for="area-data">
+                                            Data Science
+                                            <span class="filter-count">(132)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="area-marketing">
+                                        <label for="area-marketing">
+                                            Marketing
+                                            <span class="filter-count">(98)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="area-sales">
+                                        <label for="area-sales">
+                                            Sales
+                                            <span class="filter-count">(87)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Company -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Company</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <ul class="filter-options">
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="company-techcorp">
+                                        <label for="company-techcorp">
+                                            TechCorp Solutions
+                                            <span class="filter-count">(24)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="company-designhub">
+                                        <label for="company-designhub">
+                                            DesignHub Studios
+                                            <span class="filter-count">(18)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="company-dataworks">
+                                        <label for="company-dataworks">
+                                            DataWorks Analytics
+                                            <span class="filter-count">(32)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="company-cloudtech">
+                                        <label for="company-cloudtech">
+                                            CloudTech Innovations
+                                            <span class="filter-count">(15)</span>
+                                        </label>
+                                    </li>
+                                    <li class="filter-option">
+                                        <input type="checkbox" id="company-ai">
+                                        <label for="company-ai">
+                                            AI Solutions Inc.
+                                            <span class="filter-count">(28)</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Salary Range -->
+                        <div class="filter-section">
+                            <div class="filter-title">
+                                <span>Salary Range</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="filter-content">
+                                <div class="salary-range">
+                                    <input type="number" class="salary-input" placeholder="Min">
+                                    <input type="number" class="salary-input" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="search-job-btn">
+                            <i class="fas fa-search me-2"></i>
+                            Search Jobs
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Job Listings -->
+                <div class="col-lg-8">
+                    <div class="job-listings">
+                        <div class="listings-header">
+                            <div class="results-count">
+                                <span class="fw-bold">342</span> Jobs Found
+                            </div>
+                            <div class="sort-options">
+                                <select class="form-select">
+                                    <option>Most Relevant</option>
+                                    <option>Newest First</option>
+                                    <option>Highest Salary</option>
+                                    <option>Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Job Cards Grid -->
+                        <div class="row">
+                            <!-- Job Card 1 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up">
+                                <div class="job-card premium">
+                                    <span class="job-type">Full-time</span>
+                                    <div class="premium-badge">PREMIUM</div>
+                                    <h3 class="job-title">Senior UI/UX Designer</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">DH</div>
+                                        <div class="company-info">
+                                            <h4>DesignHub Studios</h4>
+                                            <p>San Francisco, CA</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$90,000 - $120,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>5-8 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Remote</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            2 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 2 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                                <div class="job-card">
+                                    <span class="job-type">Full-time</span>
+                                    <h3 class="job-title">Frontend Developer</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">TC</div>
+                                        <div class="company-info">
+                                            <h4>TechCorp Solutions</h4>
+                                            <p>New York, NY</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$85,000 - $110,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>3-5 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Hybrid</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            1 week ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 3 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                                <div class="job-card premium">
+                                    <span class="job-type">Part-time</span>
+                                    <div class="premium-badge">PREMIUM</div>
+                                    <h3 class="job-title">Product Manager</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">AI</div>
+                                        <div class="company-info">
+                                            <h4>AI Solutions Inc.</h4>
+                                            <p>Boston, MA</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$95,000 - $130,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>5-7 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>On-site</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            3 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 4 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                                <div class="job-card">
+                                    <span class="job-type">Contract</span>
+                                    <span class="urgent-badge">URGENT</span>
+                                    <h3 class="job-title">Data Scientist</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">DW</div>
+                                        <div class="company-info">
+                                            <h4>DataWorks Analytics</h4>
+                                            <p>Austin, TX</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$100,000 - $140,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>4-6 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Remote</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            5 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 5 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                                <div class="job-card">
+                                    <span class="job-type">Full-time</span>
+                                    <h3 class="job-title">DevOps Engineer</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">CT</div>
+                                        <div class="company-info">
+                                            <h4>CloudTech Innovations</h4>
+                                            <p>Seattle, WA</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$110,000 - $150,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>5-8 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Hybrid</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            1 day ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 6 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                                <div class="job-card premium">
+                                    <span class="job-type">Full-time</span>
+                                    <div class="premium-badge">PREMIUM</div>
+                                    <h3 class="job-title">Mobile App Developer</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">MF</div>
+                                        <div class="company-info">
+                                            <h4>MobileFirst Tech</h4>
+                                            <p>Los Angeles, CA</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$80,000 - $110,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>2-4 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Remote</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            4 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 7 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                                <div class="job-card">
+                                    <span class="job-type">Part-time</span>
+                                    <h3 class="job-title">Content Writer</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">CM</div>
+                                        <div class="company-info">
+                                            <h4>ContentMasters</h4>
+                                            <p>Chicago, IL</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$45,000 - $60,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>1-3 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Remote</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            1 week ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 8 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="700">
+                                <div class="job-card">
+                                    <span class="job-type">Full-time</span>
+                                    <h3 class="job-title">Marketing Specialist</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">MS</div>
+                                        <div class="company-info">
+                                            <h4>MarketSmart Inc.</h4>
+                                            <p>Miami, FL</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$60,000 - $80,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>2-4 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>On-site</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            3 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Card 9 -->
+                            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="800">
+                                <div class="job-card premium">
+                                    <span class="job-type">Full-time</span>
+                                    <div class="premium-badge">PREMIUM</div>
+                                    <h3 class="job-title">Cloud Architect</h3>
+                                    <div class="job-company">
+                                        <div class="company-logo">CA</div>
+                                        <div class="company-info">
+                                            <h4>CloudArchitects</h4>
+                                            <p>Denver, CO</p>
+                                        </div>
+                                    </div>
+                                    <div class="job-details">
+                                        <div class="job-detail">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span class="salary">$120,000 - $160,000</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>7-10 years</span>
+                                        </div>
+                                        <div class="job-detail">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Hybrid</span>
+                                        </div>
+                                    </div>
+                                    <div class="job-footer">
+                                        <div class="posted-date">
+                                            <i class="far fa-clock me-1"></i>
+                                            2 days ago
+                                        </div>
+                                        <button class="apply-btn">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="pagination-container">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+ <!-- Footer -->
+ <div id="footer-container"></div>
+
+
+ <!-- Scripts -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="assets/js/loadComponent.js"></script>
+ <script src="assets/js/navbar.js"></script>
+
+ <script>
+   // Load Navbar & Footer
+   loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+   loadHTML('footer-container', 'components/company_footer.html').then(() => {
+     AOS.init({ duration: 1000, once: true });
+   });
+ </script>
+    <script>
+        // Initialize AOS animations
+        // AOS.init({
+        //     duration: 1000,
+        //     once: true,
+        //     offset: 100
+        // });
+
+        // Filter section toggle functionality
+        document.querySelectorAll('.filter-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                const icon = title.querySelector('i');
+                
+                content.classList.toggle('collapsed');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.8rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1.2rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>

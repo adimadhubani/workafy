@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job | Green Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company_postjob.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="job-posting-hero">
+        <!-- <div class="floating-shape shape-1"></div> -->
+        <!-- <div class="floating-shape shape-2"></div> -->
+        <div class="container" style="color: #00B43D;">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3 animate-fade-in">Find Your Perfect Candidate</h1>
+                    <p class="lead mb-4 animate-fade-in" style="animation-delay: 0.2s; color: #1A1A1A;">Post your job opening and connect with top talent in minutes.</p>
+                    <div class="d-flex flex-wrap animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Reach thousands of qualified candidates
+                        </div>
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Easy application management
+                        </div>
+                        <div class="mb-2">
+                            <i class="fas fa-check-circle me-2"></i> 30-day visibility
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="animate-fade-in" style="animation-delay: 0.6s;">
+                        <i class="fas fa-briefcase" style="font-size: 150px; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="steps-indicator">
+               
+                
+               
+               
+               
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="job-form-container">
+                        <div class="form-tabs">
+                            <div class="form-tab active" data-tab="basic">Basic Information</div>
+                            <div class="form-tab" data-tab="details">Job Details</div>
+                            <div class="form-tab" data-tab="requirements">Requirements</div>
+                        </div>
+                        
+                        <form id="jobPostingForm">
+                            <!-- Basic Information Tab -->
+                            <div class="tab-content active" id="basic-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Basic Job Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobTitle" class="form-label">Job Title *</label>
+                                            <input type="text" class="form-control" id="jobTitle" placeholder="e.g. Senior Frontend Developer" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobCategory" class="form-label">Job Category *</label>
+                                            <select class="form-select" id="jobCategory" required>
+                                                <option value="" selected disabled>Select a category</option>
+                                                <option value="technology">Technology</option>
+                                                <option value="marketing">Marketing</option>
+                                                <option value="sales">Sales</option>
+                                                <option value="design">Design</option>
+                                                <option value="finance">Finance</option>
+                                                <option value="hr">Human Resources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="jobType" class="form-label">Job Type *</label>
+                                            <select class="form-select" id="jobType" required>
+                                                <option value="" selected disabled>Select job type</option>
+                                                <option value="full-time">Full-time</option>
+                                                <option value="part-time">Part-time</option>
+                                                <option value="contract">Contract</option>
+                                                <option value="internship">Internship</option>
+                                                <option value="remote">Remote</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="location" class="form-label">Location *</label>
+                                            <input type="text" class="form-control" id="location" placeholder="e.g. New York, NY or Remote" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div></div>
+                                    <button type="button" class="btn btn-primary next-tab" data-next="details">Next: Job Details <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Job Details Tab -->
+                            <div class="tab-content" id="details-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Job Details</h3>
+                                    <div class="mb-3">
+                                        <label for="jobDescription" class="form-label">Job Description *</label>
+                                        <textarea class="form-control" id="jobDescription" rows="6" placeholder="Describe the role, responsibilities, and what makes this position exciting..." required></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="salaryMin" class="form-label">Salary Range (Min)</label>
+                                            <input type="number" class="form-control" id="salaryMin" placeholder="e.g. 50000">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="salaryMax" class="form-label">Salary Range (Max)</label>
+                                            <input type="number" class="form-control" id="salaryMax" placeholder="e.g. 80000">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="benefits" class="form-label">Benefits & Perks</label>
+                                        <textarea class="form-control" id="benefits" rows="3" placeholder="Health insurance, flexible hours, remote work options, etc."></textarea>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary prev-tab" data-prev="basic"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                                    <button type="button" class="btn btn-primary next-tab" data-next="requirements">Next: Requirements <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Requirements Tab -->
+                            <div class="tab-content" id="requirements-tab">
+                                <div class="form-section">
+                                    <h3 class="section-title">Requirements & Skills</h3>
+                                    <div class="mb-3">
+                                        <label for="skills" class="form-label">Required Skills *</label>
+                                        <input type="text" class="form-control" id="skills" placeholder="e.g. JavaScript, React, Node.js (separate with commas)" required>
+                                        <div class="form-text">Separate skills with commas</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="experience" class="form-label">Experience Level *</label>
+                                            <select class="form-select" id="experience" required>
+                                                <option value="" selected disabled>Select experience level</option>
+                                                <option value="intern">Intern</option>
+                                                <option value="entry">Entry Level</option>
+                                                <option value="mid">Mid Level</option>
+                                                <option value="senior">Senior Level</option>
+                                                <option value="lead">Lead / Manager</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="education" class="form-label">Education Level</label>
+                                            <select class="form-select" id="education">
+                                                <option value="" selected>Not specified</option>
+                                                <option value="high-school">High School</option>
+                                                <option value="associate">Associate Degree</option>
+                                                <option value="bachelor">Bachelor's Degree</option>
+                                                <option value="master">Master's Degree</option>
+                                                <option value="phd">PhD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="applicationDeadline" class="form-label">Application Deadline</label>
+                                        <input type="date" class="form-control" id="applicationDeadline">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-outline-secondary prev-tab" data-prev="details"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+                                    <button type="submit" class="btn btn-primary">Post Job <i class="fas fa-paper-plane ms-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mt-5 mt-lg-0">
+                    <div class="sticky-top" style="top: 100px;">
+                        <div class="preview-card mb-4">
+                            <h4 class="preview-title">Job Preview</h4>
+                            <div class="preview-item">
+                                <div class="preview-label">Title:</div>
+                                <div class="preview-value" id="preview-title">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Type:</div>
+                                <div class="preview-value" id="preview-type">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Location:</div>
+                                <div class="preview-value" id="preview-location">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Salary:</div>
+                                <div class="preview-value" id="preview-salary">Not specified</div>
+                            </div>
+                            <div class="preview-item">
+                                <div class="preview-label">Experience:</div>
+                                <div class="preview-value" id="preview-experience">Not specified</div>
+                            </div>
+                            <div class="mt-3" id="preview-skills">
+                                <!-- Skills will be added here dynamically -->
+                            </div>
+                        </div>
+                        
+                        <h4 class="mb-3" style="color: var(--primary-green);">Why Post With Us?</h4>
+                        <div class="feature-card mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="feature-title">Wide Reach</h5>
+                            <p class="feature-description">Your job will be seen by thousands of qualified candidates actively looking for opportunities.</p>
+                        </div>
+                        <div class="feature-card mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h5 class="feature-title">Quick Setup</h5>
+                            <p class="feature-description">Post your job in minutes with our streamlined process and intuitive interface.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h5 class="feature-title">Performance Tracking</h5>
+                            <p class="feature-description">Monitor applications, views, and engagement with our detailed analytics dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loadComponent.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    
+    <script>
+        // Load Navbar & Footer
+        loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+        loadHTML('footer-container', 'components/footer.html').then(() => {
+            AOS.init({ duration: 1000, once: true });
+        });
+        
+        // Tab functionality
+        document.querySelectorAll('.form-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Next button functionality
+        document.querySelectorAll('.next-tab').forEach(button => {
+            button.addEventListener('click', function() {
+                const nextTab = this.getAttribute('data-next');
+                
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to next tab and content
+                document.querySelector(`.form-tab[data-tab="${nextTab}"]`).classList.add('active');
+                document.getElementById(`${nextTab}-tab`).classList.add('active');
+                
+                // Update step indicator
+                updateStepIndicator(nextTab);
+            });
+        });
+        
+        // Previous button functionality
+        document.querySelectorAll('.prev-tab').forEach(button => {
+            button.addEventListener('click', function() {
+                const prevTab = this.getAttribute('data-prev');
+                
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to previous tab and content
+                document.querySelector(`.form-tab[data-tab="${prevTab}"]`).classList.add('active');
+                document.getElementById(`${prevTab}-tab`).classList.add('active');
+                
+                // Update step indicator
+                updateStepIndicator(prevTab);
+            });
+        });
+        
+        // Update step indicator based on active tab
+        function updateStepIndicator(activeTab) {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => step.classList.remove('active'));
+            
+            if (activeTab === 'basic') {
+                document.querySelector('.step:nth-child(1)').classList.add('active');
+            } else if (activeTab === 'details') {
+                document.querySelector('.step:nth-child(1)').classList.add('active');
+                document.querySelector('.step:nth-child(2)').classList.add('active');
+            } else if (activeTab === 'requirements') {
+                steps.forEach(step => step.classList.add('active'));
+            }
+        }
+        
+        // Real-time preview update
+        document.getElementById('jobTitle').addEventListener('input', function() {
+            document.getElementById('preview-title').textContent = this.value || 'Not specified';
+        });
+        
+        document.getElementById('jobType').addEventListener('change', function() {
+            document.getElementById('preview-type').textContent = this.options[this.selectedIndex].text || 'Not specified';
+        });
+        
+        document.getElementById('location').addEventListener('input', function() {
+            document.getElementById('preview-location').textContent = this.value || 'Not specified';
+        });
+        
+        document.getElementById('salaryMin').addEventListener('input', updateSalaryPreview);
+        document.getElementById('salaryMax').addEventListener('input', updateSalaryPreview);
+        
+        function updateSalaryPreview() {
+            const min = document.getElementById('salaryMin').value;
+            const max = document.getElementById('salaryMax').value;
+            
+            if (min && max) {
+                document.getElementById('preview-salary').textContent = `$${min} - $${max}`;
+            } else if (min) {
+                document.getElementById('preview-salary').textContent = `From $${min}`;
+            } else if (max) {
+                document.getElementById('preview-salary').textContent = `Up to $${max}`;
+            } else {
+                document.getElementById('preview-salary').textContent = 'Not specified';
+            }
+        }
+        
+        document.getElementById('experience').addEventListener('change', function() {
+            document.getElementById('preview-experience').textContent = this.options[this.selectedIndex].text || 'Not specified';
+        });
+        
+        document.getElementById('skills').addEventListener('input', function() {
+            const skillsContainer = document.getElementById('preview-skills');
+            skillsContainer.innerHTML = '';
+            
+            if (this.value) {
+                const skills = this.value.split(',').map(skill => skill.trim()).filter(skill => skill);
+                
+                skills.forEach(skill => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.textContent = skill;
+                    skillsContainer.appendChild(tag);
+                });
+            }
+        });
+        
+        // Form submission
+        document.getElementById('jobPostingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Job posted successfully! Your listing is now live and visible to candidates.');
+            // In a real application, you would submit the form data to a server here
+        });
+        
+        document.querySelectorAll('.widget-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const list = title.nextElementSibling;
+                list.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

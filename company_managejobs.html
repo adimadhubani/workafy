@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Jobs | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company_managejob.css">
+   
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="main-content" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                                </div>
+                                <div class="company-details">
+                                    <h3>AutoSoft Dynamics</h3>
+                                    <p>Premium Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        
+                        <ul class="dashboard-menu">
+                            <li>
+                                <a href="/company_dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_editprofile.html">
+                                    <i class="fas fa-user-edit"></i>
+                                    Edit Account Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_public_profile.html">
+                                    <i class="fas fa-building"></i>
+                                    Company Public Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_postjob.html">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Post a Job
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_managejobs.html" class="active">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_cvsearch.html">
+                                    <i class="fas fa-search"></i>
+                                    CV Search Package
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="/company_paymenthistory.html">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    Payment History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_unlockeduser.html">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Unlocked Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_message.html">
+                                    <i class="fas fa-envelope"></i>
+                                    Company Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_follower.html">
+                                    <i class="fas fa-users"></i>
+                                    Company Followers
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="#" class="logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Jobs Content -->
+                <div class="col-lg-8">
+                    <!-- Jobs Header -->
+                    <div class="jobs-header">
+                      <h1>Manage Jobs</h1>
+                      <p>View and manage all your active and expired job postings</p>
+                    </div>
+                    
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stats-card">
+                                <div class="stats-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="stats-value">8</div>
+                                <div class="stats-label">Total Jobs</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stats-card">
+                                <div class="stats-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stats-value">5</div>
+                                <div class="stats-label">Active Jobs</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stats-card">
+                                <div class="stats-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stats-value">3</div>
+                                <div class="stats-label">Expired Jobs</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Jobs Tabs -->
+                    <div class="jobs-tabs" data-aos="fade-up">
+                        <ul class="nav nav-tabs" id="jobsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="active-tab" data-bs-toggle="tab" data-bs-target="#active" type="button" role="tab" aria-controls="active" aria-selected="true">
+                                    <i class="fas fa-check-circle me-2"></i>Active Jobs (5)
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="expired-tab" data-bs-toggle="tab" data-bs-target="#expired" type="button" role="tab" aria-controls="expired" aria-selected="false">
+                                    <i class="fas fa-clock me-2"></i>Expired Jobs (3)
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="jobsTabContent">
+                            <!-- Active Jobs Tab -->
+                            <div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+                                <div class="p-4">
+                                    <!-- Active Job 1 -->
+                                    <div class="job-card" data-aos="fade-up">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Senior Frontend Developer</h3>
+                                                <p class="job-company">Tech Solutions Inc.</p>
+                                            </div>
+                                            <span class="job-status status-active">Active</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>San Francisco, CA</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$90,000 - $120,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Posted 5 days ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>24 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Active Job 2 -->
+                                    <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">UX/UI Designer</h3>
+                                                <p class="job-company">Creative Minds Agency</p>
+                                            </div>
+                                            <span class="job-status status-active">Active</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Remote</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Contract</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$75,000 - $95,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Posted 2 weeks ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>18 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Active Job 3 -->
+                                    <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Data Scientist</h3>
+                                                <p class="job-company">Analytics Pro</p>
+                                            </div>
+                                            <span class="job-status status-active">Active</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>New York, NY</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$110,000 - $140,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Posted 3 days ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>32 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Active Job 4 -->
+                                    <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">DevOps Engineer</h3>
+                                                <p class="job-company">Cloud Systems Ltd</p>
+                                            </div>
+                                            <span class="job-status status-active">Active</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Austin, TX</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$100,000 - $130,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Posted 1 week ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>15 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Active Job 5 -->
+                                    <div class="job-card" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Product Manager</h3>
+                                                <p class="job-company">Innovate Tech</p>
+                                            </div>
+                                            <span class="job-status status-active">Active</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Boston, MA</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$120,000 - $150,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Posted 10 days ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>28 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Expired Jobs Tab -->
+                            <div class="tab-pane fade" id="expired" role="tabpanel" aria-labelledby="expired-tab">
+                                <div class="p-4">
+                                    <!-- Expired Job 1 -->
+                                    <div class="job-card expired" data-aos="fade-up">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Backend Developer</h3>
+                                                <p class="job-company">Server Solutions</p>
+                                            </div>
+                                            <span class="job-status status-expired">Expired</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Chicago, IL</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$85,000 - $110,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Expired 2 weeks ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>42 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-renew">
+                                                <i class="fas fa-sync-alt"></i> Renew
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Expired Job 2 -->
+                                    <div class="job-card expired" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Marketing Specialist</h3>
+                                                <p class="job-company">Growth Hackers</p>
+                                            </div>
+                                            <span class="job-status status-expired">Expired</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Miami, FL</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Part-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$50,000 - $65,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Expired 1 month ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>23 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-renew">
+                                                <i class="fas fa-sync-alt"></i> Renew
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Expired Job 3 -->
+                                    <div class="job-card expired" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="job-header">
+                                            <div>
+                                                <h3 class="job-title">Customer Support Representative</h3>
+                                                <p class="job-company">Service First Inc</p>
+                                            </div>
+                                            <span class="job-status status-expired">Expired</span>
+                                        </div>
+                                        <div class="job-details">
+                                            <div class="job-detail">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                                <span>Remote</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-briefcase"></i>
+                                                <span>Full-time</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                <span>$40,000 - $55,000</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-clock"></i>
+                                                <span>Expired 3 weeks ago</span>
+                                            </div>
+                                            <div class="job-detail">
+                                                <i class="fas fa-users"></i>
+                                                <span>37 Applications</span>
+                                            </div>
+                                        </div>
+                                        <div class="job-actions">
+                                            <button class="btn-action btn-renew">
+                                                <i class="fas fa-sync-alt"></i> Renew
+                                            </button>
+                                            <button class="btn-action btn-view">
+                                                <i class="fas fa-eye"></i> View Applications
+                                            </button>
+                                            <button class="btn-action btn-delete">
+                                                <i class="fas fa-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+     <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    loadHTML('footer-container', 'components/company_footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+    <script>
+        // Initialize AOS animations
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
