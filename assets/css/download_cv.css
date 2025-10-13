@@ -128,12 +128,12 @@ body {
 .order { 
     padding: 16px 20px 20px; 
     text-align: center; 
-    background: var(--primary-green-bg);
+    background: #00B43D;
 }
 
 .order a {
     display: inline-block;
-    background: var(--primary-green);
+    background: #00B43D;
     color: var(--white);
     padding: 12px 24px;
     border-radius: 8px;
@@ -148,7 +148,7 @@ body {
 }
 
 .order a:hover {
-    background: var(--primary-green-dark);
+    background: #00B43D;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 180, 61, 0.3);
 }
@@ -276,12 +276,12 @@ body {
 }
 
 .usernavdash li { 
-    border-bottom: 1px solid var(--medium-grey); 
+    border-bottom: 1px solid #00B43D; 
     transition: all 0.2s ease;
 }
 
 .usernavdash li:hover {
-    background: var(--primary-green-bg);
+    background: #00B43D;
 }
 
 .usernavdash li:last-child { 
@@ -307,8 +307,8 @@ body {
 }
 
 .usernavdash li.active a { 
-    background: var(--primary-green-bg); 
-    color: var(--primary-green);
+    background: #00B43D; 
+    color: #00B43D;
     border-left: 3px solid var(--primary-green);
 }
 
@@ -824,15 +824,6 @@ body {
   
 
 
-    :root {
-      --primary: #1e5395;
-      --secondary: #0981c5;
-      --accent: #fff000;
-      --light: #f8f9fa;
-      --dark: #343a40;
-      --text: #333;
-      --text-light: #6c757d;
-    }
     
     body {
       font-family: 'Poppins', sans-serif;
@@ -925,7 +916,7 @@ body {
     
     .usernavdash li a:hover,
     .usernavdash li.active a {
-      background-color: var(--primary);
+      background-color: #00B43D
       color: white;
     }
     

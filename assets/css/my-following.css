@@ -281,7 +281,7 @@ body {
 }
 
 .usernavdash li:hover {
-    background: var(--primary-green-bg);
+    background: #00B43D;
 }
 
 .usernavdash li:last-child { 
@@ -895,7 +895,7 @@ body {
 }
 
 .empint a:hover .cm-info-bottom span {
-    background: var(--secondary);
+    background: #00B43D;
     transform: scale(1.05);
 }
 

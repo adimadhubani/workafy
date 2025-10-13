@@ -13,19 +13,18 @@
 
   <!-- Project Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/candidate-dashboard.css">
+  <link rel="stylesheet" href="assets/css/my-favourite-job.css">
 </head>
 
 <body>
   <!-- Navbar -->
   <div id="navbar-container"></div>
 
-  <!-- there will be candidate dashboard  -->
-   
+  <!-- Candidate Dashboard -->
 <div class="container py-4">
   <div class="row">
+    <!-- Sidebar Column -->
     <div class="col-lg-3">
-
       <!-- Featured Profile Package -->
       <div class="featuredprofile">
         <div class="packginfor">
@@ -61,6 +60,7 @@
         </div>
       </div>
 
+      <!-- User Navigation -->
       <div class="usernavwrap">
         <div class="switchbox">
           <div class="txtlbl">Open to Work <i class="fas fa-question-circle" title="Are you immediate available?"></i></div>
@@ -94,197 +94,148 @@
           </li>
         </ul>
       </div>
-
     </div>
-
+    
+    <!-- Main Content Column -->
     <div class="col-lg-9">
-      <div class="userprofilealert">
-        <h5><i class="fas fa-exclamation-triangle"></i> Your Resume is incomplete please update.</h5>
-        <div class="editbtbn"><a href="https://portal.workafy.com/build-resume"><i class="fas fa-user-edit"></i> Complete CV </a></div>
-      </div>
-
-      <ul class="row profilestat">
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/resume/344226" class="inbox">
-            <i class="fas fa-eye" aria-hidden="true"></i>
-            <h6>0
-              <strong>Profile Views</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-followings" class="inbox">
-            <i class="fas fa-user" aria-hidden="true"></i>
-            <h6>2
-              <strong>Followings</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-profile#cvs" class="inbox">
-            <i class="fas fa-briefcase" aria-hidden="true"></i>
-            <h6>1
-              <strong>My CV List</strong>
-            </h6>
-          </a>
-        </li>
-        <li class="col-lg-3 col-md-3 col-6">
-          <a href="https://portal.workafy.com/my-messages" class="inbox">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <h6>0
-              <strong>Messages</strong>
-            </h6>
-          </a>
-        </li>
-      </ul>
-
-      <div class="usercoverphoto">
-        <img src="https://piktochart.com/wp-content/uploads/2023/05/large.jpg" alt="Ankit garg" title="Ankit garg">
-        <a href="https://portal.workafy.com/my-profile"><i class="fas fa-edit"></i></a>
-      </div>
-
-      <!-- Profile Information -->
-      <div class="profileban">
-        <div class="abtuser">
-          <div class="row">
-            <div class="col-lg-2 col-md-3">
-              <div class="uavatar"><img src="https://www.citypng.com/public/uploads/preview/hd-profile-user-round-green-icon-symbol-transparent-png-11639594320ayr6vyoidq.png" alt="Ankit garg" title="Ankit garg"></div>
+      <section class="favourite-jobs" id="favourites">
+        <div class="favourites-container">
+            <!-- Header -->
+            <div class="favourites-header">
+                <h2 class="favourites-title">
+                    <i class="fas fa-heart"></i>
+                    Favourite <span class="title-accent">Jobs</span>
+                </h2>
+                <p class="favourites-subtitle">
+                    Your saved job opportunities for quick access
+                </p>
             </div>
-            <div class="col-lg-10 col-md-9">
-              <h4>Ankit garg</h4>
-              <ul class="userdata">
-                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> </li>
-                <li><i class="fas fa-phone" aria-hidden="true"></i> </li>
-                <li><i class="fas fa-envelope" aria-hidden="true"></i> testuser@gmail.com</li>
-              </ul>
+
+            <!-- Search and Filter Bar -->
+            <div class="search-filter-bar">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search jobs by title, company, or technology...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+                
+                <div class="filter-options">
+                    <select class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="backend">Backend</option>
+                        <option value="fullstack">Full Stack</option>
+                        <option value="mobile">Mobile</option>
+                    </select>
+                    
+                    <select class="filter-select">
+                        <option value="all">All Locations</option>
+                        <option value="remote">Remote</option>
+                        <option value="onsite">On-site</option>
+                        <option value="hybrid">Hybrid</option>
+                    </select>
+                    
+                    <button class="clear-filters-btn">
+                        <i class="fas fa-times"></i>
+                        Clear Filters
+                    </button>
+                </div>
             </div>
-          </div>
+
+            <!-- Empty State -->
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-heart-broken"></i>
+                </div>
+                <h3 class="empty-title">No Favourite Jobs Found</h3>
+                <p class="empty-description">
+                    You haven't saved any jobs to your favourites yet. Start exploring and add jobs you're interested in!
+                </p>
+                
+                <!-- Suggested Actions -->
+                <div class="suggested-actions">
+                    <button class="action-btn primary">
+                        <i class="fas fa-search"></i>
+                        Search Jobs
+                    </button>
+                    <button class="action-btn secondary">
+                        <i class="fas fa-bolt"></i>
+                        Browse Trending Jobs
+                    </button>
+                </div>
+
+                <!-- Trending Jobs Suggestions -->
+                <div class="trending-suggestions">
+                    <h4>Trending Jobs You Might Like</h4>
+                    <div class="suggestion-cards">
+                        <div class="suggestion-card">
+                            <div class="suggestion-header">
+                                <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" class="company-logo">
+                                <div class="suggestion-details">
+                                    <h5>Senior React Developer</h5>
+                                    <p>Google • Mountain View, CA</p>
+                                </div>
+                                <button class="quick-save-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="suggestion-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">$150k+</span>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-card">
+                            <div class="suggestion-header">
+                                <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft" class="company-logo">
+                                <div class="suggestion-details">
+                                    <h5>Full Stack Engineer</h5>
+                                    <p>Microsoft • Remote</p>
+                                </div>
+                                <button class="quick-save-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="suggestion-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">React</span>
+                                <span class="tag">$140k+</span>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-card">
+                            <div class="suggestion-header">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Meta" class="company-logo">
+                                <div class="suggestion-details">
+                                    <h5>Frontend Architect</h5>
+                                    <p>Meta • Menlo Park, CA</p>
+                                </div>
+                                <button class="quick-save-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="suggestion-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Architecture</span>
+                                <span class="tag">$160k+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+          
         </div>
-      </div>
-
-<!-- Applied Jobs -->
-<section class="appliedjobswrap">
-  <h3>My Applied Jobs</h3>
-  <div class="job-container">
-    <div class="job-card">
-      <h4>Frontend Developer</h4>
-      <p><strong>Company:</strong> TechNova Pvt. Ltd.</p>
-      <p><strong>Location:</strong> Bengaluru, India</p>
-      <p><strong>Status:</strong> Under Review</p>
-      <button class="btn btn-primary">View Details</button>
+      </section>
     </div>
-
-    <div class="job-card">
-      <h4>Backend Engineer</h4>
-      <p><strong>Company:</strong> Cloudify Solutions</p>
-      <p><strong>Location:</strong> Pune, India</p>
-      <p><strong>Status:</strong> Interview Scheduled</p>
-      <button class="btn btn-primary">View Details</button>
-    </div>
-  </div>
-</section>
-
-<!-- Pay Packages -->
-<section class="paypackages">
-  <h3>Jobseeker Packages</h3>
-  <div class="package-container">
-    <div class="package-card">
-      <h4>Basic Plan</h4>
-      <p>₹299 / month</p>
-      <ul>
-        <li>Apply up to 10 jobs</li>
-        <li>Access to job alerts</li>
-      </ul>
-      <button class="btn btn-outline-primary">Buy Now</button>
-    </div>
-
-    <div class="package-card">
-      <h4>Premium Plan</h4>
-      <p>₹699 / month</p>
-      <ul>
-        <li>Unlimited job applications</li>
-        <li>Priority support</li>
-        <li>Resume review</li>
-      </ul>
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</section>
-
-<!-- Recommended Jobs -->
-<section class="profbox">
-  <h3>Recommended Jobs</h3>
-  <div class="recommended-container">
-    <div class="job-item">
-      <h4>Full Stack Developer</h4>
-      <p><strong>Company:</strong> DevCrafters</p>
-      <p><strong>Experience:</strong> 1–3 years</p>
-      <button class="btn btn-success">Apply Now</button>
-    </div>
-
-    <div class="job-item">
-      <h4>UI/UX Designer</h4>
-      <p><strong>Company:</strong> PixelPath</p>
-      <p><strong>Experience:</strong> Fresher</p>
-      <button class="btn btn-success">Apply Now</button>
-    </div>
-  </div>
-</section>
-
-<!-- My Followings -->
-<div class="profbox followbox">
-  <h3>
-    My Followings
-    <a href="https://portal.workafy.com/my-followings">View All <i class="fas fa-arrow-right"></i></a>
-  </h3>
-  <ul class="row compnaieslist">
-    <li class="col-lg-4 col-md-6">
-      <div class="empint">
-        <a href="https://portal.workafy.com/company/power-color-1" title="Power Color">
-          <div class="emptbox">
-            <div class="comimg">
-              <img src="https://portal.workafy.com/company_logos/power-color-1536854682-955.jpg" alt="Power Color">
-            </div>
-            <div class="text-info-right">
-              <h4>Power Color</h4>
-              <div class="indst">Fashion</div>
-              <div class="emloc"><i class="fas fa-map-marker-alt"></i> USA</div>
-            </div>
-            <div class="cm-info-bottom">
-              <span><i class="fas fa-briefcase"></i> 2 Open Jobs</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </li>
-
-    <li class="col-lg-4 col-md-6">
-      <div class="empint">
-        <a href="https://portal.workafy.com/company/surf-wave-4" title="Surf Wave">
-          <div class="emptbox">
-            <div class="comimg">
-              <img src="https://portal.workafy.com/company_logos/surf-wave-1536855024-252.jpg" alt="Surf Wave">
-            </div>
-            <div class="text-info-right">
-              <h4>Surf Wave</h4>
-              <div class="indst">Courier/Logistics</div>
-              <div class="emloc"><i class="fas fa-map-marker-alt"></i> USA</div>
-            </div>
-            <div class="cm-info-bottom">
-              <span><i class="fas fa-briefcase"></i> 1 Open Job</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-
-    </div> <!-- end col-lg-9 -->
+    <!-- end col-lg-9 -->
   </div> <!-- end row -->
 </div> <!-- end container -->
-
 
   <!-- Footer -->
   <div id="footer-container"></div>
@@ -447,7 +398,8 @@
       }
     }
   </style>
-    <script>
+  
+  <script>
     // Simple FAQ accordion functionality
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
