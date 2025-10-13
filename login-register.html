@@ -6,16 +6,20 @@
   <title>Workafy - Authentication</title>
   
   <!-- Bootstrap & Font Awesome -->
+  <!-- External Libraries -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/footer1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/login-register.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-
+  <div id="navbar-container"></div> 
 
   <!-- SINGLE AUTHENTICATION PAGE -->
   <div class="auth-container-main23" data-aos="fade-up">
@@ -38,288 +42,305 @@
       </div>
     </div>
     <div class="auth-right-section23">
-      <div class="auth-header-wrapper23">
-        <h3 class="auth-header-title23" id="right-title-element23">Create Your Account</h3>
-        <p class="auth-header-text23" id="right-text-element23">Join thousands of professionals and companies on Workafy</p>
-      </div>
-      
-      <!-- Main Tabs (Register/Login) -->
-      <div class="auth-main-tabs-wrapper23">
-        <div class="auth-main-tab-slider23" id="main-tab-slider-element23"></div>
-        <div class="auth-main-tab-item23 active23" data-target="register-content-section23">
-          <i class="fas fa-user-plus"></i> Register
+      <!-- Authentication Forms -->
+      <div id="auth-forms-container23">
+        <div class="auth-header-wrapper23">
+          <h3 class="auth-header-title23" id="right-title-element23">Create Your Account</h3>
+          <p class="auth-header-text23" id="right-text-element23">Join thousands of professionals and companies on Workafy</p>
         </div>
-        <div class="auth-main-tab-item23" data-target="login-content-section23">
-          <i class="fas fa-sign-in-alt"></i> Login
-        </div>
-      </div>
-      
-      <!-- Register Content -->
-      <div class="auth-main-content-section23 active23" id="register-content-section23">
-        <!-- Sub Tabs (Job Seeker/Company) -->
-        <div class="auth-sub-tabs-wrapper23">
-          <div class="auth-sub-tab-slider23" id="register-sub-tab-slider-element23"></div>
-          <div class="auth-sub-tab-item23 active23" data-target="jobseeker-register-form23">
-            <i class="fas fa-user"></i> Job Seeker
+        
+        <!-- Main Tabs (Register/Login) -->
+        <div class="auth-main-tabs-wrapper23">
+          <div class="auth-main-tab-slider23" id="main-tab-slider-element23"></div>
+          <div class="auth-main-tab-item23 active23" data-target="register-content-section23">
+            <i class="fas fa-user-plus"></i> Register
           </div>
-          <div class="auth-sub-tab-item23" data-target="company-register-form23">
-            <i class="fas fa-building"></i> Company
+          <div class="auth-main-tab-item23" data-target="login-content-section23">
+            <i class="fas fa-sign-in-alt"></i> Login
           </div>
         </div>
         
-        <!-- Job Seeker Registration Form -->
-        <form class="auth-sub-content-section23 active23" id="jobseeker-register-form23">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group-wrapper23">
-                <label class="form-label-custom23">First Name</label>
-                <i class="fas fa-user form-icon-custom23"></i>
-                <input type="text" class="form-control-custom23 with-icon23" placeholder="Enter your first name" required>
+        <!-- Register Content -->
+        <div class="auth-main-content-section23 active23" id="register-content-section23">
+          <!-- Sub Tabs (Job Seeker/Company) -->
+          <div class="auth-sub-tabs-wrapper23">
+            <div class="auth-sub-tab-slider23" id="register-sub-tab-slider-element23"></div>
+            <div class="auth-sub-tab-item23 active23" data-target="jobseeker-register-form23">
+              <i class="fas fa-user"></i> Job Seeker
+            </div>
+            <div class="auth-sub-tab-item23" data-target="company-register-form23">
+              <i class="fas fa-building"></i> Company
+            </div>
+          </div>
+          
+          <!-- Job Seeker Registration Form -->
+          <form class="auth-sub-content-section23 active23" id="jobseeker-register-form23">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group-wrapper23">
+                  <label class="form-label-custom23">First Name</label>
+                  <i class="fas fa-user form-icon-custom23"></i>
+                  <input type="text" class="form-control-custom23 with-icon23" placeholder="Enter your first name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-wrapper23">
+                  <label class="form-label-custom23">Last Name</label>
+                  <input type="text" class="form-control-custom23" placeholder="Enter your last name" required>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group-wrapper23">
-                <label class="form-label-custom23">Last Name</label>
-                <input type="text" class="form-control-custom23" placeholder="Enter your last name" required>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Email Address</label>
+              <i class="fas fa-envelope form-icon-custom23"></i>
+              <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23 password-input-field23" placeholder="Create a password" required>
+              <i class="fas fa-eye password-toggle-btn23" id="password-toggle-btn-123"></i>
+              <div class="password-strength-meter23">
+                <div class="password-strength-bar-custom23" id="password-strength-bar-123"></div>
               </div>
+              <div class="password-hint-text23">Use 8+ characters with a mix of letters, numbers & symbols</div>
             </div>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Email Address</label>
-            <i class="fas fa-envelope form-icon-custom23"></i>
-            <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter your email" required>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23 password-input-field23" placeholder="Create a password" required>
-            <i class="fas fa-eye password-toggle-btn23" id="password-toggle-btn-123"></i>
-            <div class="password-strength-meter23">
-              <div class="password-strength-bar-custom23" id="password-strength-bar-123"></div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Confirm Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23" placeholder="Confirm your password" required>
             </div>
-            <div class="password-hint-text23">Use 8+ characters with a mix of letters, numbers & symbols</div>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Confirm Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23" placeholder="Confirm your password" required>
-          </div>
-          
-          <div class="form-check-custom23">
-            <input class="form-check-input-custom23" type="checkbox" id="newsletter-checkbox23">
-            <label class="form-check-label-custom23" for="newsletter-checkbox23">
-              Subscribe to our newsletter for job alerts and career insights
-            </label>
-          </div>
-          
-          <div class="form-check-custom23">
-            <input class="form-check-input-custom23" type="checkbox" id="terms-checkbox23" required>
-            <label class="form-check-label-custom23" for="terms-checkbox23">
-              I agree to the <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a>
-            </label>
-          </div>
-          
-          <div class="recaptcha-container-wrapper23">
-            <input type="checkbox" id="robot-checkbox23" required>
-            <div class="recaptcha-text-custom23">
-              <i class="fas fa-robot"></i> I'm not a robot
-            </div>
-          </div>
-          
-          <button type="submit" class="btn btn-primary-custom23">
-            <i class="fas fa-user-plus me-2"></i> CREATE ACCOUNT
-          </button>
-          
-          <div class="auth-link-wrapper23">
-            Already have an account? <a href="#" class="switch-to-login-link23">Sign in here</a>
-          </div>
-        </form>
-        
-        <!-- Company Registration Form -->
-        <form class="auth-sub-content-section23" id="company-register-form23">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group-wrapper23">
-                <label class="form-label-custom23">Company Name</label>
-                <i class="fas fa-building form-icon-custom23"></i>
-                <input type="text" class="form-control-custom23 with-icon23" placeholder="Enter company name" required>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group-wrapper23">
-                <label class="form-label-custom23">Industry</label>
-                <select class="form-control-custom23" required>
-                  <option value="">Select industry</option>
-                  <option value="technology">Technology</option>
-                  <option value="finance">Finance</option>
-                  <option value="healthcare">Healthcare</option>
-                  <option value="education">Education</option>
-                  <option value="manufacturing">Manufacturing</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Business Email</label>
-            <i class="fas fa-envelope form-icon-custom23"></i>
-            <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter company email" required>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23 password-input-field23" placeholder="Create a password" required>
-            <i class="fas fa-eye password-toggle-btn23" id="password-toggle-btn-223"></i>
-            <div class="password-strength-meter23">
-              <div class="password-strength-bar-custom23" id="password-strength-bar-223"></div>
-            </div>
-            <div class="password-hint-text23">Use 8+ characters with a mix of letters, numbers & symbols</div>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Confirm Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23" placeholder="Confirm your password" required>
-          </div>
-          
-          <div class="form-check-custom23">
-            <input class="form-check-input-custom23" type="checkbox" id="company-newsletter-checkbox23">
-            <label class="form-check-label-custom23" for="company-newsletter-checkbox23">
-              Subscribe to business updates and industry trends
-            </label>
-          </div>
-          
-          <div class="form-check-custom23">
-            <input class="form-check-input-custom23" type="checkbox" id="company-terms-checkbox23" required>
-            <label class="form-check-label-custom23" for="company-terms-checkbox23">
-              I agree to the <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a>
-            </label>
-          </div>
-          
-          <div class="recaptcha-container-wrapper23">
-            <input type="checkbox" id="company-robot-checkbox23" required>
-            <div class="recaptcha-text-custom23">
-              <i class="fas fa-robot"></i> I'm not a robot
-            </div>
-          </div>
-          
-          <button type="submit" class="btn btn-primary-custom23">
-            <i class="fas fa-building me-2"></i> REGISTER COMPANY
-          </button>
-          
-          <div class="auth-link-wrapper23">
-            Already have an account? <a href="#" class="switch-to-login-link23">Sign in here</a>
-          </div>
-        </form>
-      </div>
-      
-      <!-- Login Content -->
-      <div class="auth-main-content-section23" id="login-content-section23">
-        <!-- Sub Tabs (Job Seeker/Company) -->
-        <div class="auth-sub-tabs-wrapper23">
-          <div class="auth-sub-tab-slider23" id="login-sub-tab-slider-element23"></div>
-          <div class="auth-sub-tab-item23 active23" data-target="jobseeker-login-form23">
-            <i class="fas fa-user"></i> Job Seeker
-          </div>
-          <div class="auth-sub-tab-item23" data-target="company-login-form23">
-            <i class="fas fa-building"></i> Company
-          </div>
-        </div>
-        
-        <div class="social-login-wrapper23">
-          <button class="social-btn-custom23">
-            <i class="fab fa-google" style="color: #DB4437;"></i> Google
-          </button>
-          <button class="social-btn-custom23">
-            <i class="fab fa-linkedin-in" style="color: #0077B5;"></i> LinkedIn
-          </button>
-          <button class="social-btn-custom23">
-            <i class="fab fa-apple" style="color: #000;"></i> Apple
-          </button>
-        </div>
-        
-        <div class="divider-custom23">
-          <span>Or continue with email</span>
-        </div>
-        
-        <!-- Job Seeker Login Form -->
-        <form class="auth-sub-content-section23 active23" id="jobseeker-login-form23">
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Email Address</label>
-            <i class="fas fa-envelope form-icon-custom23"></i>
-            <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter your email" required>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23" placeholder="Enter your password" required>
-            <i class="fas fa-eye password-toggle-btn23" id="login-password-toggle-btn23"></i>
-          </div>
-          
-          <div class="d-flex justify-content-between align-items-center mb-4">
+            
             <div class="form-check-custom23">
-              <input class="form-check-input-custom23" type="checkbox" id="remember-checkbox23">
-              <label class="form-check-label-custom23" for="remember-checkbox23">
-                Remember me
+              <input class="form-check-input-custom23" type="checkbox" id="newsletter-checkbox23">
+              <label class="form-check-label-custom23" for="newsletter-checkbox23">
+                Subscribe to our newsletter for job alerts and career insights
               </label>
             </div>
-            <a href="#" class="text-primary" style="text-decoration: none; font-weight: 500;">Forgot Password?</a>
-          </div>
-          
-          <button type="submit" class="btn btn-primary-custom23">
-            <i class="fas fa-sign-in-alt me-2"></i> SIGN IN
-          </button>
-          
-          <div class="auth-link-wrapper23">
-            New to Workafy? <a href="#" class="switch-to-register-link23">Create an account</a>
-          </div>
-        </form>
-        
-        <!-- Company Login Form -->
-        <form class="auth-sub-content-section23" id="company-login-form23">
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Company Email</label>
-            <i class="fas fa-envelope form-icon-custom23"></i>
-            <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter company email" required>
-          </div>
-          
-          <div class="form-group-wrapper23">
-            <label class="form-label-custom23">Password</label>
-            <i class="fas fa-lock form-icon-custom23"></i>
-            <input type="password" class="form-control-custom23 with-icon23" placeholder="Enter your password" required>
-            <i class="fas fa-eye password-toggle-btn23" id="company-login-password-toggle-btn23"></i>
-          </div>
-          
-          <div class="d-flex justify-content-between align-items-center mb-4">
+            
             <div class="form-check-custom23">
-              <input class="form-check-input-custom23" type="checkbox" id="company-remember-checkbox23">
-              <label class="form-check-label-custom23" for="company-remember-checkbox23">
-                Remember me
+              <input class="form-check-input-custom23" type="checkbox" id="terms-checkbox23" required>
+              <label class="form-check-label-custom23" for="terms-checkbox23">
+                I agree to the <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a>
               </label>
             </div>
-            <a href="#" class="text-primary" style="text-decoration: none; font-weight: 500;">Forgot Password?</a>
+            
+            <div class="recaptcha-container-wrapper23">
+              <input type="checkbox" id="robot-checkbox23" required>
+              <div class="recaptcha-text-custom23">
+                <i class="fas fa-robot"></i> I'm not a robot
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary-custom23">
+              <i class="fas fa-user-plus me-2"></i> CREATE ACCOUNT
+            </button>
+            
+            <div class="auth-link-wrapper23">
+              Already have an account? <a href="#" class="switch-to-login-link23">Sign in here</a>
+            </div>
+          </form>
+          
+          <!-- Company Registration Form -->
+          <form class="auth-sub-content-section23" id="company-register-form23">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group-wrapper23">
+                  <label class="form-label-custom23">Company Name</label>
+                  <i class="fas fa-building form-icon-custom23"></i>
+                  <input type="text" class="form-control-custom23 with-icon23" placeholder="Enter company name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-wrapper23">
+                  <label class="form-label-custom23">Industry</label>
+                  <select class="form-control-custom23" required>
+                    <option value="">Select industry</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Business Email</label>
+              <i class="fas fa-envelope form-icon-custom23"></i>
+              <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter company email" required>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23 password-input-field23" placeholder="Create a password" required>
+              <i class="fas fa-eye password-toggle-btn23" id="password-toggle-btn-223"></i>
+              <div class="password-strength-meter23">
+                <div class="password-strength-bar-custom23" id="password-strength-bar-223"></div>
+              </div>
+              <div class="password-hint-text23">Use 8+ characters with a mix of letters, numbers & symbols</div>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Confirm Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23" placeholder="Confirm your password" required>
+            </div>
+            
+            <div class="form-check-custom23">
+              <input class="form-check-input-custom23" type="checkbox" id="company-newsletter-checkbox23">
+              <label class="form-check-label-custom23" for="company-newsletter-checkbox23">
+                Subscribe to business updates and industry trends
+              </label>
+            </div>
+            
+            <div class="form-check-custom23">
+              <input class="form-check-input-custom23" type="checkbox" id="company-terms-checkbox23" required>
+              <label class="form-check-label-custom23" for="company-terms-checkbox23">
+                I agree to the <a href="#" class="text-primary">Terms of Use</a> and <a href="#" class="text-primary">Privacy Policy</a>
+              </label>
+            </div>
+            
+            <div class="recaptcha-container-wrapper23">
+              <input type="checkbox" id="company-robot-checkbox23" required>
+              <div class="recaptcha-text-custom23">
+                <i class="fas fa-robot"></i> I'm not a robot
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary-custom23">
+              <i class="fas fa-building me-2"></i> REGISTER COMPANY
+            </button>
+            
+            <div class="auth-link-wrapper23">
+              Already have an account? <a href="#" class="switch-to-login-link23">Sign in here</a>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Login Content -->
+        <div class="auth-main-content-section23" id="login-content-section23">
+          <!-- Sub Tabs (Job Seeker/Company) -->
+          <div class="auth-sub-tabs-wrapper23">
+            <div class="auth-sub-tab-slider23" id="login-sub-tab-slider-element23"></div>
+            <div class="auth-sub-tab-item23 active23" data-target="jobseeker-login-form23">
+              <i class="fas fa-user"></i> Job Seeker
+            </div>
+            <div class="auth-sub-tab-item23" data-target="company-login-form23">
+              <i class="fas fa-building"></i> Company
+            </div>
           </div>
           
-          <button type="submit" class="btn btn-primary-custom23">
-            <i class="fas fa-sign-in-alt me-2"></i> SIGN IN
-          </button>
-          
-          <div class="auth-link-wrapper23">
-            New to Workafy? <a href="#" class="switch-to-register-link23">Create an account</a>
+          <div class="social-login-wrapper23">
+            <button class="social-btn-custom23">
+              <i class="fab fa-google" style="color: #DB4437;"></i> Google
+            </button>
+            <button class="social-btn-custom23">
+              <i class="fab fa-linkedin-in" style="color: #0077B5;"></i> LinkedIn
+            </button>
+            <button class="social-btn-custom23">
+              <i class="fab fa-apple" style="color: #000;"></i> Apple
+            </button>
           </div>
-        </form>
+          
+          <div class="divider-custom23">
+            <span>Or continue with email</span>
+          </div>
+          
+          <!-- Job Seeker Login Form -->
+          <form class="auth-sub-content-section23 active23" id="jobseeker-login-form23">
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Email Address</label>
+              <i class="fas fa-envelope form-icon-custom23"></i>
+              <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23" placeholder="Enter your password" required>
+              <i class="fas fa-eye password-toggle-btn23" id="login-password-toggle-btn23"></i>
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check-custom23">
+                <input class="form-check-input-custom23" type="checkbox" id="remember-checkbox23">
+                <label class="form-check-label-custom23" for="remember-checkbox23">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-primary" style="text-decoration: none; font-weight: 500;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary-custom23">
+              <i class="fas fa-sign-in-alt me-2"></i> SIGN IN
+            </button>
+            
+            <div class="auth-link-wrapper23">
+              New to Workafy? <a href="#" class="switch-to-register-link23">Create an account</a>
+            </div>
+          </form>
+          
+          <!-- Company Login Form -->
+          <form class="auth-sub-content-section23" id="company-login-form23">
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Company Email</label>
+              <i class="fas fa-envelope form-icon-custom23"></i>
+              <input type="email" class="form-control-custom23 with-icon23" placeholder="Enter company email" required>
+            </div>
+            
+            <div class="form-group-wrapper23">
+              <label class="form-label-custom23">Password</label>
+              <i class="fas fa-lock form-icon-custom23"></i>
+              <input type="password" class="form-control-custom23 with-icon23" placeholder="Enter your password" required>
+              <i class="fas fa-eye password-toggle-btn23" id="company-login-password-toggle-btn23"></i>
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check-custom23">
+                <input class="form-check-input-custom23" type="checkbox" id="company-remember-checkbox23">
+                <label class="form-check-label-custom23" for="company-remember-checkbox23">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-primary" style="text-decoration: none; font-weight: 500;">Forgot Password?</a>
+            </div>
+            
+            <button type="submit" class="btn btn-primary-custom23">
+              <i class="fas fa-sign-in-alt me-2"></i> SIGN IN
+            </button>
+            
+            <div class="auth-link-wrapper23">
+              New to Workafy? <a href="#" class="switch-to-register-link23">Create an account</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Success Message Container (Hidden by default) -->
+      <div id="success-message-container23" style="display: none;">
+        <div class="success-message23">
+          <div class="success-icon23">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2 class="success-title23" id="success-title23">Account Created Successfully!</h2>
+          <p class="success-text23" id="success-text23">Welcome to Workafy! Your account has been created successfully.</p>
+          <div class="success-actions23">
+            <button class="btn btn-primary" id="continue-to-dashboard23">Continue to Dashboard</button>
+            <button class="btn btn-outline" id="back-to-auth23">Back to Authentication</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-
+      <div id="footer-container"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -329,154 +350,20 @@
   <script>
     // Load Navbar & Footer
     loadHTML('navbar-container', 'components/navbar.html').then(() => initializeNavbar());
+    // loadHTML('sidebar-container', 'components/company_sidebar.html');
     loadHTML('footer-container', 'components/footer.html').then(() => {
       AOS.init({ duration: 1000, once: true });
     });
+
+    // Initialize AOS animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    });
   </script>
-  <style>
-    /* ===== Updated Profile Page CSS (Workafy Theme) ===== */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #FFFFFF;
-      color: #333;
-    }
-
-    .profile-section {
-      padding-top: 60px;
-      padding-bottom: 60px;
-    }
-
-    .profile-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .cover-img-container {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .cover-img {
-      width: 100%;
-      height: 100%;
-      background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
-
-    .profile-name {
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #000;
-    }
-
-    .profile-title {
-      color: grey;
-    }
-
-    .profile-meta span {
-      display: inline-block;
-      margin: 5px 10px;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .btn-success {
-      background-color: #00B43D !important;
-      border-color: #00B43D !important;
-    }
-
-    .btn-success:hover {
-      background-color: #009e34 !important;
-    }
-
-    .info-box {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    }
-
-    .info-box h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #00B43D;
-    }
-
-    .skill-badge {
-      background: #e6f9ed;
-      color: #00B43D;
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-
-    .skill-badge:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-    }
-
-    .contact-box {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    }
-
-    .contact-box h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #00B43D;
-    }
-
-    .profile-left {
-      animation: fadeInUp 0.8s ease-out;
-    }
-
-    .profile-right {
-      animation: fadeInRight 0.8s ease-out 0.2s both;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
   <script>
     // Initialize animations
     AOS.init({ duration: 800, once: true });
@@ -677,9 +564,38 @@
         
         // Simulate API call
         setTimeout(() => {
-          alert('Form submitted successfully!');
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
+          // Determine user type and update success message
+          let userType = '';
+          let dashboardUrl = '';
+          
+          if (form.id === 'jobseeker-register-form23' || form.id === 'jobseeker-login-form23') {
+            userType = 'Job Seeker';
+            dashboardUrl = '/candidate-dashboard.html';
+          } else if (form.id === 'company-register-form23' || form.id === 'company-login-form23') {
+            userType = 'Company';
+            dashboardUrl = '/company.html';
+          }
+          
+          // Update success message
+          document.getElementById('success-title23').textContent = `${userType} Account Created Successfully!`;
+          document.getElementById('success-text23').textContent = `Welcome to Workafy! Your ${userType.toLowerCase()} account has been created successfully.`;
+          
+          // Hide auth forms and show success message
+          document.getElementById('auth-forms-container23').style.display = 'none';
+          document.getElementById('success-message-container23').style.display = 'block';
+          
+          // Set up continue button
+          document.getElementById('continue-to-dashboard23').onclick = function() {
+            window.location.href = dashboardUrl;
+          };
+          
+          // Set up back to auth button
+          document.getElementById('back-to-auth23').onclick = function() {
+            document.getElementById('auth-forms-container23').style.display = 'block';
+            document.getElementById('success-message-container23').style.display = 'none';
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          };
         }, 1500);
       });
     });

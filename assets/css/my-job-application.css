@@ -22,31 +22,31 @@ body {
 }
 
 /* Featured profile card */
-.featuredprofile {
-    background: #6ec68bff;
+  .featuredprofile {
+    background: #fff;
     border-radius: 12px;
     box-shadow: var(--shadow);
     overflow: hidden;
     margin-bottom: 1.4rem;
-    border: 1px solid var(--medium-grey);
+    border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     position: relative;
-}
+  }
 
-.featuredprofile:hover {
+  .featuredprofile:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
-}
+  }
 
-.featuredprofile::before {
+  .featuredprofile::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-green), var(--primary-green-light));
-}
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  }
 
 .packginfor { 
     padding: 20px; 

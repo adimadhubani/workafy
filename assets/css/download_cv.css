@@ -22,31 +22,31 @@ body {
 }
 
 /* Featured profile card */
-.featuredprofile {
-    background: #6ec68bff;
+  .featuredprofile {
+    background: #fff;
     border-radius: 12px;
     box-shadow: var(--shadow);
     overflow: hidden;
     margin-bottom: 1.4rem;
-    border: 1px solid var(--medium-grey);
+    border: 1px solid #e9ecef;
     transition: all 0.3s ease;
     position: relative;
-}
+  }
 
-.featuredprofile:hover {
+  .featuredprofile:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
-}
+  }
 
-.featuredprofile::before {
+  .featuredprofile::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-green), var(--primary-green-light));
-}
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  }
 
 .packginfor { 
     padding: 20px; 
@@ -128,7 +128,6 @@ body {
 .order { 
     padding: 16px 20px 20px; 
     text-align: center; 
-    background: #00B43D;
 }
 
 .order a {
@@ -744,7 +743,7 @@ body {
     margin-top:50px;
 }
 .profbox{
-    // margin-right:6000px;
+    margin-right:6000px;
 }
 .paypackages ,.h3{
       margin-left:60px;
@@ -916,7 +915,7 @@ body {
     
     .usernavdash li a:hover,
     .usernavdash li.active a {
-      background-color: #00B43D
+      background-color: #00B43D;
       color: white;
     }
     
@@ -927,73 +926,7 @@ body {
     }
     
     /* Featured Profile */
-    .featuredprofile {
-      background: linear-gradient(135deg, #78dc9a 0%, #5ec57e 100%);
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 25px;
-      text-align: center;
-      color: white;
-    }
     
-    .featuredprofile h5 {
-      color: white;
-      font-weight: 600;
-      margin-bottom: 15px;
-    }
-    
-    .featprice {
-      font-size: 28px;
-      font-weight: 700;
-      color: white;
-      margin: 15px 0;
-    }
-    
-    .featprice span {
-      display: block;
-      font-size: 14px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.9);
-    }
-    
-    .pckfeatlist {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin: 20px 0;
-    }
-    
-    .pckfeatlist li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      color: white;
-    }
-    
-    .pckfeatlist li:last-child {
-      border-bottom: none;
-    }
-    
-    .pckfeatlist li i {
-      margin-right: 10px;
-      color: white;
-    }
-    
-    .order a {
-      display: block;
-      background: white;
-      color: var(--primary);
-      padding: 12px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .order a:hover {
-      background: var(--accent);
-      color: var(--dark);
-    }
     
     /* Resume Container */
     .resume-container {
