@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs In United States of America</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company.css">
+
+</head>
+
+<body>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header start -->
+    <div id="navbar-container"></div> 
+    <!-- Header end -->
+
+   <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title">
+                        Discover <span style="color: #00B43D">Amazing Companies</span> to Work With
+                    </h1>
+                    <p class="hero-subtitle" style="color: #6B7280; font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem;">
+                        Explore top-rated companies across various industries. Find your perfect workplace with our curated company directory.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="listpgWraper">
+        <div class="container">
+            <form action="#" method="get" id="companyFilterForm">
+                <div class="row">
+                    <!-- Mobile Filter Toggle -->
+                    <div class="d-lg-none mobile-filter-toggle mobile-only" id="mobileFilterToggle">
+                        <i class="fas fa-filter me-2"></i> Filter Companies
+                    </div>
+                    
+                    <!-- Sidebar Filters -->
+                    <div class="col-lg-3 desktop-only">
+                        <div class="filter-section" id="filterjobs">
+                            <a href="javascript:void();" class="close-filterjobs mb-3 d-lg-none d-flex align-items-center">
+                                <i class="fas fa-times me-2"></i> Close Filters
+                            </a>
+    
+                            <!-- Search Company -->
+                            <div class="filter-search">
+                                <input type="text" class="form-control" placeholder="Search company name">
+                            </div>
+    
+                            <!-- By Country -->
+                            <div class="location-dropdown ">
+                                <h4 class="filter-title"><i class="fas fa-globe"></i> Country</h4>
+                                <select class="form-select">
+                                    <option value="">Select Country</option>
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="au">Australia</option>
+                                    <option value="de">Germany</option>
+                                    <option value="fr">France</option>
+                                    <option value="jp">Japan</option>
+                                    <option value="in">India</option>
+                                </select>
+                            </div>
+    
+                            <!-- By State -->
+                            <div class="location-dropdown">
+                                <h4 class="filter-title"><i class="fas fa-map"></i> State</h4>
+                                <select class="form-select">
+                                    <option value="">Select State</option>
+                                    <option value="ca">California</option>
+                                    <option value="ny">New York</option>
+                                    <option value="tx">Texas</option>
+                                    <option value="wa">Washington</option>
+                                    <option value="fl">Florida</option>
+                                    <option value="il">Illinois</option>
+                                    <option value="ma">Massachusetts</option>
+                                    <option value="ga">Georgia</option>
+                                </select>
+                            </div>
+    
+                            <!-- By City -->
+                            <div class="location-dropdown">
+                                <h4 class="filter-title"><i class="fas fa-building"></i> City</h4>
+                                <select class="form-select">
+                                    <option value="">Select City</option>
+                                    <option value="sf">San Francisco</option>
+                                    <option value="ny">New York</option>
+                                    <option value="sea">Seattle</option>
+                                    <option value="la">Los Angeles</option>
+                                    <option value="aus">Austin</option>
+                                    <option value="chi">Chicago</option>
+                                    <option value="bos">Boston</option>
+                                    <option value="atl">Atlanta</option>
+                                </select>
+                            </div>
+    
+                            <!-- By Industry -->
+                            <div class="widget">
+                                <h4 class="filter-title"><i class="fas fa-industry"></i> Industry</h4>
+                                <div class="industry-list">
+                                    <ul class="optionlist">
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_tech" value="tech">
+                                            <label for="industry_tech">Technology <span>432</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_finance" value="finance">
+                                            <label for="industry_finance">Finance & Banking <span>187</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_healthcare" value="healthcare">
+                                            <label for="industry_healthcare">Healthcare <span>154</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_retail" value="retail">
+                                            <label for="industry_retail">Retail & E-commerce <span>132</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_education" value="education">
+                                            <label for="industry_education">Education <span>98</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_automotive" value="automotive">
+                                            <label for="industry_automotive">Automotive <span>87</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_fashion" value="fashion">
+                                            <label for="industry_fashion">Fashion & Apparel <span>76</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_manufacturing" value="manufacturing">
+                                            <label for="industry_manufacturing">Manufacturing <span>65</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_energy" value="energy">
+                                            <label for="industry_energy">Energy & Utilities <span>54</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_realestate" value="realestate">
+                                            <label for="industry_realestate">Real Estate <span>43</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_media" value="media">
+                                            <label for="industry_media">Media & Entertainment <span>32</span></label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="industry[]" id="industry_telecom" value="telecom">
+                                            <label for="industry_telecom">Telecommunications <span>21</span></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <!-- Apply Filters Button -->
+                            <div class="searchnt mt-4">
+                                <button type="submit" class="btn"><i class="fas fa-search me-2"></i> Search Companies</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Company Listings -->
+                    <div class="col-lg-9">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="mb-0"><span class="text-black">342</span> Companies Found</h3>
+                            <div class="sortby">
+                                <select class="form-select form-select-sm">
+                                    <option>Most Relevant</option>
+                                    <option>Newest First</option>
+                                    <option>Highest Rated</option>
+                                    <option>Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="topstatinfo mb-4">
+                            <i class="fas fa-info-circle me-2"></i>Showing <strong>1-10</strong> of <strong>342</strong> companies
+                        </div>
+    
+                        <ul class="featuredlist row">
+                            <!-- Company Example -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up">
+                                    <div class="company-logo">TC</div>
+                                    <h5 class="company-name">TechCorp Solutions</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> San Francisco, CA
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">24 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Technology</span>
+                                        <span class="industry-tag">AI/ML</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">50-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <!-- Repeat for other companies -->
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="company-logo">DH</div>
+                                    <h5 class="company-name">DesignHub Studios</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> New York, NY
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">18 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Design</span>
+                                        <span class="industry-tag">Creative</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">50-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+                        
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="company-logo">FB</div>
+                                    <h5 class="company-name">FinanceBridge Inc</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Chicago, IL
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">15 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Finance</span>
+                                        <span class="industry-tag">Banking</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">200-500 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="company-logo">HC</div>
+                                    <h5 class="company-name">HealthCare Plus</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Boston, MA
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">22 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Healthcare</span>
+                                        <span class="industry-tag">Medical</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">100-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="company-logo">ER</div>
+                                    <h5 class="company-name">EcoRetail Group</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Seattle, WA
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">12 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Retail</span>
+                                        <span class="industry-tag">E-commerce</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">100-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="500">
+                                    <div class="company-logo">ES</div>
+                                    <h5 class="company-name">EduSmart Learning</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Austin, TX
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">8 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Education</span>
+                                        <span class="industry-tag">EdTech</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">50-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="600">
+                                    <div class="company-logo">AM</div>
+                                    <h5 class="company-name">AutoMotive Pro</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Detroit, MI
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">14 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Automotive</span>
+                                        <span class="industry-tag">Manufacturing</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">100-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="700">
+                                    <div class="company-logo">FS</div>
+                                    <h5 class="company-name">FashionStyle Co</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Los Angeles, CA
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">9 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Fashion</span>
+                                        <span class="industry-tag">Apparel</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">200-500 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+    
+                            <li class="col-lg-6 col-xl-4 mt-4">
+                                <div class="company-card" data-aos="fade-up" data-aos-delay="800">
+                                    <div class="company-logo">EP</div>
+                                    <h5 class="company-name">EnergyPower Ltd</h5>
+                                    <div class="company-meta">
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Houston, TX
+                                        </div>
+                                        <div class="company-meta-item">
+                                            <i class="fas fa-briefcase"></i> <span class="job-openings">11 Open Jobs</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="industry-tag">Energy</span>
+                                        <span class="industry-tag">Utilities</span>
+                                    </div>
+                                    <div class="company-footer">
+                                        <div class="company-size">100-200 employees</div>
+                                        <a href="company-dashboard.html" class="open-jobs-btn">Open Jobs</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+    
+                        <!-- Pagination Start -->
+                        <div class="pagiWrap">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <div class="showreslt">
+                                        <i class="fas fa-info-circle me-2"></i>Showing <strong>1-10</strong> of <strong>342</strong> companies
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                                    <i class="fas fa-chevron-left me-1"></i> Previous
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">
+                                                    Next <i class="fas fa-chevron-right ms-1"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pagination end -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    <!-- Footer start -->
+    <div id="footer-container"></div>
+    <!-- Footer end -->
+    
+
+    <!-- Scripts -->
+    <script src="assets/js/loadComponent.js"></script>
+    <script>
+        // Load navbar
+        loadHTML('navbar-container', 'components/navbar.html');
+
+        // Load footer and then initialize AOS & other dependent scripts
+        loadHTML('footer-container', 'components/company_footer.html').then(() => {
+            // Initialize AOS after footer is loaded
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Preloader
+            $(window).on('load', function() {
+                $('#preloader').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            });
+            
+            // Back to top button
+            var backToTop = $('.back-to-top');
+            
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    backToTop.addClass('active');
+                } else {
+                    backToTop.removeClass('active');
+                }
+            });
+            
+            backToTop.on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop:0}, '300');
+            });
+            
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+            
+            // Employer carousel
+            $(".employerList").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 4 }
+                }
+            });
+            
+            // Categories carousel
+            $(".categorylisting").owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 3 },
+                    1000: { items: 5 }
+                }
+            });
+            
+            // Testimonials carousel
+            $(".testimonialsList").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+            
+            // Add animation to search bar on focus
+            $('.form-control, .form-select').focus(function() {
+                $(this).parent().addClass('animate__pulse');
+            }).blur(function() {
+                $(this).parent().removeClass('animate__pulse');
+            });
+            
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#ffffff'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ffffff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+            
+            // Counter animation
+            $('.counter').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+            
+            // Add hover effect to cards
+            $('.userloginbox, .catecard, .jobint').hover(function() {
+                $(this).addClass('animate__pulse');
+            }, function() {
+                $(this).removeClass('animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html>
