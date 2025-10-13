@@ -8,137 +8,27 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         :root {
             --primary-green: #00b35f;
             --light-green: #e8f7ef;
             --dark-green: #008a4a;
             --accent-green: #00e676;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-            --background-light: #f9fdfb;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+            /* font-family: 'Poppins', sans-serif; */
+            background-color: #f9fdfb;
+            color: #333;
         }
         
-        /* ===== NAVBAR STYLES ===== */
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--primary-green) !important;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-brand i {
-            margin-right: 8px;
-        }
-        
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            color: var(--text-dark) !important;
-            padding: 8px 16px !important;
-            margin: 0 4px;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-        
-        .navbar-nav .nav-link:hover {
-            background-color: var(--light-green);
-            color: var(--primary-green) !important;
-        }
-        
-        .navbar-nav .nav-link.active {
-            background-color: var(--primary-green);
-            color: white !important;
-        }
-        
-        .navbar-toggler {
-            border: none;
-            padding: 4px 8px;
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 179, 95, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        
-        .btn-nav {
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .btn-login {
-            background-color: transparent;
-            border: 1px solid var(--primary-green);
-            color: var(--primary-green);
-            margin-right: 10px;
-        }
-        
-        .btn-login:hover {
-            background-color: var(--light-green);
-        }
-        
-        .btn-post {
-            background-color: var(--primary-green);
-            color: white;
-        }
-        
-        .btn-post:hover {
-            background-color: var(--dark-green);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 179, 95, 0.3);
-        }
-        
-        @media (max-width: 991px) {
-            .navbar-nav {
-                padding: 10px 0;
-            }
-            
-            .navbar-nav .nav-link {
-                margin: 4px 0;
-            }
-            
-            .navbar-buttons {
-                margin-top: 10px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .btn-nav {
-                text-align: center;
-            }
-        }
-        
-        /* ===== HERO SECTION ===== */
         .job-posting-hero {
-            background: linear-gradient(135deg, #FFFFFF 0%, #f0f9f4 100%);
-            color: var(--text-dark);
-            padding: 100px 0 80px;
+            background: #FFFFFF;
+            color: white;
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
@@ -150,117 +40,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2300b35f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 1;
+            opacity: 0.3;
         }
         
-        .hero-title {
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--primary-green);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--text-light);
-        }
-        
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .hero-feature i {
-            color: var(--primary-green);
-            margin-right: 10px;
-        }
-        
-        .hero-icon {
-            font-size: 150px;
-            color: var(--primary-green);
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            .job-posting-hero {
-                padding: 80px 0 60px;
-                text-align: center;
-            }
-            
-            .hero-icon {
-                font-size: 100px;
-                margin-top: 30px;
-            }
-        }
-        
-        /* ===== STEPS INDICATOR ===== */
-        .steps-indicator {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .step {
-            display: flex;
-            align-items: center;
-            margin: 0 10px;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #e0e0e0;
-            color: #999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            margin-right: 10px;
-            transition: all 0.3s;
-        }
-        
-        .step.active .step-number {
-            background-color: var(--primary-green);
-            color: white;
-        }
-        
-        .step-text {
-            font-weight: 500;
-            color: #999;
-            white-space: nowrap;
-        }
-        
-        .step.active .step-text {
-            color: var(--primary-green);
-        }
-        
-        .step-connector {
-            width: 40px;
-            height: 2px;
-            background-color: #e0e0e0;
-            margin: 0 10px;
-        }
-        
-        @media (max-width: 576px) {
-            .step {
-                margin: 5px;
-            }
-            
-            .step-text {
-                font-size: 0.9rem;
-            }
-            
-            .step-connector {
-                width: 20px;
-            }
-        }
-        
-        /* ===== JOB FORM ===== */
         .job-form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 179, 95, 0.1);
+            padding: 40px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+        
+         /* ===== JOB FORM ===== */
+         .job-form-container {
             background: white;
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 179, 95, 0.1);
@@ -307,7 +101,7 @@
         }
         
         .section-title {
-            color: var(--primary-green);
+            color:#00B43D;
             font-weight: 600;
             margin-bottom: 25px;
             position: relative;
@@ -322,7 +116,7 @@
             transform: translateY(-50%);
             width: 8px;
             height: 8px;
-            background-color: var(--primary-green);
+            background-color:#00B43D;
             border-radius: 50%;
         }
         
@@ -340,13 +134,13 @@
         }
         
         .form-control:focus, .form-select:focus {
-            border-color: var(--primary-green);
+            border-color: #00B43D;
             box-shadow: 0 0 0 0.25rem rgba(0, 179, 95, 0.25);
         }
         
         .btn-primary {
-            background-color: var(--primary-green);
-            border-color: var(--primary-green);
+            background-color: #00B43D;
+            border-color: #00B43D;
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
@@ -382,18 +176,58 @@
             }
         }
         
-        /* ===== PREVIEW CARD ===== */
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 179, 95, 0.15);
+            border-color: #00B43D;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #00B43D;
+            font-size: 28px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: #00B43D;
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            color: #666;
+            font-size: 14px;
+        }
+        
         .preview-card {
             background: white;
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid var(--primary-green);
+            border-left: 5px solid #00B43D;
         }
         
         .preview-title {
             font-weight: 600;
-            color: var(--primary-green);
+            color: #00B43D;
             margin-bottom: 15px;
         }
         
@@ -432,177 +266,53 @@
             display: inline-block;
         }
         
-        /* ===== FEATURE CARDS ===== */
-        .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            height: 100%;
-            border: 1px solid #f0f0f0;
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 179, 95, 0.15);
-            border-color: var(--light-green);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--light-green);
-            border-radius: 50%;
+        .step {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary-green);
-            font-size: 28px;
+            margin: 0 15px;
         }
         
-        .feature-title {
-            font-weight: 600;
-            color: var(--primary-green);
-            margin-bottom: 15px;
-        }
-        
-        .feature-description {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        /* ===== FOOTER STYLES ===== */
-        .footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-        
-        .footer-brand {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-green);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .footer-description {
-            color: #aaa;
-            margin-bottom: 25px;
-            max-width: 300px;
-        }
-        
-        .footer-title {
-            color: white;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-green);
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-green);
-            padding-left: 5px;
-        }
-        
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-contact li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .footer-contact i {
-            color: var(--primary-green);
-            margin-right: 10px;
-            margin-top: 4px;
-        }
-        
-        .footer-contact span {
-            color: #aaa;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .step-number {
             width: 40px;
             height: 40px;
-            background-color: #333;
             border-radius: 50%;
-            color: white;
+            background-color: #e0e0e0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 10px;
             transition: all 0.3s;
         }
         
-        .social-link:hover {
+        .step.active .step-number {
             background-color: var(--primary-green);
-            transform: translateY(-3px);
+            color: white;
         }
         
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 30px;
-            margin-top: 50px;
-            text-align: center;
-            color: #aaa;
+        .step-text {
+            font-weight: 500;
+            color: #999;
         }
         
-        @media (max-width: 768px) {
-            .footer {
-                padding: 40px 0 20px;
-                text-align: center;
-            }
-            
-            .footer-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
+        .step.active .step-text {
+            color: var(--primary-green);
         }
         
-        /* ===== ANIMATIONS ===== */
+        .step-connector {
+            width: 60px;
+            height: 2px;
+            background-color: #e0e0e0;
+            margin: 0 10px;
+        }
+        
         .animate-fade-in {
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -612,76 +322,86 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .sticky-top {
-            position: sticky;
-            top: 100px;
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            bottom: 10%;
+            right: 10%;
+        }
+        
+        .form-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .form-tab {
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #777;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .form-tab.active {
+            color: var(--primary-green);
+            border-bottom: 3px solid var(--primary-green);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
         }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-leaf"></i> Green Careers
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Find Jobs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Companies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Post a Job</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="navbar-buttons">
-                    <a href="#" class="btn btn-nav btn-login">Sign In</a>
-                    <a href="#" class="btn btn-nav btn-post">For Job Seekers</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
 
     <!-- Main Content -->
     <section class="job-posting-hero">
-        <div class="container">
+        <!-- <div class="floating-shape shape-1"></div> -->
+        <!-- <div class="floating-shape shape-2"></div> -->
+        <div class="container" style="color: #00B43D;">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1 class="hero-title animate-fade-in">Find Your Perfect Candidate</h1>
-                    <p class="hero-subtitle animate-fade-in" style="animation-delay: 0.2s;">Post your job opening and connect with top talent in minutes.</p>
-                    <div class="animate-fade-in" style="animation-delay: 0.4s;">
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Reach thousands of qualified candidates</span>
+                    <h1 class="display-4 fw-bold mb-3 animate-fade-in">Find Your Perfect Candidate</h1>
+                    <p class="lead mb-4 animate-fade-in" style="animation-delay: 0.2s; color: #1A1A1A;">Post your job opening and connect with top talent in minutes.</p>
+                    <div class="d-flex flex-wrap animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Reach thousands of qualified candidates
                         </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Easy application management</span>
+                        <div class="me-4 mb-2">
+                            <i class="fas fa-check-circle me-2"></i> Easy application management
                         </div>
-                        <div class="hero-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>30-day visibility</span>
+                        <div class="mb-2">
+                            <i class="fas fa-check-circle me-2"></i> 30-day visibility
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="animate-fade-in" style="animation-delay: 0.6s;">
-                        <i class="fas fa-briefcase hero-icon"></i>
+                        <i class="fas fa-briefcase" style="font-size: 150px; opacity: 0.8;"></i>
                     </div>
                 </div>
             </div>
@@ -691,20 +411,11 @@
     <section class="py-5">
         <div class="container">
             <div class="steps-indicator">
-                <div class="step active">
-                    <div class="step-number">1</div>
-                    <div class="step-text">Job Details</div>
-                </div>
-                <div class="step-connector"></div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-text">Company Info</div>
-                </div>
-                <div class="step-connector"></div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-text">Review & Post</div>
-                </div>
+               
+                
+               
+               
+               
             </div>
             
             <div class="row">
@@ -840,7 +551,7 @@
                 </div>
                 
                 <div class="col-lg-4 mt-5 mt-lg-0">
-                    <div class="sticky-top">
+                    <div class="sticky-top" style="top: 100px;">
                         <div class="preview-card mb-4">
                             <h4 class="preview-title">Job Preview</h4>
                             <div class="preview-item">
@@ -897,74 +608,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <a href="#" class="footer-brand">
-                        <i class="fas fa-leaf"></i> Green Careers
-                    </a>
-                    <p class="footer-description">
-                        Connecting talented professionals with sustainable companies that care about our planet and future.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="footer-title">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Find Jobs</a></li>
-                        <li><a href="#">Post a Job</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5 class="footer-title">Resources</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Career Advice</a></li>
-                        <li><a href="#">Resume Tips</a></li>
-                        <li><a href="#">Interview Guide</a></li>
-                        <li><a href="#">Company Reviews</a></li>
-                        <li><a href="#">Salary Guide</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="footer-title">Contact Us</h5>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Green Street, Eco City, EC 12345</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@greencareers.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Green Careers. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loadComponent.js"></script>
+    <script src="assets/js/navbar.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init({ duration: 1000, once: true });
+        // Load Navbar & Footer
+        loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+        loadHTML('footer-container', 'components/footer.html').then(() => {
+            AOS.init({ duration: 1000, once: true });
+        });
         
         // Tab functionality
         document.querySelectorAll('.form-tab').forEach(tab => {
@@ -1087,6 +744,13 @@
             e.preventDefault();
             alert('Job posted successfully! Your listing is now live and visible to candidates.');
             // In a real application, you would submit the form data to a server here
+        });
+        
+        document.querySelectorAll('.widget-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const list = title.nextElementSibling;
+                list.classList.toggle('open');
+            });
         });
     </script>
 </body>

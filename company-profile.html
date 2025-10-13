@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile | Workafy</title>
+
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Layout container for sidebar and main content */
+    /* #sidebar-container .sidebar {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      height: auto !important;
+      width: 100%;
+      z-index: 1 !important;
+      margin-top: 10px;
+      border: 2px solid #00b35f;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* Layout for sidebar + content */
+    .dashboard-layout {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
+      margin: 30px auto;
+      padding: 0 40px;
+      max-width: 1800px;
+    }
+
+    /* Sidebar width */
+    /* #sidebar-container {
+      flex: 0 0 280px;
+    } */
+
+    /* Content box styling */
+    .main-content {
+      flex: 1;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Profile Header */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .profile-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #00B43D;
+      box-shadow: 0 4px 12px rgba(0, 180, 61, 0.3);
+      margin-right: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .profile-avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 180, 61, 0.4);
+    }
+    
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .profile-info h1 {
+      color: #333;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    
+    .profile-info p {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .profile-status {
+      display: inline-block;
+      background: rgba(0, 180, 61, 0.1);
+      color: #00B43D;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    /* Profile Stats */
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .profile-stat-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid #00B43D;
+      text-align: center;
+    }
+    
+    .profile-stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    
+    .stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      color: #666;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    /* Profile Form */
+    .profile-form-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+    
+    .form-section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+      position: relative;
+    }
+    
+    .form-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background: #00B43D;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-label {
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .form-control {
+      border-radius: 8px;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: #00B43D;
+      box-shadow: 0 0 0 0.2rem rgba(0, 180, 61, 0.25);
+    }
+    
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+    
+    .form-col {
+      padding-right: 10px;
+      padding-left: 10px;
+      flex: 1 0 0%;
+    }
+    
+    /* Logo Upload */
+    .logo-upload-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo-preview {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 20px;
+      border: 2px dashed #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-preview:hover {
+      border-color: #00B43D;
+    }
+    
+    .logo-preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .logo-upload-btn {
+      background: #00B43D;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-upload-btn:hover {
+      background: #00a336;
+      transform: translateY(-2px);
+    }
+    
+    /* Submit Button */
+    .submit-btn {
+      background: #00B43D;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 30px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .submit-btn:hover {
+      background: #00a336;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 180, 61, 0.4);
+    }
+    
+    .submit-btn i {
+      margin-left: 8px;
+    }
+    
+    /* Social Media Links */
+    .social-links-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: #00B43D;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .dashboard-layout {
+        flex-direction: column;
+        padding: 0 20px;
+      }
+      
+      /* #sidebar-container {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
+      } */
+      
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .profile-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .form-col {
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+      }
+      
+      .logo-upload-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .logo-preview {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <main class="dashboard-layout">
+    <!-- <div id="sidebar-container"></div> -->
+    <div class="main-content">
+      <!-- Profile Header -->
+      <div class="profile-header" data-aos="fade-up">
+        <div class="profile-avatar">
+          <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="AutoSoft Dynamics">
+        </div>
+        <div class="profile-info">
+          <h1>AutoSoft Dynamics</h1>
+          <p>Information Technology • Private • Established in 2002</p>
+          <span class="profile-status">Profile Complete: 85%</span>
+        </div>
+      </div>
+      
+      <!-- Profile Stats -->
+      <div class="profile-stats" data-aos="fade-up" data-aos-delay="100">
+        <div class="profile-stat-card">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Active Jobs</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="stat-value">23</div>
+          <div class="stat-label">Total Applications</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="stat-value">11-50</div>
+          <div class="stat-label">Employees</div>
+        </div>
+        <div class="profile-stat-card">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Office Locations</div>
+        </div>
+      </div>
+      
+      <!-- Profile Form -->
+      <div class="profile-form-container" data-aos="fade-up" data-aos-delay="200">
+        <form method="POST" action="https://portal.workafy.com/update-company-profile" accept-charset="UTF-8" class="form" enctype="multipart/form-data">
+          <input name="_method" type="hidden" value="PUT">
+          <input name="_token" type="hidden" value="ux7HNbP8fKyST0aH5BaLciXpF55B4LOm8ELYarhN">
+          
+          <!-- Account Information -->
+          <h3 class="form-section-title">Account Information</h3>
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input class="form-control" id="email" placeholder="Company Email" name="email" type="text" value="b2btechnosoft1@gmail.com">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Password</label>
+                <input class="form-control" id="password" placeholder="Password" name="password" type="password" value="">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Company Information -->
+          <h3 class="form-section-title">Company Information</h3>
+          
+          <!-- Logo Upload -->
+          <div class="logo-upload-container">
+            <div class="logo-preview">
+              <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+            </div>
+            <div>
+              <label class="form-label">Company Logo</label>
+              <div class="form-group">
+                <input type="file" name="logo" id="logo" style="display: none;">
+                <button type="button" class="logo-upload-btn" onclick="document.getElementById('logo').click()">
+                  <i class="fas fa-upload"></i> Upload Logo
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Company Name <span class="text-danger">*</span></label>
+                <input class="form-control" id="name" placeholder="Company Name" name="name" type="text" value="AutoSoft Dynamics">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Industry <span class="text-danger">*</span></label>
+                <select class="form-control" id="industry_id" name="industry_id">
+                  <option value="">Select Industry</option>
+                  <option value="1" selected="selected">Information Technology</option>
+                  <option value="8">Accounting/Taxation</option>
+                  <option value="7">Advertising/PR</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Ownership <span class="text-danger">*</span></label>
+                <select class="form-control" id="ownership_type_id" name="ownership_type_id">
+                  <option value="">Select Ownership type</option>
+                  <option value="1">Sole Proprietorship</option>
+                  <option value="2">Public</option>
+                  <option value="3" selected="selected">Private</option>
+                  <option value="4">Government</option>
+                  <option value="5">NGO</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Website URL <span class="text-danger">*</span></label>
+                <input class="form-control" id="website" placeholder="Website" name="website" type="text" value="http://www.comapnydomain.com">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Description <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="description" placeholder="Company details" name="description" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum condimentum mauris, non posuere urna consectetur quis. Suspendisse semper eu eros eget convallis. Etiam mattis blandit nulla, non venenatis risus varius vel. Morbi fringilla dignissim elit id blandit. Pellentesque vel luctus felis. Vestibulum eros nibh, consequat ut felis in, vehicula lobortis quam. Duis diam mauris, convallis in risus in, gravida hendrerit lacus. Donec euismod accumsan sem et aliquam. Duis a velit eget urna mattis ultricies. Aliquam nibh ipsum, aliquet nec sollicitudin non, fermentum nec diam. Vestibulum ac urna vehicula, dapibus dui quis, aliquet neque. Sed ac tristique purus.</textarea>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">No of Offices <span class="text-danger">*</span></label>
+                <select class="form-control" id="no_of_offices" name="no_of_offices">
+                  <option value="">Select num. of offices</option>
+                  <option value="7" selected="selected">7</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">No of Employees <span class="text-danger">*</span></label>
+                <select class="form-control" id="no_of_employees" name="no_of_employees">
+                  <option value="">Select num. of employees</option>
+                  <option value="11-50" selected="selected">11-50</option>
+                  <option value="1-10">1-10</option>
+                  <option value="51-100">51-100</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Established In <span class="text-danger">*</span></label>
+                <select class="form-control" id="established_in" name="established_in">
+                  <option value="">Select Established In</option>
+                  <option value="2002" selected="selected">2002</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Information -->
+          <h3 class="form-section-title">Contact Information</h3>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Phone <span class="text-danger">*</span></label>
+                <input class="form-control" id="phone" placeholder="Phone" name="phone" type="text" value="+133333333333">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Country <span class="text-danger">*</span></label>
+                <select class="form-control" id="country_id" name="country_id">
+                  <option value="">Select Country</option>
+                  <option value="231" selected="selected">United States of America</option>
+                  <option value="1">Afghanistan</option>
+                  <option value="2">Albania</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">State <span class="text-danger">*</span></label>
+                <select id="state_id" class="form-control" name="state_id">
+                  <option value="">Select State</option>
+                  <option value="3931" selected="selected">Georgia</option>
+                  <option value="3919">Alabama</option>
+                  <option value="3920">Alaska</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">City <span class="text-danger">*</span></label>
+                <select id="city_id" class="form-control" name="city_id">
+                  <option value="">Select City</option>
+                  <option value="43999" selected="selected">Kennesaw</option>
+                  <option value="43921">Acworth</option>
+                  <option value="43922">Adel</option>
+                  <!-- Other options -->
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Company Address <span class="text-danger">*</span></label>
+            <input class="form-control" id="map" placeholder="Company Address" name="map" type="text" value="&lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8310.686427880151!2d-74.00585671025667!3d40.7098868133123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1536851502771&quot;  frameborder=&quot;0&quot; style=&quot;border:0&quot; allowfullscreen&gt;&lt;/iframe&gt;">
+          </div>
+          
+          <!-- Social Media -->
+          <h3 class="form-section-title">Social Media</h3>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Facebook</label>
+                <input class="form-control" id="facebook" placeholder="Facebook" name="facebook" type="text" value="https://www.facebook.com/">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Twitter</label>
+                <input class="form-control" id="twitter" placeholder="Twitter" name="twitter" type="text" value="https://twitter.com/">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">LinkedIn</label>
+                <input class="form-control" id="linkedin" placeholder="Linkedin" name="linkedin" type="text" value="https://www.linkedin.com/">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Pinterest</label>
+                <input class="form-control" id="pinterest" placeholder="Pinterest" name="pinterest" type="text" value="https://www.pinterest.com/">
+              </div>
+            </div>
+          </div>
+          
+          <!-- HR Information -->
+          <h3 class="form-section-title">HR Person Information</h3>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Name <span class="text-danger">*</span></label>
+                <input class="form-control" id="contact_name" placeholder="e.g. John Doe" name="contact_name" type="text">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Email <span class="text-danger">*</span></label>
+                <input class="form-control" id="contact_email" placeholder="Contact email" name="contact_email" type="email">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Designation</label>
+                <input class="form-control" id="ceo" placeholder="e.g. CEO" name="ceo" type="text" value="AutoSoft Dynamics">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-group">
+                <label class="form-label">Company Registration Number</label>
+                <input class="form-control" id="registration_number" placeholder="Registration Number" name="registration_number" type="text">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="form-group text-end mt-4">
+            <button type="submit" class="submit-btn">
+              Update Profile and Save <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    // loadHTML('sidebar-container', 'components/company_sidebar.html');
+    loadHTML('footer-container', 'components/footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+
+    // Initialize AOS animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Search Packages | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --primary-color: #00B43D;
+            --primary-dark: #008a2e;
+            --primary-light: #33c366;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s ease;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            /* font-family: 'Poppins', sans-serif; */
+            background-color: #f5f7fa;
+            color: #333;
+            /* line-height: 1.6; */
+            overflow-x: hidden;
+        }
+        
+       
+        
+        /* Main Content Layout */
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 160px);
+        }
+        
+        /* Sidebar Styling */
+        .sidebar {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            transition: var(--transition);
+        }
+        
+        .sidebar-header {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .action-btn.post-job {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .action-btn.post-job:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Dashboard Menu */
+        .dashboard-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dashboard-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .dashboard-menu a:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: translateX(5px);
+        }
+        
+        .dashboard-menu a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        .menu-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin: 15px 0;
+        }
+        
+        .logout-link {
+            color: #dc3545;
+        }
+        
+        .logout-link:hover {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        
+        /* CV Search Content Styling */
+        .cv-header {
+            margin-bottom: 30px;
+        }
+        
+        .cv-header h1 {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .cv-header p {
+            color: var(--secondary-color);
+        }
+        
+        /* Search Section */
+        .search-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .search-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .search-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            position: relative;
+        }
+        
+        .search-input i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+        }
+        
+        .search-input .form-control {
+            padding-left: 45px;
+        }
+        
+        .btn-search {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-search:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 180, 61, 0.3);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 30px;
+            font-size: 12px;
+            font-weight: 600;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        .package-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .professional .package-header {
+            background: linear-gradient(135deg, #6c757d, #495057);
+        }
+        
+        .enterprise .package-header {
+            background: linear-gradient(135deg, #343a40, #212529);
+        }
+        
+        .package-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .package-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .package-price {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .currency {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1;
+        }
+        
+        .period {
+            font-size: 16px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .package-body {
+            padding: 25px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+        
+        .feature-list i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        .feature-list .fa-check {
+            color: var(--primary-color);
+        }
+        
+        .feature-list .fa-times {
+            color: #dc3545;
+        }
+        
+        .feature-list .fa-star {
+            color: #ffc107;
+        }
+        
+        .btn-package {
+            display: block;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-package:hover {
+            background-color: var(--primary-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 180, 61, 0.3);
+        }
+        
+        .professional .btn-package {
+            background-color: #6c757d;
+        }
+        
+        .professional .btn-package:hover {
+            background-color: #5a6268;
+        }
+        
+        .enterprise .btn-package {
+            background-color: #343a40;
+        }
+        
+        .enterprise .btn-package:hover {
+            background-color: #23272b;
+        }
+        
+        /* Features Comparison */
+        .comparison-section {
+            margin-bottom: 40px;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 15px;
+        }
+        
+        .table td {
+            padding: 15px;
+            vertical-align: middle;
+            border-color: #eee;
+        }
+        
+        .feature-name {
+            font-weight: 500;
+        }
+        
+        .feature-check {
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        
+        .feature-cross {
+            color: #dc3545;
+            font-size: 18px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(0, 180, 61, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--secondary-color);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    
+        .company-info {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 2px solid var(--primary-green);
+}
+
+.company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.company-details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000; /* black text */
+}
+
+.company-details p {
+    font-size: 0.8rem;
+    color: #555555; /* dark gray for subtitle */
+}
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .sidebar {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar-actions {
+                flex-direction: row;
+            }
+            
+            .action-btn {
+                flex: 1;
+                justify-content: center;
+            }
+            
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sidebar-actions {
+                flex-direction: column;
+            }
+            
+            .search-section, .package-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="main-content" style="margin-top: 10px;">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                                </div>
+                                <div class="company-details">
+                                    <h3>AutoSoft Dynamics</h3>
+                                    <p>Premium Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+                        
+                        <ul class="dashboard-menu">
+                            <li>
+                                <a href="/company_dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_editprofile.html">
+                                    <i class="fas fa-user-edit"></i>
+                                    Edit Account Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_public_profile.html">
+                                    <i class="fas fa-building"></i>
+                                    Company Public Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_postjob.html">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Post a Job
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_managejobs.html">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_cvsearch.html" class="active">
+                                    <i class="fas fa-search"></i>
+                                    CV Search Package
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="/company_paymenthistory.html">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    Payment History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_unlockeduser.html">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Unlocked Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_message.html">
+                                    <i class="fas fa-envelope"></i>
+                                    Company Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_follower.html">
+                                    <i class="fas fa-users"></i>
+                                    Company Followers
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="#" class="logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CV Search Content -->
+                <div class="col-lg-8">
+                    <!-- CV Search Header -->
+                    <div class="cv-header">
+                      <h1>CV Search Packages</h1>
+                      <p>Find the perfect candidates with our advanced CV search capabilities</p>
+                    </div>
+                    
+                    <!-- Search Section -->
+                    <div class="search-section" data-aos="fade-up">
+                        <h3 class="search-title">Search CV Database</h3>
+                        <div class="search-form">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Skills (e.g. JavaScript, Python)">
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-briefcase"></i>
+                                <input type="text" class="form-control" placeholder="Job Title (e.g. Developer, Manager)">
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-chart-line"></i>
+                                <select class="form-control">
+                                    <option value="">Experience Level</option>
+                                    <option value="0-2">0-2 Years</option>
+                                    <option value="2-5">2-5 Years</option>
+                                    <option value="5-10">5-10 Years</option>
+                                    <option value="10+">10+ Years</option>
+                                </select>
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" class="form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <button class="btn-search">
+                            <i class="fas fa-search"></i> Search CVs
+                        </button>
+                    </div>
+                    
+                    <!-- Packages Section -->
+                    <div class="packages-section">
+                        <h2 class="section-title">Choose Your CV Search Package</h2>
+                        <div class="packages-container">
+                            <!-- Basic Package -->
+                            <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="package-header">
+                                    <h3 class="package-name">Basic</h3>
+                                    <p class="package-description">Perfect for small businesses and startups</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">29</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> 50 CV Views per Month</li>
+                                        <li><i class="fas fa-check"></i> Basic Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Save up to 20 CVs</li>
+                                        <li><i class="fas fa-times"></i> Advanced Candidate Matching</li>
+                                        <li><i class="fas fa-times"></i> Priority Support</li>
+                                        <li><i class="fas fa-times"></i> Candidate Contact Details</li>
+                                        <li><i class="fas fa-times"></i> Bulk CV Downloads</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Professional Package -->
+                            <div class="package-card professional" data-aos="fade-up" data-aos-delay="200">
+                                <div class="popular-badge">Most Popular</div>
+                                <div class="package-header">
+                                    <h3 class="package-name">Professional</h3>
+                                    <p class="package-description">Ideal for growing companies</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">79</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> 200 CV Views per Month</li>
+                                        <li><i class="fas fa-check"></i> Advanced Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Save up to 100 CVs</li>
+                                        <li><i class="fas fa-check"></i> Advanced Candidate Matching</li>
+                                        <li><i class="fas fa-check"></i> Priority Email Support</li>
+                                        <li><i class="fas fa-check"></i> Candidate Contact Details</li>
+                                        <li><i class="fas fa-times"></i> Bulk CV Downloads</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Enterprise Package -->
+                            <div class="package-card enterprise" data-aos="fade-up" data-aos-delay="300">
+                                <div class="package-header">
+                                    <h3 class="package-name">Enterprise</h3>
+                                    <p class="package-description">For large organizations with high hiring needs</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">149</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Unlimited CV Views</li>
+                                        <li><i class="fas fa-check"></i> All Advanced Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Unlimited CV Saving</li>
+                                        <li><i class="fas fa-check"></i> AI-Powered Candidate Matching</li>
+                                        <li><i class="fas fa-check"></i> 24/7 Phone & Email Support</li>
+                                        <li><i class="fas fa-check"></i> Full Candidate Contact Details</li>
+                                        <li><i class="fas fa-check"></i> Bulk CV Downloads (up to 100 at once)</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Features Comparison Section -->
+                    <div class="comparison-section" data-aos="fade-up">
+                        <h2 class="section-title">Package Comparison</h2>
+                        <div class="comparison-table">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Features</th>
+                                        <th>Basic</th>
+                                        <th>Professional</th>
+                                        <th>Enterprise</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="feature-name">CV Views per Month</td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-infinity feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Advanced Search Filters</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Save CVs</td>
+                                        <td>Up to 20</td>
+                                        <td>Up to 100</td>
+                                        <td>Unlimited</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">AI Candidate Matching</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-star feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Candidate Contact Details</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Bulk CV Download</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Support</td>
+                                        <td>Email (48h)</td>
+                                        <td>Priority Email (24h)</td>
+                                        <td>24/7 Phone & Email</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="faq-section" data-aos="fade-up">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How does the CV search work?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Our CV search allows you to find candidates based on skills, experience, education, location, and more. You can use advanced filters to narrow down your search to find the perfect candidates for your job openings.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can I cancel my subscription anytime?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period, and you won't be charged again.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What payment methods do you accept?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Is there a free trial available?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We offer a 7-day free trial for our Professional and Enterprise plans. During the trial, you'll have full access to all features with some usage limits.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+     <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    loadHTML('footer-container', 'components/company_footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+    <script>
+       
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
