@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-2">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="https://portal.workafy.com/sitesetting_images/thumb/workafy-1748826768-353.png"
+           alt="Workafy Logo" height="42">
+    </a>
+
+    <!-- Toggler for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links (Right Side) -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+
+        <!-- Navigation Links -->
+        <li class="nav-item"><a class="nav-link" href="/company_home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/search_talent.html">Search Talent</a></li>
+        <li class="nav-item"><a class="nav-link" href="/company.html">Companies</a></li>
+        <li class="nav-item"><a class="nav-link" href="/company_blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/company_contact.html">Contact</a></li>
+
+        <!-- Post Job Button -->
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-success px-3 fw-semibold" href="/company_postjob.html" style="background:#00B43D; border:none;">
+            Post a Job
+          </a>
+        </li>
+
+        <!-- User Profile Dropdown -->
+        <li class="nav-item dropdown ms-lg-3">
+          <!-- <a class="dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" 
+             data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;"> -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                 alt="User" class="rounded-circle me-1" data-bs-toggle="dropdown"
+                 width="38" height="38" style="object-fit: cover">
+          <!-- </a> -->
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3"
+              aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/company_dashboard.html">
+                <i class="fas fa-tachometer-alt me-2 text-success"></i> Dashboard
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/company-profile.html">
+                <i class="fas fa-building me-2 text-success"></i> Company Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/company_postjob.html">
+                <i class="fas fa-briefcase me-2 text-success"></i> Post Job
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="/company_message.html">
+                <i class="fas fa-envelope me-2 text-success"></i> Messages
+              </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center text-danger" href="/logout.html">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Language Switcher Dropdown -->
+        <li class="nav-item dropdown ms-lg-2">
+          <a class="dropdown-toggle d-flex align-items-center" href="#" id="languageDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false"
+             style="text-decoration:none; color:#0d0e0d;">
+            <i class="fas fa-globe me-1"  style="font-size: 18px;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm rounded-3"
+              aria-labelledby="languageDropdown">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">हिन्दी (Hindi)</a></li>
+            <li><a class="dropdown-item" href="#">Español (Spanish)</a></li>
+            <li><a class="dropdown-item" href="#">Français (French)</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== ACTIVE LINK SCRIPT ===== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "") currentPage = "index.html";
+
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+        link.style.color = "#00B43D";
+        link.style.fontWeight = "600";
+      }
+    });
+  });
+</script>
+
+<!-- Additional Styling -->
+<style>
+  .navbar-nav .nav-link {
+    color: #0d0e0d;
+    font-weight: 500;
+    margin-right: 12px;
+    transition: color 0.2s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #00B43D;
+  }
+
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+
+  .navbar .btn {
+    border-radius: 10px;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-nav .nav-link {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .navbar .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

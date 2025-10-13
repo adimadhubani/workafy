@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Search Packages | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company_cvsearch.css">
+   
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="main-content" style="margin-top: 10px;">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                                </div>
+                                <div class="company-details">
+                                    <h3>AutoSoft Dynamics</h3>
+                                    <p>Premium Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+                        
+                        <ul class="dashboard-menu">
+                            <li>
+                                <a href="/company_dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_editprofile.html">
+                                    <i class="fas fa-user-edit"></i>
+                                    Edit Account Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_public_profile.html">
+                                    <i class="fas fa-building"></i>
+                                    Company Public Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_postjob.html">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Post a Job
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_managejobs.html">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_cvsearch.html" class="active">
+                                    <i class="fas fa-search"></i>
+                                    CV Search Package
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="/company_paymenthistory.html">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    Payment History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_unlockeduser.html">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Unlocked Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_message.html">
+                                    <i class="fas fa-envelope"></i>
+                                    Company Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_follower.html">
+                                    <i class="fas fa-users"></i>
+                                    Company Followers
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="#" class="logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CV Search Content -->
+                <div class="col-lg-8">
+                    <!-- CV Search Header -->
+                    <div class="cv-header">
+                      <h1>CV Search Packages</h1>
+                      <p>Find the perfect candidates with our advanced CV search capabilities</p>
+                    </div>
+                    
+                    <!-- Search Section -->
+                    <div class="search-section" data-aos="fade-up">
+                        <h3 class="search-title">Search CV Database</h3>
+                        <div class="search-form">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" placeholder="Skills (e.g. JavaScript, Python)">
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-briefcase"></i>
+                                <input type="text" class="form-control" placeholder="Job Title (e.g. Developer, Manager)">
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-chart-line"></i>
+                                <select class="form-control">
+                                    <option value="">Experience Level</option>
+                                    <option value="0-2">0-2 Years</option>
+                                    <option value="2-5">2-5 Years</option>
+                                    <option value="5-10">5-10 Years</option>
+                                    <option value="10+">10+ Years</option>
+                                </select>
+                            </div>
+                            <div class="search-input">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" class="form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <button class="btn-search">
+                            <i class="fas fa-search"></i> Search CVs
+                        </button>
+                    </div>
+                    
+                    <!-- Packages Section -->
+                    <div class="packages-section">
+                        <h2 class="section-title">Choose Your CV Search Package</h2>
+                        <div class="packages-container">
+                            <!-- Basic Package -->
+                            <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="package-header">
+                                    <h3 class="package-name">Basic</h3>
+                                    <p class="package-description">Perfect for small businesses and startups</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">29</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> 50 CV Views per Month</li>
+                                        <li><i class="fas fa-check"></i> Basic Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Save up to 20 CVs</li>
+                                        <li><i class="fas fa-times"></i> Advanced Candidate Matching</li>
+                                        <li><i class="fas fa-times"></i> Priority Support</li>
+                                        <li><i class="fas fa-times"></i> Candidate Contact Details</li>
+                                        <li><i class="fas fa-times"></i> Bulk CV Downloads</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Professional Package -->
+                            <div class="package-card professional" data-aos="fade-up" data-aos-delay="200">
+                                <div class="popular-badge">Most Popular</div>
+                                <div class="package-header">
+                                    <h3 class="package-name">Professional</h3>
+                                    <p class="package-description">Ideal for growing companies</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">79</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> 200 CV Views per Month</li>
+                                        <li><i class="fas fa-check"></i> Advanced Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Save up to 100 CVs</li>
+                                        <li><i class="fas fa-check"></i> Advanced Candidate Matching</li>
+                                        <li><i class="fas fa-check"></i> Priority Email Support</li>
+                                        <li><i class="fas fa-check"></i> Candidate Contact Details</li>
+                                        <li><i class="fas fa-times"></i> Bulk CV Downloads</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Enterprise Package -->
+                            <div class="package-card enterprise" data-aos="fade-up" data-aos-delay="300">
+                                <div class="package-header">
+                                    <h3 class="package-name">Enterprise</h3>
+                                    <p class="package-description">For large organizations with high hiring needs</p>
+                                    <div class="package-price">
+                                        <span class="currency">$</span>
+                                        <span class="price">149</span>
+                                        <span class="period">/month</span>
+                                    </div>
+                                </div>
+                                <div class="package-body">
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Unlimited CV Views</li>
+                                        <li><i class="fas fa-check"></i> All Advanced Search Filters</li>
+                                        <li><i class="fas fa-check"></i> Unlimited CV Saving</li>
+                                        <li><i class="fas fa-check"></i> AI-Powered Candidate Matching</li>
+                                        <li><i class="fas fa-check"></i> 24/7 Phone & Email Support</li>
+                                        <li><i class="fas fa-check"></i> Full Candidate Contact Details</li>
+                                        <li><i class="fas fa-check"></i> Bulk CV Downloads (up to 100 at once)</li>
+                                    </ul>
+                                    <a href="#" class="btn-package">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Features Comparison Section -->
+                    <div class="comparison-section" data-aos="fade-up">
+                        <h2 class="section-title">Package Comparison</h2>
+                        <div class="comparison-table">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Features</th>
+                                        <th>Basic</th>
+                                        <th>Professional</th>
+                                        <th>Enterprise</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="feature-name">CV Views per Month</td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-infinity feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Advanced Search Filters</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Save CVs</td>
+                                        <td>Up to 20</td>
+                                        <td>Up to 100</td>
+                                        <td>Unlimited</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">AI Candidate Matching</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-star feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Candidate Contact Details</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Bulk CV Download</td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-times feature-cross"></i></td>
+                                        <td><i class="fas fa-check feature-check"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="feature-name">Support</td>
+                                        <td>Email (48h)</td>
+                                        <td>Priority Email (24h)</td>
+                                        <td>24/7 Phone & Email</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Section -->
+                    <div class="faq-section" data-aos="fade-up">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                How does the CV search work?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Our CV search allows you to find candidates based on skills, experience, education, location, and more. You can use advanced filters to narrow down your search to find the perfect candidates for your job openings.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Can I cancel my subscription anytime?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, you can cancel your subscription at any time. Your access will continue until the end of your current billing period, and you won't be charged again.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                What payment methods do you accept?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                Is there a free trial available?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                We offer a 7-day free trial for our Professional and Enterprise plans. During the trial, you'll have full access to all features with some usage limits.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+     <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    loadHTML('footer-container', 'components/company_footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+    <script>
+       
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

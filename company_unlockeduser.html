@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlocked Users | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company_unlockuser.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="main-content" style="margin-top: 10px;">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                                </div>
+                                <div class="company-details">
+                                    <h3>AutoSoft Dynamics</h3>
+                                    <p>Premium Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+                        
+                        <ul class="dashboard-menu">
+                            <li>
+                                <a href="/company_dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_editprofile.html">
+                                    <i class="fas fa-user-edit"></i>
+                                    Edit Account Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_public_profile.html">
+                                    <i class="fas fa-building"></i>
+                                    Company Public Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_postjob.html">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Post a Job
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_managejobs.html">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_cvsearch.html">
+                                    <i class="fas fa-search"></i>
+                                    CV Search Package
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="/company_paymenthistory.html">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    Payment History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_unlockeduser.html" class="active">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Unlocked Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_message.html">
+                                    <i class="fas fa-envelope"></i>
+                                    Company Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_follower.html">
+                                    <i class="fas fa-users"></i>
+                                    Company Followers
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="#" class="logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Unlocked Users Content -->
+                <div class="col-lg-8">
+                    <!-- Users Header -->
+                    <div class="users-header">
+                      <h1>Unlocked Users</h1>
+                      <p>Connect with talented professionals who have subscribed to your services</p>
+                    </div>
+                    
+                    <!-- Stats Cards -->
+                    <div class="stats-container">
+                        <div class="stats-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stats-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stats-value">24</div>
+                            <div class="stats-label">Total Users</div>
+                        </div>
+                        
+                        <div class="stats-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stats-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="stats-value">8</div>
+                            <div class="stats-label">Premium Users</div>
+                        </div>
+                        
+                        <div class="stats-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stats-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="stats-value">18</div>
+                            <div class="stats-label">Active Users</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter Section -->
+                    <div class="filter-section" data-aos="fade-up">
+                        <h4 class="filter-title">Filter Users</h4>
+                        <div class="filter-form">
+                            <div class="filter-group">
+                                <label class="filter-label">User Type</label>
+                                <select class="form-select">
+                                    <option value="">All Users</option>
+                                    <option value="premium">Premium Users</option>
+                                    <option value="standard">Standard Users</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label class="filter-label">Subscription Type</label>
+                                <select class="form-select">
+                                    <option value="">All Subscriptions</option>
+                                    <option value="job-package">Job Package</option>
+                                    <option value="cv-search">CV Search</option>
+                                    <option value="premium">Premium</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label class="filter-label">Status</label>
+                                <select class="form-select">
+                                    <option value="">All Statuses</option>
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label class="filter-label">Skills</label>
+                                <select class="form-select">
+                                    <option value="">All Skills</option>
+                                    <option value="design">Design</option>
+                                    <option value="development">Development</option>
+                                    <option value="marketing">Marketing</option>
+                                </select>
+                            </div>
+                            <button class="btn-filter">Apply Filters</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Users Grid -->
+                    <div class="users-container">
+                        <!-- User 1 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="subscription-badge">Job Package</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">Michael Chen</h3>
+                                <p class="user-profession">Senior Frontend Developer</p>
+                                <span class="user-status">Active</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">24</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">92%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-value">4.7</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">JavaScript</span>
+                                        <span class="skill-tag">TypeScript</span>
+                                        <span class="skill-tag">CSS</span>
+                                    </div>
+                                </div>
+                                <div class="user-type premium-user">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Premium User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User 2 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="subscription-badge">CV Search</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">Sarah Johnson</h3>
+                                <p class="user-profession">UX/UI Designer</p>
+                                <span class="user-status">Active</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">18</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">88%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">4.0</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">Figma</span>
+                                        <span class="skill-tag">Adobe XD</span>
+                                        <span class="skill-tag">Prototyping</span>
+                                        <span class="skill-tag">User Research</span>
+                                    </div>
+                                </div>
+                                <div class="user-type standard-user">
+                                    <i class="fas fa-user"></i>
+                                    <span>Standard User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User 3 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="subscription-badge">Premium Package</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">David Rodriguez</h3>
+                                <p class="user-profession">Full Stack Developer</p>
+                                <span class="user-status">Active</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">32</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">95%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">5.0</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">Node.js</span>
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag">MongoDB</span>
+                                        <span class="skill-tag">AWS</span>
+                                    </div>
+                                </div>
+                                <div class="user-type premium-user">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Premium User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User 4 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="subscription-badge">Job Package</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">Emma Wilson</h3>
+                                <p class="user-profession">Digital Marketing Specialist</p>
+                                <span class="user-status">Inactive</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">14</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">82%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">4.0</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">SEO</span>
+                                        <span class="skill-tag">Content Marketing</span>
+                                        <span class="skill-tag">Social Media</span>
+                                        <span class="skill-tag">Analytics</span>
+                                    </div>
+                                </div>
+                                <div class="user-type standard-user">
+                                    <i class="fas fa-user"></i>
+                                    <span>Standard User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User 5 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="500">
+                            <div class="subscription-badge">CV Search</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">James Thompson</h3>
+                                <p class="user-profession">Data Scientist</p>
+                                <span class="user-status">Active</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">21</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">90%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-value">4.5</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Machine Learning</span>
+                                        <span class="skill-tag">SQL</span>
+                                        <span class="skill-tag">Data Visualization</span>
+                                    </div>
+                                </div>
+                                <div class="user-type premium-user">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Premium User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- User 6 -->
+                        <div class="user-card" data-aos="fade-up" data-aos-delay="600">
+                            <div class="subscription-badge">Job Package</div>
+                            <div class="user-header">
+                                <div class="user-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="User Avatar">
+                                </div>
+                                <h3 class="user-name">Olivia Martinez</h3>
+                                <p class="user-profession">Product Manager</p>
+                                <span class="user-status">Active</span>
+                            </div>
+                            <div class="user-body">
+                                <div class="user-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">28</span>
+                                        <span class="stat-label">Projects</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">94%</span>
+                                        <span class="stat-label">Success Rate</span>
+                                    </div>
+                                </div>
+                                <div class="user-rating">
+                                    <div class="rating-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">5.0</span>
+                                </div>
+                                <div class="user-skills">
+                                    <h5 class="skills-title">Skills</h5>
+                                    <div class="skills-list">
+                                        <span class="skill-tag">Agile</span>
+                                        <span class="skill-tag">Scrum</span>
+                                        <span class="skill-tag">Product Strategy</span>
+                                        <span class="skill-tag">User Stories</span>
+                                    </div>
+                                </div>
+                                <div class="user-type standard-user">
+                                    <i class="fas fa-user"></i>
+                                    <span>Standard User</span>
+                                </div>
+                                <div class="user-actions">
+                                    <button class="btn-message">
+                                        <i class="fas fa-envelope"></i> Message
+                                    </button>
+                                    <button class="btn-connect">
+                                        <i class="fas fa-user-plus"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination-container">
+                        <div class="pagination-info">
+                            Showing 1 to 6 of 24 users
+                        </div>
+                        <nav aria-label="Users navigation">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+       <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+    loadHTML('footer-container', 'components/company_footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
