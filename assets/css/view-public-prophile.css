@@ -127,7 +127,7 @@
 }
 
 .userlinkstp .btn {
-    background: var(--primary);
+    background: #00B43D;
     color: white;
     padding: 12px 30px;
     border-radius: 6px;
@@ -196,7 +196,7 @@
 }
 
 .profileskills li {
-    background: var(--light);
+    background: #00B43D;
     color: var(--primary);
     padding: 8px 16px;
     border-radius: 20px;
@@ -242,7 +242,7 @@
 .jobdetail h3 {
     font-size: 18px;
     font-weight: 700;
-    color: var(--dark);
+    color: #00B43D;
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 2px solid var(--light);
@@ -256,7 +256,7 @@
     left: 0;
     width: 40px;
     height: 2px;
-    background: var(--primary);
+    background: #00B43D;
 }
 
 /* Candidate Info */
@@ -270,7 +270,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--text);
+    color: #00B43D;
     font-size: 15px;
 }
 

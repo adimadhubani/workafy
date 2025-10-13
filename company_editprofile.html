@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Company Profile | JobPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/company_editprofile.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-4">
+                    <div class="sidebar" data-aos="fade-right">
+                        <div class="sidebar-header">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                                </div>
+                                <div class="company-details">
+                                    <h3>AutoSoft Dynamics</h3>
+                                    <p>Premium Account</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        
+                        <ul class="dashboard-menu">
+                            <li>
+                                <a href="/company_dashboard.html">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="company_editprofile.html" class="active">
+                                    <i class="fas fa-user-edit"></i>
+                                    Edit Account Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_public_profile.html">
+                                    <i class="fas fa-building"></i>
+                                    Company Public Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="company_postjob.html">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Post a Job
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_managejobs.html">
+                                    <i class="fas fa-tasks"></i>
+                                    Manage Jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_cvsearch.html">
+                                    <i class="fas fa-search"></i>
+                                    CV Search Package
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="/company_paymenthistory.html">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    Payment History
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_unlockeduser.html">
+                                    <i class="fas fa-unlock-alt"></i>
+                                    Unlocked Users
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_message.html">
+                                    <i class="fas fa-envelope"></i>
+                                    Company Messages
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/company_follower.html">
+                                    <i class="fas fa-users"></i>
+                                    Company Followers
+                                </a>
+                            </li>
+                    
+                            <div class="menu-divider"></div>
+                    
+                            <li>
+                                <a href="#" class="logout-link">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Profile Content -->
+                <div class="col-lg-8">
+                    <!-- Profile Header -->
+                    <div class="profile-header">
+                      <h1>Edit Company Profile</h1>
+                      <p>Update your company information to attract the best talent</p>
+                    </div>
+                    
+                    <!-- Account Information Section -->
+                    <div class="profile-card" data-aos="fade-up">
+                        <h3 class="section-title">Account Information</h3>
+                        <form>
+                            <div class="profile-image-container">
+                                <img src="https://media.istockphoto.com/id/1468396766/photo/sustainble-green-building-eco-friendly-building-sustainable-glass-office-building-with-tree.jpg?s=612x612&w=0&k=20&c=fx2SQQxPmKY6oUpR-ZcJEB5K3dYJIpSFwVC0sM2FIW0=" alt="Company Logo" class="profile-image">
+                                <div>
+                                    <label for="image-upload" class="image-upload-btn">
+                                        <i class="fas fa-camera me-2"></i>Change Logo
+                                    </label>
+                                    <input type="file" id="image-upload" class="d-none" accept="image/*">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" value="company@example.com">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter new password">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="company-name" class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" id="company-name" value="Tech Solutions Inc.">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="industry" class="form-label">Industry</label>
+                                    <select class="form-select" id="industry">
+                                        <option selected>Information Technology</option>
+                                        <option>Finance</option>
+                                        <option>Healthcare</option>
+                                        <option>Manufacturing</option>
+                                        <option>Retail</option>
+                                        <option>Education</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="ownership" class="form-label">Ownership Type</label>
+                                    <select class="form-select" id="ownership">
+                                        <option selected>Private Limited</option>
+                                        <option>Public Limited</option>
+                                        <option>Partnership</option>
+                                        <option>Proprietorship</option>
+                                        <option>LLC</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="established" class="form-label">Established In</label>
+                                    <input type="number" class="form-control" id="established" value="2015" min="1900" max="2023">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Company Description</label>
+                                <textarea class="form-control" id="description" rows="4">We are a leading technology company specializing in software development and IT solutions. Our team of experts is dedicated to delivering innovative products that transform businesses.</textarea>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="offices" class="form-label">Number of Offices</label>
+                                    <input type="number" class="form-control" id="offices" value="5" min="1">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="employees" class="form-label">Number of Employees</label>
+                                    <select class="form-select" id="employees">
+                                        <option selected>100-500</option>
+                                        <option>1-10</option>
+                                        <option>11-50</option>
+                                        <option>51-100</option>
+                                        <option>501-1000</option>
+                                        <option>1000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Information Section -->
+                    <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="section-title">Contact Information</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="website" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control" id="website" value="https://www.techsolutions.com">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="country" class="form-label">Country</label>
+                                    <select class="form-select" id="country">
+                                        <option selected>United States</option>
+                                        <option>Canada</option>
+                                        <option>United Kingdom</option>
+                                        <option>Australia</option>
+                                        <option>India</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="state" class="form-label">State/Province</label>
+                                    <input type="text" class="form-control" id="state" value="California">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="city" value="San Francisco">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="zip" class="form-label">ZIP/Postal Code</label>
+                                    <input type="text" class="form-control" id="zip" value="94105">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Company Address</label>
+                                <textarea class="form-control" id="address" rows="3">123 Tech Street, Suite 500, San Francisco, CA 94105</textarea>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Social Media Section -->
+                    <div class="profile-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="section-title">Social Media</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="social-input-group">
+                                        <i class="fab fa-facebook-f social-icon"></i>
+                                        <input type="text" class="form-control social-input" id="facebook" placeholder="Facebook Profile URL">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="social-input-group">
+                                        <i class="fab fa-twitter social-icon"></i>
+                                        <input type="text" class="form-control social-input" id="twitter" placeholder="Twitter Profile URL">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="social-input-group">
+                                        <i class="fab fa-linkedin-in social-icon"></i>
+                                        <input type="text" class="form-control social-input" id="linkedin" placeholder="LinkedIn Profile URL">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="social-input-group">
+                                        <i class="fab fa-pinterest-p social-icon"></i>
+                                        <input type="text" class="form-control social-input" id="pinterest" placeholder="Pinterest Profile URL">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- HR Information Section -->
+                    <div class="profile-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="section-title">HR Person Information</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="hr-name" class="form-label">HR Person Name</label>
+                                    <input type="text" class="form-control" id="hr-name" value="Sarah Johnson">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="hr-email" class="form-label">HR Email</label>
+                                    <input type="email" class="form-control" id="hr-email" value="sarah.johnson@techsolutions.com">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="hr-designation" class="form-label">HR Designation</label>
+                                    <input type="text" class="form-control" id="hr-designation" value="HR Manager">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="registration" class="form-label">Company Registration Number</label>
+                                    <input type="text" class="form-control" id="registration" value="REG-789456123">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-end mt-4" data-aos="fade-up" data-aos-delay="400">
+                        <button type="button" class="btn btn-cancel">Cancel</button>
+                        <button type="button" class="btn btn-save">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+      <!-- Footer -->
+      <div id="footer-container"></div>
+
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="assets/js/loadComponent.js"></script>
+      <script src="assets/js/navbar.js"></script>
+    
+      <script>
+        // Load Navbar & Footer
+        loadHTML('navbar-container', 'components/company_nav.html').then(() => initializeNavbar());
+        loadHTML('footer-container', 'components/company_footer.html').then(() => {
+          AOS.init({ duration: 1000, once: true });
+        });
+      </script>
+    <script>
+        // Initialize AOS animations
+        // AOS.init({
+        //     duration: 1000,
+        //     once: true,
+        //     offset: 100
+        // });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Image upload functionality
+        document.getElementById('image-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector('.profile-image').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Dashboard | Workafy</title>
+
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Project Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/my-job-application.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- there will be candidate dashboard  -->
+   
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-3">
+
+      <!-- Featured Profile Package -->
+      <div class="featuredprofile">
+        <div class="packginfor">
+          <h5><i class="fas fa-bolt"></i> Featured Profile</h5>
+          <div class="featprice">INR10<span>For 60 Days</span></div>
+          <p>Gain a competitive edge in the job market with exclusive features</p>
+          <ul class="pckfeatlist">
+            <li><i class="fas fa-crown"></i> Premium Badge</li>
+            <li><i class="fas fa-chart-line"></i> Rank Booster</li>
+            <li><i class="fas fa-ribbon"></i> Your CV above all others</li>
+            <li><i class="fas fa-briefcase"></i> Increased Job Opportunities</li>
+            <li><i class="fas fa-eye"></i> Higher Profile Views</li>
+            <li><i class="fas fa-bell"></i> Exclusive Alerts</li>
+          </ul>
+        </div>
+        <div class="order">
+          <a href="javascript:void();" data-bs-toggle="modal" data-bs-target="#buyfeatured">Buy Now</a>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade mypremodal" id="buyfeatured" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+              <div class="preuserinfo">
+                <h3>To Buy Featured Package you need to first complete your profile.</h3>
+                <a href="https://portal.workafy.com/my-profile" class="btn btn-yellow mt-3">Edit Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usernavwrap">
+        <div class="switchbox">
+          <div class="txtlbl">Open to Work <i class="fas fa-question-circle" title="Are you immediate available?"></i></div>
+          <div class="">
+            <label class="switch switch-green">
+              <input type="checkbox" name="is_immediate_available" id="is_immediate_available" class="switch-input" checked="&quot;checked&quot;" onchange="changeImmediateAvailableStatus(344226, 1);">
+              <span class="switch-label" data-on="Yes" data-off="No"></span>
+              <span class="switch-handle"></span>
+            </label>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <ul class="usernavdash">
+          <li class="active"><a href="https://portal.workafy.com/home"><i class="fas fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-profile"><i class="fas fa-pencil" aria-hidden="true"></i> Edit Profile</a></li>
+          <li class=""><a href="https://portal.workafy.com/build-resume"><i class="fas fa-file" aria-hidden="true"></i> Build Resume</a></li>
+          <li><a href="https://portal.workafy.com/resume/344226"><i class="fa fa-print" aria-hidden="true"></i> Download CV</a></li>
+          <li><a href="https://portal.workafy.com/view-public-profile/344226"><i class="fas fa-eye" aria-hidden="true"></i> View Public Profile</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-job-applications"><i class="fas fa-desktop" aria-hidden="true"></i> My Job Applications</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-favourite-jobs"><i class="fas fa-heart" aria-hidden="true"></i> My Favourite Jobs</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-alerts"><i class="fas fa-bullhorn" aria-hidden="true"></i> My Job Alerts</a></li>
+          <li class=""><a href="https://portal.workafy.com/candidate-payment-history"><i class="fas fa-file-invoice-dollar"></i> Payment History</a></li>
+          <li><a href="https://portal.workafy.com/my-profile#cvs"><i class="fas fa-file" aria-hidden="true"></i> Manage Resume</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-messages"><i class="fas fa-envelope" aria-hidden="true"></i> My Messages</a></li>
+          <li class=""><a href="https://portal.workafy.com/my-followings"><i class="fas fa-user" aria-hidden="true"></i> My Followings</a></li>
+          <li><a href="https://portal.workafy.com/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out" aria-hidden="true"></i> Logout</a>
+            <form id="logout-form" action="https://portal.workafy.com/logout" method="POST" style="display: none;">
+              <input type="hidden" name="_token" value="W2JABW8QUYRn71YH7yIrzSsFRyPV15tciSmrF54U" autocomplete="off">
+            </form>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="col-lg-9">
+     
+
+   
+
+
+      <!-- Profile Information -->
+     
+
+<!-- Applied Jobs -->
+ <section class="applied-jobs" id="jobs">
+        <div class="jobs-container">
+            <!-- Header -->
+            <div class="jobs-header">
+                <h2 class="jobs-title">
+                    Applied <span class="title-accent">Jobs</span>
+                </h2>
+                <p class="jobs-subtitle">
+                    Tracking my journey through the job application process
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="jobs-filter">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-text">All Jobs</span>
+                    <span class="filter-count">6</span>
+                </button>
+                <button class="filter-btn" data-filter="applied">
+                    <span class="filter-text">Applied</span>
+                    <span class="filter-count">2</span>
+                </button>
+                <button class="filter-btn" data-filter="interview">
+                    <span class="filter-text">Interview</span>
+                    <span class="filter-count">2</span>
+                </button>
+                <button class="filter-btn" data-filter="offer">
+                    <span class="filter-text">Offer Received</span>
+                    <span class="filter-count">1</span>
+                </button>
+                <button class="filter-btn" data-filter="rejected">
+                    <span class="filter-text">Not Selected</span>
+                    <span class="filter-count">1</span>
+                </button>
+            </div>
+
+            <!-- Jobs Grid -->
+            <div class="jobs-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card" data-status="interview">
+                    <div class="card-glow"></div>
+                    
+                    <div class="card-header">
+                        <div class="company-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" class="company-logo">
+                            <div class="company-details">
+                                <h3 class="company-name">Google</h3>
+                                <p class="job-position">Senior Frontend Developer</p>
+                            </div>
+                        </div>
+                        <div class="status-badge interview">Interview</div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="detail-row">
+                            <span class="detail-label">📍 Location</span>
+                            <span class="detail-value">Mountain View, CA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">💰 Salary</span>
+                            <span class="detail-value">$150k - $180k</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📝 Type</span>
+                            <span class="detail-value">Full-time</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📅 Applied</span>
+                            <span class="detail-value">Mar 15, 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Application Progress</span>
+                            <span class="progress-percent">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill interview" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="requirements">
+                        <h4>Key Requirements:</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">5+ years experience</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="action-btn primary">View Details</button>
+                        <button class="action-btn secondary">Track Application</button>
+                    </div>
+
+                    <div class="hover-effect"></div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card" data-status="applied">
+                    <div class="card-glow"></div>
+                    
+                    <div class="card-header">
+                        <div class="company-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft" class="company-logo">
+                            <div class="company-details">
+                                <h3 class="company-name">Microsoft</h3>
+                                <p class="job-position">Full Stack Engineer</p>
+                            </div>
+                        </div>
+                        <div class="status-badge applied">Applied</div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="detail-row">
+                            <span class="detail-label">📍 Location</span>
+                            <span class="detail-value">Redmond, WA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">💰 Salary</span>
+                            <span class="detail-value">$140k - $170k</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📝 Type</span>
+                            <span class="detail-value">Full-time</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📅 Applied</span>
+                            <span class="detail-value">Mar 10, 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Application Progress</span>
+                            <span class="progress-percent">50%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill applied" style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="requirements">
+                        <h4>Key Requirements:</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Azure</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="action-btn primary">View Details</button>
+                        <button class="action-btn secondary">Track Application</button>
+                    </div>
+
+                    <div class="hover-effect"></div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card" data-status="rejected">
+                    <div class="card-glow"></div>
+                    
+                    <div class="card-header">
+                        <div class="company-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Meta" class="company-logo">
+                            <div class="company-details">
+                                <h3 class="company-name">Meta</h3>
+                                <p class="job-position">React Native Developer</p>
+                            </div>
+                        </div>
+                        <div class="status-badge rejected">Not Selected</div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="detail-row">
+                            <span class="detail-label">📍 Location</span>
+                            <span class="detail-value">Remote</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">💰 Salary</span>
+                            <span class="detail-value">$130k - $160k</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📝 Type</span>
+                            <span class="detail-value">Contract</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📅 Applied</span>
+                            <span class="detail-value">Mar 5, 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Application Progress</span>
+                            <span class="progress-percent">100%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill rejected" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="requirements">
+                        <h4>Key Requirements:</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">iOS/Android</span>
+                            <span class="tech-tag">GraphQL</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="action-btn primary">View Details</button>
+                        <button class="action-btn secondary">Learn More</button>
+                    </div>
+
+                    <div class="hover-effect"></div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="job-card" data-status="offer">
+                    <div class="card-glow"></div>
+                    
+                    <div class="card-header">
+                        <div class="company-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="Netflix" class="company-logo">
+                            <div class="company-details">
+                                <h3 class="company-name">Netflix</h3>
+                                <p class="job-position">UI/UX Developer</p>
+                            </div>
+                        </div>
+                        <div class="status-badge offer">Offer Received</div>
+                    </div>
+
+                    <div class="job-details">
+                        <div class="detail-row">
+                            <span class="detail-label">📍 Location</span>
+                            <span class="detail-value">Los Gatos, CA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">💰 Salary</span>
+                            <span class="detail-value">$145k - $175k</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📝 Type</span>
+                            <span class="detail-value">Full-time</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📅 Applied</span>
+                            <span class="detail-value">Mar 20, 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Application Progress</span>
+                            <span class="progress-percent">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill offer" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="requirements">
+                        <h4>Key Requirements:</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="action-btn primary">View Offer</button>
+                        <button class="action-btn secondary">Accept Offer</button>
+                    </div>
+
+                    <div class="hover-effect"></div>
+                </div>
+
+                <!-- Job Card 5 -->
+              
+
+                <!-- Job Card 6 -->
+               
+            </div>
+        </div>
+    </section>
+
+
+
+
+    </div> <!-- end col-lg-9 -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/loadComponent.js"></script>
+  <script src="assets/js/navbar.js"></script>
+
+  <script>
+    // Load Navbar & Footer
+    loadHTML('navbar-container', 'components/navbar.html').then(() => initializeNavbar());
+    loadHTML('footer-container', 'components/footer.html').then(() => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+
+  <style>
+    /* ===== Updated Profile Page CSS (Workafy Theme) ===== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #FFFFFF;
+      color: #333;
+    }
+
+    .profile-section {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .profile-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cover-img-container {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cover-img {
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-name {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #000;
+    }
+
+    .profile-title {
+      color: grey;
+    }
+
+    .profile-meta span {
+      display: inline-block;
+      margin: 5px 10px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .btn-success {
+      background-color: #00B43D !important;
+      border-color: #00B43D !important;
+    }
+
+    .btn-success:hover {
+      background-color: #009e34 !important;
+    }
+
+    .info-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #00B43D;
+    }
+
+    .skill-badge {
+      background: #e6f9ed;
+      color: #00B43D;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .skill-badge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #00B43D;
+    }
+
+    .profile-left {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .profile-right {
+      animation: fadeInRight 0.8s ease-out 0.2s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+    <script>
+    // Simple FAQ accordion functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // Back to top button
+      const backToTop = document.querySelector('.back-to-top');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Simple intersection observer for animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.slide-in, .bounce-in, .fade-in');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.visibility = 'visible';
+            entry.target.style.opacity = '1';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animatedElements.forEach(el => {
+        el.style.visibility = 'hidden';
+        el.style.opacity = '0';
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
