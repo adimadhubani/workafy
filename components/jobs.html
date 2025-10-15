@@ -21,6 +21,75 @@
             display: none !important;
           }
         }
+
+
+        /* Job Listings */
+.jobint {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    margin-bottom: 25px;
+    height: 100%;
+    transition: all 0.4s ease;
+    border: 1px solid #f1f1f1;
+    position: relative;
+    overflow: hidden;
+}
+
+.jobint:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #00B43D;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.jobint:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.jobint:hover:before {
+    opacity: 1;
+}
+
+.jobint h4 a {
+    color: #000; /* Black job title */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.jobint h4 a:hover {
+    color: #00B43D; /* Green hover */
+}
+
+
+.job-card-link {
+    display: block;
+    text-decoration: none; /* remove underline */
+    color: inherit; /* keep text color */
+}
+
+.job-card-link .job-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card-link:hover .job-card {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Optional: Make button non-clickable if you want the entire card to navigate */
+.job-card-link .connect-btn {
+    pointer-events: none;
+}
+
         </style>
         
         
@@ -29,7 +98,7 @@
     <!-- Search Section for Jobs Page -->
     <!-- <div class="pageSearch"> -->
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center ">
                 <div class="col-lg-8">
                     <div class="text-center mb-4">
                         <h1>Find Your <span class="text-highlight">Dream Job</span></h1>
@@ -217,11 +286,13 @@
                         <div class="topstatinfo mb-4">
                             <i class="fas fa-info-circle me-2"></i>Showing <strong>1-12</strong> of <strong>224</strong> jobs
                         </div>
-
+                           
                         <ul class="featuredlist row">
+                            
                             <!-- Job 1 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card ">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint ">
                                     <div class="job-card-header">
                                         <div class="company-logo">JD</div>
                                         <div class="job-type">Full Time</div>
@@ -238,11 +309,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 2 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">DH</div>
                                         <div class="job-type">Contract</div>
@@ -259,11 +332,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 3 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">DW</div>
                                         <div class="job-type">Full Time</div>
@@ -280,11 +355,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 4 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">CT</div>
                                         <div class="job-type">Full Time</div>
@@ -301,11 +378,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 5 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">AI</div>
                                         <div class="job-type">Full Time</div>
@@ -322,11 +401,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 6 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">MF</div>
                                         <div class="job-type">Full Time</div>
@@ -343,11 +424,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 7 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">WD</div>
                                         <div class="job-type">Part Time</div>
@@ -364,11 +447,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 8 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">DB</div>
                                         <div class="job-type">Full Time</div>
@@ -385,11 +470,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 9 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">SE</div>
                                         <div class="job-type">Contract</div>
@@ -406,11 +493,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 10 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">GD</div>
                                         <div class="job-type">Full Time</div>
@@ -427,11 +516,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 11 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">BE</div>
                                         <div class="job-type">Full Time</div>
@@ -448,11 +539,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 12 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">PM</div>
                                         <div class="job-type">Full Time</div>
@@ -469,11 +562,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 13 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">QA</div>
                                         <div class="job-type">Contract</div>
@@ -490,11 +585,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 14 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">PM</div>
                                         <div class="job-type">Full Time</div>
@@ -511,11 +608,13 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         
                             <!-- Job 15 -->
                             <li class="col-lg-6 col-xl-4 mb-4">
-                                <div class="job-card">
+                                <a href="/jobdetails.html" class="job-card-link">
+                                <div class="job-card jobint">
                                     <div class="job-card-header">
                                         <div class="company-logo">CS</div>
                                         <div class="job-type">Full Time</div>
@@ -532,6 +631,7 @@
                                         <button class="connect-btn">Connect</button>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                         </ul>
                         
