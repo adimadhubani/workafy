@@ -389,6 +389,7 @@ body {
 }
 
 /* Pagination */
+/* Pagination */
 .pagination-container {
     display: flex;
     justify-content: space-between;
@@ -402,15 +403,35 @@ body {
     font-size: 0.9rem;
 }
 
+/* Default Link */
 .pagination .page-link {
-    color: var(--primary-color);
+    color: #00B43D;
     border: 1px solid #dee2e6;
+    background: white;
     padding: 8px 15px;
+    transition: all 0.25s ease;
 }
 
+/* ✅ Hover Effect */
+.pagination .page-link:hover {
+    background: #00B43D;
+    color: white;
+    border-color: #00B43D;
+    transform: translateY(-3px);
+}
+
+/* ✅ Active Page */
 .pagination .page-item.active .page-link {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: #00B43D;
+    border-color: #00B43D;
+    color: white;
+}
+
+/* Optional: Disabled State */
+.pagination .page-item.disabled .page-link {
+    color: grey;
+    border-color: #dee2e6;
+    background: #f8f9fa;
 }
 .company-info {
 display: flex;

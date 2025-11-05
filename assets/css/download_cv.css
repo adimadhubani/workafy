@@ -265,51 +265,61 @@ body {
 
 /* Navigation list */
 .usernavdash { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-    background: var(--white); 
-    border-radius: 10px; 
-    border: 1px solid var(--medium-grey);
-    overflow: hidden;
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  background: var(--white); 
+  border-radius: 10px; 
+  border: 1px solid var(--medium-grey);
+  overflow: hidden;
 }
 
 .usernavdash li { 
-    border-bottom: 1px solid #00B43D; 
-    transition: all 0.2s ease;
+  border-bottom: 1px solid #00B43D; 
+  transition: all 0.2s ease;
 }
 
 .usernavdash li:hover {
-    background: #00B43D;
+  background: #00B43D;
+}
+
+/* ✅ Make icon + text white on hover */
+.usernavdash li:hover a, 
+.usernavdash li:hover a i {
+  color: white !important;
 }
 
 .usernavdash li:last-child { 
-    border-bottom: 0; 
+  border-bottom: 0; 
 }
 
 .usernavdash a { 
-    display: block; 
-    padding: 14px 16px; 
-    color: var(--black); 
-    text-decoration: none; 
-    font-weight: 600;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px; 
+  color: var(--black); 
+  text-decoration: none; 
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .usernavdash a i {
-    color: var(--primary-green);
-    width: 20px;
-    text-align: center;
+  color: var(--primary-green);
+  width: 20px;
+  text-align: center;
 }
 
-.usernavdash li.active a { 
-    background: #00B43D; 
-    color: #00B43D;
-    border-left: 3px solid var(--primary-green);
+/* ✅ Active tab fix */
+.usernavdash li.active {
+  background: #00B43D;
 }
+
+.usernavdash li.active a,
+.usernavdash li.active a i {
+  color: white !important;
+}
+
 
 /* Alerts & top stat */
 .userprofilealert { 
@@ -818,7 +828,7 @@ body {
 .text-info-right , .i {
     margin-left: 10px;
     font-weight: 400; 
-    text:black;/* Corrected from 40px → 400 (normal weight) */
+    color:black;/* Corrected from 40px → 400 (normal weight) */
 }
   
 
@@ -1090,19 +1100,37 @@ body {
       background-color: #00B43D;
       color: white;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 6px;
       border: none;
-      font-weight: 500;
+      font-weight: 600;
       margin: 0 10px;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
     }
     
+    /* ✅ Hover effect */
     .btn-workafy:hover {
-      background-color: var(--primary);
-      color: white;
+      background-color: #00B43D;
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      color: white;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
     }
+    
+    /* ✅ Click (active) effect */
+    .btn-workafy:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      color: white;
+      background-color: #00B43D;
+    }
+    
+    /* Optional: focus ring for accessibility */
+    .btn-workafy:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,180,61,0.4);
+    }
+    
     
     /* Profile Alert */
     .profile-alert {
