@@ -14,29 +14,198 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/search_talent.css">
     
+    <style>
+
+        
+        @media (max-width: 768px) {
+          .searchwrap {
+            padding: 60px 0;
+            text-align: center;
+          }
+          .bxsrctxt h1 {
+            font-size: 1.8rem;
+          }
+          .bxsrctxt p {
+            font-size: 1rem;
+          }
+          .searchbar {
+            margin: 0 auto;
+            max-width: 95%;
+          }
+          .text-end {
+            text-align: center !important;
+          }
+        }
+
+        /* Mobile Sidebar Styles */
+      /* Mobile Sidebar Overlay - High z-index */
+.mobile-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    display: none;
+}
+
+/* Mobile Sidebar - High z-index */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100%;
+    background-color: white;
+    z-index: 1200;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-sidebar.active {
+    left: 0;
+}
+
+.mobile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.mobile-sidebar-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-sidebar:hover {
+    color: var(--primary-green);
+}
+
+.mobile-filter-toggle {
+    background: var(--primary-green);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.mobile-filter-toggle:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-2px);
+}
+
+/* When sidebar is open, blur and darken the background content */
+body.sidebar-open .pageSearch,
+body.sidebar-open .listpgWraper {
+    filter: blur(2px) brightness(0.95);
+    pointer-events: none; /* Prevent interactions with background content */
+}
+
+/* Search Hero Section */
+.pageSearch {
+    background: #FFFFFF;
+    padding: 3rem 0;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+}
+
+.pageSearch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.05)"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>') no-repeat;
+    background-size: cover;
+}
+
+.pageSearch h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchform {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.searchform .input-group {
+    margin-bottom: 1rem;
+}
+
+.searchform .form-control, .searchform .form-select {
+    border: 2px solid var(--medium-grey);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.searchform .form-control:focus, .searchform .form-select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(0, 180, 61, 0.25);
+}
+
+.searchform .btn {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.searchform .btn:hover {
+    background: var(--primary-green-dark);
+    transform: translateY(-2px);
+}
+        
+        @media (min-width: 992px) {
+            .mobile-filter-toggle, .mobile-sidebar-overlay, .mobile-sidebar {
+                display: none !important;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .desktop-only {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
-<style>
-    @media (max-width: 768px) {
-      .searchwrap {
-        padding: 60px 0;
-        text-align: center;
-      }
-      .bxsrctxt h1 {
-        font-size: 1.8rem;
-      }
-      .bxsrctxt p {
-        font-size: 1rem;
-      }
-      .searchbar {
-        margin: 0 auto;
-        max-width: 95%;
-      }
-      .text-end {
-        text-align: center !important;
-      }
-    }
-  </style>
 <body>
 
     <div class="back-to-top">
@@ -60,80 +229,348 @@
         </div>
     </div>
 
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+    
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <h3>Filter Candidates</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Filter Content -->
+        <div class="filter-section" id="mobileFilterjobs">
+            <!-- By Country -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-globe me-2"></i> By Country</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="country[]" id="mobile_country_us" value="us">
+                        <label for="mobile_country_us">United States <span>342</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="country[]" id="mobile_country_ca" value="ca">
+                        <label for="mobile_country_ca">Canada <span>127</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="country[]" id="mobile_country_uk" value="uk">
+                        <label for="mobile_country_uk">United Kingdom <span>98</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="country[]" id="mobile_country_au" value="au">
+                        <label for="mobile_country_au">Australia <span>76</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="country[]" id="mobile_country_de" value="de">
+                        <label for="mobile_country_de">Germany <span>64</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By State -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-map me-2"></i> By State</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="state[]" id="mobile_state_ca" value="ca">
+                        <label for="mobile_state_ca">California <span>187</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="state[]" id="mobile_state_ny" value="ny">
+                        <label for="mobile_state_ny">New York <span>132</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="state[]" id="mobile_state_tx" value="tx">
+                        <label for="mobile_state_tx">Texas <span>98</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="state[]" id="mobile_state_wa" value="wa">
+                        <label for="mobile_state_wa">Washington <span>76</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="state[]" id="mobile_state_fl" value="fl">
+                        <label for="mobile_state_fl">Florida <span>64</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By City -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-building me-2"></i> By City</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="city[]" id="mobile_city_sf" value="sf">
+                        <label for="mobile_city_sf">San Francisco <span>87</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="city[]" id="mobile_city_ny" value="ny">
+                        <label for="mobile_city_ny">New York <span>76</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="city[]" id="mobile_city_sea" value="sea">
+                        <label for="mobile_city_sea">Seattle <span>65</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="city[]" id="mobile_city_la" value="la">
+                        <label for="mobile_city_la">Los Angeles <span>54</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="city[]" id="mobile_city_aus" value="aus">
+                        <label for="mobile_city_aus">Austin <span>43</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Career Level -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-chart-line me-2"></i> Career Level</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="career_level[]" id="mobile_level_entry" value="entry">
+                        <label for="mobile_level_entry">Entry Level <span>156</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="career_level[]" id="mobile_level_mid" value="mid">
+                        <label for="mobile_level_mid">Mid Level <span>243</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="career_level[]" id="mobile_level_senior" value="senior">
+                        <label for="mobile_level_senior">Senior Level <span>187</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="career_level[]" id="mobile_level_lead" value="lead">
+                        <label for="mobile_level_lead">Lead/Manager <span>98</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="career_level[]" id="mobile_level_exec" value="exec">
+                        <label for="mobile_level_exec">Executive <span>42</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Experience -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-briefcase me-2"></i> Experience</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="experience[]" id="mobile_exp_0_2" value="0_2">
+                        <label for="mobile_exp_0_2">0-2 years <span>132</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="experience[]" id="mobile_exp_2_5" value="2_5">
+                        <label for="mobile_exp_2_5">2-5 years <span>287</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="experience[]" id="mobile_exp_5_10" value="5_10">
+                        <label for="mobile_exp_5_10">5-10 years <span>198</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="experience[]" id="mobile_exp_10" value="10">
+                        <label for="mobile_exp_10">10+ years <span>87</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Gender -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-user me-2"></i> Gender</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="gender[]" id="mobile_gender_male" value="male">
+                        <label for="mobile_gender_male">Male <span>342</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="gender[]" id="mobile_gender_female" value="female">
+                        <label for="mobile_gender_female">Female <span>287</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="gender[]" id="mobile_gender_other" value="other">
+                        <label for="mobile_gender_other">Other/Prefer not to say <span>54</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Skills -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-code me-2"></i> Skills</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="skills[]" id="mobile_skill_js" value="js">
+                        <label for="mobile_skill_js">JavaScript <span>287</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="skills[]" id="mobile_skill_python" value="python">
+                        <label for="mobile_skill_python">Python <span>243</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="skills[]" id="mobile_skill_react" value="react">
+                        <label for="mobile_skill_react">React <span>198</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="skills[]" id="mobile_skill_aws" value="aws">
+                        <label for="mobile_skill_aws">AWS <span>154</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="skills[]" id="mobile_skill_ui" value="ui">
+                        <label for="mobile_skill_ui">UI/UX Design <span>132</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Industry -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-industry me-2"></i> Industry</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="industry[]" id="mobile_industry_tech" value="tech">
+                        <label for="mobile_industry_tech">Technology <span>432</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="industry[]" id="mobile_industry_finance" value="finance">
+                        <label for="mobile_industry_finance">Finance <span>187</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="industry[]" id="mobile_industry_health" value="health">
+                        <label for="mobile_industry_health">Healthcare <span>154</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="industry[]" id="mobile_industry_retail" value="retail">
+                        <label for="mobile_industry_retail">Retail/E-commerce <span>132</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="industry[]" id="mobile_industry_edu" value="edu">
+                        <label for="mobile_industry_edu">Education <span>98</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- By Functional Area -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-sitemap me-2"></i> Functional Area</h4>
+                <ul class="optionlist">
+                    <li>
+                        <input type="checkbox" name="functional_area[]" id="mobile_area_dev" value="dev">
+                        <label for="mobile_area_dev">Software Development <span>287</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="functional_area[]" id="mobile_area_design" value="design">
+                        <label for="mobile_area_design">Design <span>154</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="functional_area[]" id="mobile_area_data" value="data">
+                        <label for="mobile_area_data">Data Science <span>132</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="functional_area[]" id="mobile_area_marketing" value="marketing">
+                        <label for="mobile_area_marketing">Marketing <span>98</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="functional_area[]" id="mobile_area_sales" value="sales">
+                        <label for="mobile_area_sales">Sales <span>87</span></label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Salary Range -->
+            <div class="widget">
+                <h4 class="widget-title"><i class="fas fa-dollar-sign me-2"></i> Expected Salary</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input class="form-control" id="mobile_salary_from" placeholder="Min" name="salary_from" type="number">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <input class="form-control" id="mobile_salary_to" placeholder="Max" name="salary_to" type="number">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apply Filters Button -->
+                <div class="searchnt mt-3">
+                    <button type="submit" class="btn w-100"><i class="fas fa-filter me-2"></i> Apply Filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Search Section -->
-  <!-- Search Section -->
-<div class="pageSearch desktop-only py-5" style="background-color: #f9f9f9;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <!-- Heading -->
-          <div class="text-center mb-4">
-            <h1 style="color: #080805; font-weight: 700;">
-              Find Top <span style="color: #020804;">Talent</span>
-            </h1>
-            <p class="lead text-muted">
-              Discover skilled professionals ready to join your team
-            </p>
-          </div>
-  
-          <!-- Search Form -->
-          <div class="searchform shadow-lg p-4 rounded-4 bg-white animate-fadeInUp">
-            <form id="desktopSearchForm" action="#" method="get">
-              <div class="row g-3 align-items-center">
-                <div class="col-md-8">
-                  <div class="input-group border rounded-3 overflow-hidden">
-                    <span class="input-group-text bg-white border-0">
-                      <i class="fas fa-search text-success"></i>
-                    </span>
-                    <input
-                      type="text"
-                      name="search"
-                      class="form-control border-0"
-                      placeholder="Enter skills (e.g. JavaScript, Python, UX Design)"
-                      autocomplete="off"
-                    />
+    <div class="pageSearch desktop-only py-5" style="background-color: #f9f9f9;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <!-- Heading -->
+              <div class="text-center mb-4">
+                <h1 style="color: #080805; font-weight: 700;">
+                  Find Top <span style="color: #020804;">Talent</span>
+                </h1>
+                <p class="lead text-muted">
+                  Discover skilled professionals ready to join your team
+                </p>
+              </div>
+      
+              <!-- Search Form -->
+              <div class="searchform shadow-lg p-4 rounded-4 bg-white animate-fadeInUp">
+                <form id="desktopSearchForm" action="#" method="get">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-md-8">
+                      <div class="input-group border rounded-3 overflow-hidden">
+                        <span class="input-group-text bg-white border-0">
+                          <i class="fas fa-search text-success"></i>
+                        </span>
+                        <input
+                          type="text"
+                          name="search"
+                          class="form-control border-0"
+                          placeholder="Enter skills (e.g. JavaScript, Python, UX Design)"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+      
+                    <div class="col-md-4 position-relative">
+                      <!-- Custom Dropdown -->
+                      <div class="custom-dropdown" id="functionalDropdown">
+                        <button
+                          type="button"
+                          class="dropdown-toggle w-100 text-start"
+                          id="dropdownBtn"
+                        >
+                          <span id="dropdownSelected">Select Functional Area</span>
+                          <i class="fas fa-chevron-down float-end mt-1"></i>
+                        </button>
+                        <ul class="dropdown-menu-list text-dark" id="dropdownList">
+                          <li data-value="software_development">Software Development</li>
+                          <li data-value="data_science">Data Science & Analytics</li>
+                          <li data-value="ux_ui">UX/UI Design</li>
+                          <li data-value="product_management">Product Management</li>
+                          <li data-value="digital_marketing">Digital Marketing</li>
+                          <li data-value="devops">DevOps & Infrastructure</li>
+                          <li data-value="qa">Quality Assurance</li>
+                          <li data-value="it_support">IT Support</li>
+                          <li data-value="sales">Sales & Business Development</li>
+                          <li data-value="project_management">Project Management</li>
+                        </ul>
+                        <input type="hidden" name="functional_area" id="functionalInput" />
+                      </div>
+                    </div>
                   </div>
-                </div>
-  
-                <div class="col-md-4 position-relative">
-                  <!-- Custom Dropdown -->
-                  <div class="custom-dropdown" id="functionalDropdown">
-                    <button
-                      type="button"
-                      class="dropdown-toggle w-100 text-start"
-                      id="dropdownBtn"
-                    >
-                      <span id="dropdownSelected">Select Functional Area</span>
-                      <i class="fas fa-chevron-down float-end mt-1"></i>
+      
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success mt-4 px-5 py-2 rounded-pill shadow-sm">
+                      <i class="fas fa-search me-2"></i> Search Candidates
                     </button>
-                    <ul class="dropdown-menu-list text-dark" id="dropdownList">
-                      <li data-value="software_development">Software Development</li>
-                      <li data-value="data_science">Data Science & Analytics</li>
-                      <li data-value="ux_ui">UX/UI Design</li>
-                      <li data-value="product_management">Product Management</li>
-                      <li data-value="digital_marketing">Digital Marketing</li>
-                      <li data-value="devops">DevOps & Infrastructure</li>
-                      <li data-value="qa">Quality Assurance</li>
-                      <li data-value="it_support">IT Support</li>
-                      <li data-value="sales">Sales & Business Development</li>
-                      <li data-value="project_management">Project Management</li>
-                    </ul>
-                    <input type="hidden" name="functional_area" id="functionalInput" />
                   </div>
-                </div>
+                </form>
               </div>
-  
-              <div class="text-center">
-                <button type="submit" class="btn btn-success mt-4 px-5 py-2 rounded-pill shadow-sm">
-                  <i class="fas fa-search me-2"></i> Search Candidates
-                </button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
     <!-- Main Content -->
     <div class="listpgWraper">
@@ -589,25 +1026,7 @@
         </div>
     </div>
 
-    <!-- Mobile Filter Modal -->
-    <div class="mobile-filter-modal" id="mobileFilterModal">
-        <div class="mobile-filter-content">
-            <div class="mobile-filter-header">
-                <h5 class="mb-0">Filter Candidates</h5>
-                <button type="button" class="btn-close" id="closeMobileFilter"></button>
-            </div>
-            <div class="mobile-filter-body">
-                <!-- Mobile filter content would go here -->
-                <p>Mobile filter content would be implemented here with the same filter options as the desktop sidebar.</p>
-            </div>
-            <div class="mobile-filter-footer">
-                <button type="button" class="btn btn-secondary" id="resetMobileFilters">Reset</button>
-                <button type="button" class="btn btn-primary" id="applyMobileFilters">Apply Filters</button>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright end -->
-     <!-- Footer -->
+    <!-- Footer -->
    <div id="footer-container"></div>
 
     <!-- Scripts -->
@@ -633,6 +1052,40 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         $(document).ready(function(){
+            // Mobile sidebar toggle functionality
+            const mobileFilterToggle = $('#mobileFilterToggle');
+            const mobileSidebar = $('#mobileSidebar');
+            const closeSidebar = $('#closeSidebar');
+            const mobileSidebarOverlay = $('#mobileSidebarOverlay');
+            
+           // Open mobile sidebar
+mobileFilterToggle.on('click', function() {
+    mobileSidebar.addClass('active');
+    mobileSidebarOverlay.fadeIn(300);
+    $('body').addClass('sidebar-open'); // Add this line
+});
+
+// Close mobile sidebar
+function closeMobileSidebar() {
+    mobileSidebar.removeClass('active');
+    mobileSidebarOverlay.fadeOut(300);
+    $('body').removeClass('sidebar-open'); // Add this line
+}
+            
+            closeSidebar.on('click', closeMobileSidebar);
+            mobileSidebarOverlay.on('click', closeMobileSidebar);
+            
+            // Close sidebar when clicking outside on mobile
+            $(document).on('click', function(event) {
+                if ($(window).width() < 992) {
+                    if (!$(event.target).closest('#mobileSidebar').length && 
+                        !$(event.target).closest('#mobileFilterToggle').length && 
+                        mobileSidebar.hasClass('active')) {
+                        closeMobileSidebar();
+                    }
+                }
+            });
+
             // Initialize AOS
             AOS.init({
                 duration: 1000,
@@ -811,46 +1264,41 @@
         });
     </script>
 
-
-<script>
-    document.querySelectorAll('.widget-title').forEach(title => {
-      title.addEventListener('click', () => {
-        const list = title.nextElementSibling;
-        list.classList.toggle('open');
-      });
-    });
+    <script>
+        document.querySelectorAll('.widget-title').forEach(title => {
+          title.addEventListener('click', () => {
+            const list = title.nextElementSibling;
+            list.classList.toggle('open');
+          });
+        });
     </script>
 
-
-
-
-<!-- ✅ Script -->
-<script>
-    const dropdownBtn = document.getElementById("dropdownBtn");
-    const dropdownList = document.getElementById("dropdownList");
-    const dropdownSelected = document.getElementById("dropdownSelected");
-    const functionalInput = document.getElementById("functionalInput");
-  
-    dropdownBtn.addEventListener("click", () => {
-      dropdownList.style.display =
-        dropdownList.style.display === "block" ? "none" : "block";
-    });
-  
-    dropdownList.querySelectorAll("li").forEach((item) => {
-      item.addEventListener("click", () => {
-        dropdownSelected.textContent = item.textContent;
-        functionalInput.value = item.getAttribute("data-value");
-        dropdownList.style.display = "none";
-      });
-    });
-  
-    // Close dropdown if clicked outside
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".custom-dropdown")) {
-        dropdownList.style.display = "none";
-      }
-    });
-  </script>
+    <script>
+        const dropdownBtn = document.getElementById("dropdownBtn");
+        const dropdownList = document.getElementById("dropdownList");
+        const dropdownSelected = document.getElementById("dropdownSelected");
+        const functionalInput = document.getElementById("functionalInput");
+      
+        dropdownBtn.addEventListener("click", () => {
+          dropdownList.style.display =
+            dropdownList.style.display === "block" ? "none" : "block";
+        });
+      
+        dropdownList.querySelectorAll("li").forEach((item) => {
+          item.addEventListener("click", () => {
+            dropdownSelected.textContent = item.textContent;
+            functionalInput.value = item.getAttribute("data-value");
+            dropdownList.style.display = "none";
+          });
+        });
+      
+        // Close dropdown if clicked outside
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".custom-dropdown")) {
+            dropdownList.style.display = "none";
+          }
+        });
+    </script>
     
 </body>
 </html>
