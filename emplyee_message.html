@@ -138,53 +138,63 @@
       color: var(--primary);
     }
 
-    .usernavdash {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: var(--bg-white);
-      border-radius: 10px;
-      border: 1px solid #e9ecef;
-      overflow: hidden;
-    }
+        /* Navigation list */
+        .usernavdash { 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        background: var(--white); 
+        border-radius: 10px; 
+        border: 1px solid var(--medium-grey);
+        overflow: hidden;
+        }
 
-    .usernavdash li {
-      border-bottom: 1px solid #e9ecef;
-      transition: all 0.2s ease;
-    }
+        .usernavdash li { 
+        border-bottom: 1px solid #00B43D; 
+        transition: all 0.2s ease;
+        }
 
-    .usernavdash li:hover {
-      background: var(--primary-light);
-    }
+        .usernavdash li:hover {
+        background: #00B43D;
+        }
 
-    .usernavdash li:last-child {
-      border-bottom: 0;
-    }
+        /* ✅ Make icon + text white on hover */
+        .usernavdash li:hover a, 
+        .usernavdash li:hover a i {
+        color: white !important;
+        }
 
-    .usernavdash a {
-      display: block;
-      padding: 14px 16px;
-      color: #212529;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .usernavdash li:last-child { 
+        border-bottom: 0; 
+        }
 
-    .usernavdash a i {
-      color: var(--primary);
-      width: 20px;
-      text-align: center;
-    }
+        .usernavdash a { 
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 16px; 
+        color: var(--black); 
+        text-decoration: none; 
+        font-weight: 600;
+        transition: all 0.2s ease;
+        }
 
-    .usernavdash li.active a {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-left: 3px solid var(--primary);
-    }
+        .usernavdash a i {
+        color:#00a037;
+        width: 20px;
+        text-align: center;
+        }
 
+        /* ✅ Active tab fix */
+        .usernavdash li.active {
+        background: #00B43D;
+        }
+
+        .usernavdash li.active a,
+        .usernavdash li.active a i {
+        color: white !important;
+        }
+        
     /* Featured Profile */
     .featuredprofile {
       background: #fff;
@@ -773,7 +783,7 @@
         </div>
 
         <ul class="usernavdash">
-          <li class="active"><a href="/candidate-dashboard.html"><i class="fas fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
+          <li class=""><a href="/candidate-dashboard.html"><i class="fas fa-tachometer" aria-hidden="true"></i> Dashboard</a></li>
           <li class=""><a href="/my_profile.html"><i class="fas fa-pencil" aria-hidden="true"></i> Edit Profile</a></li>
           <li class=""><a href="/build_resume.html"><i class="fas fa-file" aria-hidden="true"></i> Build Resume</a></li>
           <li><a href="/download_cv.html"><i class="fa fa-print" aria-hidden="true"></i> Download CV</a></li>

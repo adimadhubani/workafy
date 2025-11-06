@@ -10,7 +10,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/footer1.css">
+  <link href="assets/css/footer1.css" rel="stylesheet">
+
 
   <style>
     :root {
@@ -136,51 +137,62 @@
       color: var(--primary);
     }
 
-    .usernavdash {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: var(--bg-white);
-      border-radius: 10px;
-      border: 1px solid #e9ecef;
+
+    /* Navigation list */
+    .usernavdash { 
+      list-style: none; 
+      padding: 0; 
+      margin: 0; 
+      background: var(--white); 
+      border-radius: 10px; 
+      border: 1px solid var(--medium-grey);
       overflow: hidden;
     }
 
-    .usernavdash li {
-      border-bottom: 1px solid #e9ecef;
+    .usernavdash li { 
+      border-bottom: 1px solid #00B43D; 
       transition: all 0.2s ease;
     }
 
     .usernavdash li:hover {
-      background: var(--primary-light);
+      background: #00B43D;
     }
 
-    .usernavdash li:last-child {
-      border-bottom: 0;
+    /* ✅ Make icon + text white on hover */
+    .usernavdash li:hover a, 
+    .usernavdash li:hover a i {
+      color: white !important;
     }
 
-    .usernavdash a {
-      display: block;
-      padding: 14px 16px;
-      color: #212529;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
+    .usernavdash li:last-child { 
+      border-bottom: 0; 
+    }
+
+    .usernavdash a { 
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 14px 16px; 
+      color: var(--black); 
+      text-decoration: none; 
+      font-weight: 600;
+      transition: all 0.2s ease;
     }
 
     .usernavdash a i {
-      color: var(--primary);
+      color:#00a037;
       width: 20px;
       text-align: center;
     }
 
-    .usernavdash li.active a {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-left: 3px solid var(--primary);
+    /* ✅ Active tab fix */
+    .usernavdash li.active {
+      background: #00B43D;
+    }
+
+    .usernavdash li.active a,
+    .usernavdash li.active a i {
+      color: white !important;
     }
 
     /* Featured Profile */
