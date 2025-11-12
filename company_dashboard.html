@@ -13,14 +13,220 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/company_dashboard.css">
   
+    <style>
+    /* Mobile Sidebar Styles */
+    .mobile-sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1100;
+        display: none;
+    }
+    
+    .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100%;
+        background-color: white;
+        z-index: 1200;
+        overflow-y: auto;
+        transition: left 0.3s ease;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-sidebar.active {
+        left: 0;
+    }
+    
+    .mobile-sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .mobile-sidebar-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    
+    .close-sidebar {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #6c757d;
+        cursor: pointer;
+    }
+    
+    .mobile-sidebar-toggle {
+        background: #00B43D;
+        color: white;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        margin-left: 1rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 90%;
+    }
+    
+    @media (min-width: 992px) {
+        .mobile-sidebar-toggle, .mobile-sidebar-overlay, .mobile-sidebar {
+            display: none !important;
+        }
+    }
+    
+    /* When sidebar is open, blur and darken the background content */
+    body.sidebar-open .main-content {
+        filter: blur(2px) brightness(0.95);
+        pointer-events: none; /* Prevent interactions with background content */
+    }
+    
+    /* Hide desktop sidebar on mobile */
+    @media (max-width: 991px) {
+        .col-lg-4 .sidebar {
+            display: none !important;
+        }
+        
+        .mobile-sidebar-toggle {
+            display: flex !important;
+        }
+    }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <div id="navbar-container"></div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+    
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <!-- <div class="mobile-sidebar-header">
+            <h3>Dashboard Menu</h3>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div> -->
+        
+        <!-- Mobile Sidebar Content -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="company-info">
+                    <div class="company-logo">
+                        <img src="https://portal.workafy.com/admin_assets/no-image.png" alt="Company Logo">
+                    </div>
+                    <div class="company-details">
+                        <h3>AutoSoft Dynamics</h3>
+                        <p>Premium Account</p>
+                    </div>
+                    <button class="close-sidebar pt-0" id="closeSidebar">
+                      <i class="fas fa-times"></i>
+                  </button>
+                </div>
+            </div>
+            
+            <ul class="dashboard-menu">
+                <li>
+                    <a href="/company_dashboard.html" class="active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_editprofile.html">
+                        <i class="fas fa-user-edit"></i>
+                        Edit Account Details
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_public_profile.html">
+                        <i class="fas fa-building"></i>
+                        Company Public Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_postjob.html">
+                        <i class="fas fa-plus-circle"></i>
+                        Post a Job
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_managejobs.html">
+                        <i class="fas fa-tasks"></i>
+                        Manage Jobs
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_cvsearch.html">
+                        <i class="fas fa-search"></i>
+                        CV Search Package
+                    </a>
+                </li>
+        
+                <div class="menu-divider"></div>
+        
+                <li>
+                    <a href="/company_paymenthistory.html">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Payment History
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_unlockeduser.html">
+                        <i class="fas fa-unlock-alt"></i>
+                        Unlocked Users
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_message.html">
+                        <i class="fas fa-envelope"></i>
+                        Company Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="/company_follower.html">
+                        <i class="fas fa-users"></i>
+                        Company Followers
+                    </a>
+                </li>
+        
+                <div class="menu-divider"></div>
+        
+                <li>
+                    <a href="#" class="logout-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <section class="main-content" style="margin-top: 20px;">
         <div class="container">
             <div class="row">
+                <!-- Mobile Sidebar Toggle -->
+                <div class="d-lg-none mobile-sidebar-toggle" id="mobileSidebarToggle">
+                    <i class="fas fa-bars me-2"></i> Dashboard Menu
+                </div>
+                
                 <!-- Sidebar Filters -->
                 <div class="col-lg-4">
                     <div class="sidebar" data-aos="fade-right">
@@ -348,6 +554,46 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+    </script>
+
+    <!-- Mobile Sidebar Toggle Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Mobile sidebar toggle functionality
+            const mobileSidebarToggle = $('#mobileSidebarToggle');
+            const mobileSidebar = $('#mobileSidebar');
+            const closeSidebar = $('#closeSidebar');
+            const mobileSidebarOverlay = $('#mobileSidebarOverlay');
+            
+            // Open mobile sidebar
+            mobileSidebarToggle.on('click', function() {
+                mobileSidebar.addClass('active');
+                mobileSidebarOverlay.fadeIn(300);
+                $('body').addClass('sidebar-open');
+            });
+            
+            // Close mobile sidebar
+            function closeMobileSidebar() {
+                mobileSidebar.removeClass('active');
+                mobileSidebarOverlay.fadeOut(300);
+                $('body').removeClass('sidebar-open');
+            }
+            
+            closeSidebar.on('click', closeMobileSidebar);
+            mobileSidebarOverlay.on('click', closeMobileSidebar);
+            
+            // Close sidebar when clicking outside on mobile
+            $(document).on('click', function(event) {
+                if ($(window).width() < 992) {
+                    if (!$(event.target).closest('#mobileSidebar').length && 
+                        !$(event.target).closest('#mobileSidebarToggle').length && 
+                        mobileSidebar.hasClass('active')) {
+                        closeMobileSidebar();
+                    }
                 }
             });
         });
