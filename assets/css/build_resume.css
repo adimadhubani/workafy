@@ -389,9 +389,9 @@ tr:hover {
 
 /* Responsive styles */
 @media (max-width: 1023px) {
-    .container {
+    /* .container {
         padding: 15px;
-    }
+    } */
     
     .card {
         padding: 24px;
